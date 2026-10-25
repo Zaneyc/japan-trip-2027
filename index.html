@@ -132,6 +132,8 @@ mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
 .eat-card h4 small{display:block;font:500 14px var(--sans);color:var(--ink2)}
 .eat-card p{margin:4px 0 0;font-size:16px;color:var(--ink2);line-height:1.7}
 .eat-card .meta{font-size:15px;color:var(--ink2);margin-top:5px}
+.eat-card .rec{margin-top:6px;font-size:15.5px;color:var(--ink)}
+.eat-card .cost{display:inline-block;margin-top:6px;font:700 15px var(--sans);color:var(--shu)}
 .warnline{display:inline-block;font-size:14.5px;line-height:1.6;color:var(--kin);background:var(--kin-soft);padding:2px 9px;border-radius:6px;margin-top:6px}
 
 .photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px}
@@ -198,9 +200,9 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   <div class="status">
     <div class="st"><span class="hanko">已訂</span><b>機票</b><small>酷航 TR874 去・樂桃 MM625 回</small></div>
     <div class="st"><span class="hanko">已訂</span><b>上野 toco</b><small>12/31–1/2・12/28 扣款</small></div>
-    <div class="st"><span class="hanko">已訂</span><b>湯澤 Sansan</b><small>1/2–1/5・已付</small></div>
+    <div class="st"><span class="hanko">已訂</span><b>湯澤 Sansan</b><small>1/2–1/5・已付・15:00 入住</small></div>
     <div class="st"><span class="hanko">已訂</span><b>新大久保 石亭</b><small>1/5–1/7・1/1 扣款</small></div>
-    <div class="st"><span class="hanko todo">待定</span><b>雪具</b><small>青達 或 BOO</small></div>
+    <div class="st"><span class="hanko todo">預約</span><b>雪具 BOO</b><small>1/3 7:00 取件・含接送</small></div>
     <div class="st"><span class="hanko todo">待訂</span><b>新幹線</b><small>12/2、12/5 開賣</small></div>
   </div>
 </section>
@@ -222,11 +224,16 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </div></details>
   </div>
   <ul class="timeline">
-    <li><span class="t">14:25</span><span class="x">桃園 TR874 → 18:30 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Narita%20International%20Airport%20Terminal">成田機場</a></span></li>
-    <li><span class="t">19:30</span><span class="x">入境、領行李，搭京成 Skyliner 到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85">京成上野</a>（約 41 分）</span></li>
-    <li><span class="t">20:45</span><span class="x">步行約 15 分（或日比谷線到入谷）入住 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Guesthouse%20toco%20Tokyo">Guesthouse toco</a>；入住到 22:00，延誤先傳訊息</span></li>
-    <li class="eat"><span class="t">21:30</span><details class="x"><summary>跨年蕎麥麵 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%8A%E9%87%8E%E8%97%AA%E3%81%9D%E3%81%B0">上野藪そば</a>，或逛 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A2%E3%83%A1%E6%A8%AA%E5%95%86%E5%BA%97%E8%A1%97">阿美橫町</a><span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">蕎</div><div><h4>上野藪そば<small>1892 年創業・蕎麥</small></h4><p>天婦羅蒸籠蕎麥、鴨肉「合燒」。上野老字號，最適合當跨年那碗麵。</p><div class="meta">上野 6-9-16・御徒町站步行 3 分</div><span class="warnline">週二三公休；除夕營業時間未公布，晚到可能已打烊 → 備案：便利商店的年越しそば，或回 toco 酒吧認識旅人</span></div></div>
+    <li><span class="t">14:25</span><span class="x">桃園 TR874 → 18:30 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Narita%20International%20Airport%20Terminal%201">成田第一航廈</a></span></li>
+    <li><span class="t">19:30</span><details class="x"><summary>入境、領行李 → 地下 B1 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E9%A7%85">成田機場站</a>搭京成 Skyliner 到<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85">京成上野</a>（約 41 分）<span class="hint">票券</span></summary>
+      <div class="eat-card info"><div class="ic">券</div><div><h4>Skyliner 外國旅客優惠票<small>¥2,310（一般 ¥2,580）</small></h4><p>在京成官網「Skyliner e-ticket」購買，<b>乘車日前 30 天起開放（12/1 起）</b>。到成田第一航廈 Skyliner 售票窗口出示兌換 QR 碼＋<b>護照</b>，換成指定車次與座位的車票。</p><span class="warnline">除夕班次可能較滿，12/1 開賣後就先買</span></div></div>
+    </details></li>
+    <li><span class="t">20:25</span><details class="x"><summary>站內轉乘：京成上野 → 日比谷線上野站 → 1 站到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%85%A5%E8%B0%B7%E9%A7%85%20%E6%9D%B1%E4%BA%AC%E3%83%A1%E3%83%88%E3%83%AD">入谷</a><span class="hint">怎麼走</span></summary>
+      <div class="eat-card info"><div class="ic">乘</div><div><h4>帶行李的最省力路線<small>全程只走約 6 分鐘</small></h4><p>出京成上野剪票口後，沿地下通道往「東京メトロ日比谷線」指標走約 5 分，從昭和通り南方面改札進站。搭往<b>北千住</b>方向，1 站（約 2 分）到入谷。上野站月台有電梯。</p><div class="meta">入谷站出站後步行約 1 分到 toco。</div><span class="warnline">不要走地面從京成上野直接走過去：約 25 分鐘、還要拖行李。</span></div></div>
+    </details></li>
+    <li><span class="t">20:45</span><span class="x">入住 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Guesthouse%20toco%20Tokyo">Guesthouse toco</a>（入住到 22:00）</span></li>
+    <li class="eat"><span class="t">21:15</span><details class="x"><summary>跨年蕎麥麵：附近便利商店的「年越しそば」，回 toco 交誼廳和旅人一起跨年<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">蕎</div><div><h4>年越しそば<small>大晦日的傳統</small></h4><p>除夕晚上餐廳大多提早打烊（上野藪そば平日最後點餐 20:30），帶著行李也不適合再出門。便利商店 12/31 會賣現成的年越しそば，微波就能吃。</p><p class="rec"><b>推薦點：</b>天婦羅年越しそば（加炸蝦或炸什錦）</p><div class="cost">預估一人 約 ¥400–600</div></div></div>
     </details></li>
   </ul>
   <div class="photos">
@@ -238,10 +245,10 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <article class="chapter" data-date="2027-01-01" data-s>
   <div class="ch-head">
     <div class="ch-date"><div class="d">1/1</div><div class="w">金 ・ 五</div></div>
-    <div class="ch-title"><div class="n">第二章</div><h3>七福神的散步道</h3><div class="tag">谷中七福神 → 東博 → 淺草夜</div></div>
+    <div class="ch-title"><div class="n">第二章</div><h3>七福神的散步道</h3><div class="tag">谷中七福神（精簡版）→ 東博 → 淺草夜</div></div>
   </div>
   <div class="story">
-    <p>元旦的早晨，東京安靜得出奇。你從田端出發，走進谷中——一座在 1923 年關東大地震和二戰空襲中都奇蹟般倖存的寺町。窄巷裡有七十多間寺院，木造老屋的屋簷下睡著貓。</p>
+    <p>元旦的早晨，東京安靜得出奇。你從日暮里出發，走進谷中——一座在 1923 年關東大地震和二戰空襲中都奇蹟般倖存的寺町。窄巷裡有七十多間寺院，木造老屋的屋簷下睡著貓。</p>
     <details><summary>繼續讀</summary><div class="more">
     <p>「谷中七福神巡禮」據說是江戶最古老的七福神參拜路線。七位神明各司其職：惠比壽管漁獲與生意、大黑天管五穀、毘沙門天管武運、壽老人與福祿壽管長壽、布袋管度量、辯財天管音樂與才藝。正月一日到十日，每間寺院才會蓋上專屬的御朱印。</p>
     <p>巡禮的終點在不忍池中央的辯天堂。它模仿琵琶湖竹生島的辯財天而建，曾是德川家菩提寺「寬永寺」的一部分。1868 年，幕府最後的彰義隊就在這片山丘上與新政府軍決戰——上野戰爭。一天之內，寬永寺大半化為灰燼，江戶時代也跟著落幕。</p>
@@ -250,19 +257,21 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </div></details>
   </div>
   <ul class="timeline">
-    <li><span class="t">08:30</span><span class="x">JR 上野 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%94%B0%E7%AB%AF%E9%A7%85">田端站</a>（約 7 分）</span></li>
-    <li><span class="t">09:00</span><span class="x">谷中七福神巡禮：田端 → 谷中 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%8D%E5%BF%8D%E6%B1%A0%E8%BE%AF%E5%A4%A9%E5%A0%82">不忍池辯天堂</a>，5.2 km；御朱印只在 1/1–1/10</span></li>
-    <li class="eat"><span class="t">10:30</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B0%B7%E4%B8%AD%E9%8A%80%E5%BA%A7%E5%95%86%E5%BA%97%E8%A1%97">谷中銀座</a> 邊走邊吃炸肉餅<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">餅</div><div><h4>谷中銀座 炸肉餅<small>邊走邊吃</small></h4><p>「夕陽階梯（夕やけだんだん）」下的小商店街，招牌是現炸メンチカツ（肉のすずき等店）。</p><div class="meta">日暮里站步行 5 分</div><span class="warnline">正月初一多數小店休息，可能要碰運氣</span></div></div>
+    <li><span class="t">08:30</span><span class="x">步行約 7 分到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%B6%AF%E8%B0%B7%E9%A7%85">JR 鶯谷</a> → 山手線 1 站到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A5%E6%9A%AE%E9%87%8C%E9%A7%85">日暮里</a>（約 2 分）</span></li>
+    <li><span class="t">09:00</span><details class="x"><summary>谷中七福神（精簡版）：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A9%E7%8E%8B%E5%AF%BA%20%E8%B0%B7%E4%B8%AD">天王寺</a> → 谷中靈園 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%AD%B7%E5%9B%BD%E9%99%A2%20%E4%B8%8A%E9%87%8E">護國院</a> → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%8D%E5%BF%8D%E6%B1%A0%E8%BE%AF%E5%A4%A9%E5%A0%82">不忍池辯天堂</a><span class="hint">詳情</span></summary>
+      <div class="eat-card info"><div class="ic">福</div><div><h4>七福神巡禮・精簡版<small>只走最後 3 位神：毘沙門天、大黑天、辯財天</small></h4><p>日暮里南口出站走 3 分到天王寺，穿過谷中靈園的櫻花大道，經上野公園到護國院，最後走到不忍池中央的辯天堂。約 2 km，含排隊約 1.5 小時。</p><div class="meta">御朱印只在 1/1–1/10 提供，每間寺另付，準備零錢。</div></div></div>
     </details></li>
-    <li class="eat"><span class="t">11:45</span><details class="x"><summary>午餐：根津 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A0%B9%E6%B4%A5%20%E9%87%9C%E7%AB%B9">釜竹</a> 釜揚烏龍<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">饂</div><div><h4>根津 釜竹<small>釜揚烏龍</small></h4><p>開在 1910 年建的石造倉庫裡，大阪風釜揚烏龍，湯頭清澈，空間很有味道。</p><div class="meta">根津 2-14-18・千代田線根津站步行 5 分</div><span class="warnline">賣完即打烊；新年營業日請先查，休息就改上野站內</span></div></div>
+    <li class="eat"><span class="t">10:45</span><details class="x"><summary>午餐：不忍池對面的 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BC%8A%E8%B1%86%E6%A0%84%20%E6%9C%AC%E5%BA%97">伊豆榮 本店</a> 鰻魚飯（11:00 開門前排隊）<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">鰻</div><div><h4>伊豆榮 本店<small>江戶中期創業・鰻魚割烹</small></h4><p>300 多年歷史的江戶前鰻魚老店，醬汁只用醬油和味醂、不加糖，偏辛口。二樓窗邊看得到不忍池。走完辯天堂出來就在對面。</p><p class="rec"><b>推薦點：</b>うな重（鰻魚飯盒）、う巻き（鰻魚玉子燒）</p><div class="cost">預估一人 ¥4,000–5,500</div><div class="meta">上野 2-12-22・11:00–22:00</div><span class="warnline">1/1 有營業，但網路不接受 1 人預約 → 開門前到現場排隊</span></div></div>
     </details></li>
-    <li><span class="t">13:00</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8">東京國立博物館</a>「博物館に初もうで」：元旦 13:00 開館</span></li>
-    <li><span class="t">16:00</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%8D%E5%BF%8D%E6%B1%A0">不忍池</a> 散步看夕陽</span></li>
-    <li class="eat"><span class="t">18:00</span><details class="x"><summary>銀座線 5 分到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B5%85%E8%8D%89%E5%AF%BA">淺草寺</a> 夜間點燈 → 晚餐 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%BB%92%E5%AE%B6%E5%A4%A9%E9%BA%A9%E7%BE%85%20%E6%B5%85%E8%8D%89">大黑家天麩羅</a><span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">天</div><div><h4>大黑家天麩羅<small>1887 年創業・天丼</small></h4><p>用芝麻油炸出深色麵衣的炸蝦天丼，淺草最具代表性的一碗。</p><div class="meta">淺草 1-38-10・每天 11:00–20:30</div><span class="warnline">新年人潮多，傍晚提早排</span></div></div>
+    <li><span class="t">13:00</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8">東京國立博物館</a>「博物館に初もうで」（2026 年是 1/1 13:00 開館，2027 時程待公布）</span></li>
+    <li class="eat"><span class="t">16:00</span><details class="x"><summary>銀座線上野 → 淺草（5 分）：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B5%85%E8%8D%89%20%E6%A2%85%E5%9C%92">梅園</a> 甜點 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B5%85%E8%8D%89%E5%AF%BA">浅草寺</a>夜間點燈<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">甜</div><div><h4>浅草 梅園<small>江戶創業的甜品老店</small></h4><p>熱騰騰的小米麻糬淋上紅豆泥，永井荷風的小說裡也出現過。</p><p class="rec"><b>推薦點：</b>あわぜんざい（小米紅豆湯）</p><div class="cost">預估一人 約 ¥800</div><span class="warnline">不接受訂位、元旦營業查不到；淺草寺元旦參拜人潮可能要排 1 小時</span></div></div>
     </details></li>
+    <li class="eat"><span class="t">18:00</span><details class="x"><summary>晚餐：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%BB%92%E5%AE%B6%E5%A4%A9%E9%BA%A9%E7%BE%85%20%E6%B5%85%E8%8D%89">大黑家天麩羅</a> 天丼<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">天</div><div><h4>大黑家天麩羅<small>1887 年創業・天丼</small></h4><p>用芝麻油炸出深色麵衣的炸蝦天丼，淺草最具代表性的一碗。</p><p class="rec"><b>推薦點：</b>天丼 ¥2,300（蝦、鱚、炸什錦）或 海老天丼 ¥2,700（4 隻蝦）</p><div class="cost">預估一人 ¥2,300–2,900</div><div class="meta">淺草 1-38-10・標示全年無休・不接受訂位</div><span class="warnline">元旦營業時間查不到；人多就去附近的「別館」</span></div></div>
+    </details></li>
+    <li><span class="t">19:30</span><span class="x">銀座線淺草 → 上野 → 日比谷線 1 站回入谷</span></li>
   </ul>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Yanaka_Ginza_2.jpg/960px-Yanaka_Ginza_2.jpg" alt="谷中銀座"><figcaption>谷中銀座</figcaption></figure>
@@ -287,18 +296,22 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </div></details>
   </div>
   <ul class="timeline">
-    <li><span class="t">08:30</span><span class="x">行李箱交 toco 櫃檯（或附近全家）用宅急便寄到石亭，指定 1/5 送達；只背後背包</span></li>
-    <li><span class="t">09:00</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%9A%87%E5%B1%85%E6%AD%A3%E9%96%80">皇居正門</a> 排隊安檢，一般參賀依往年約 10:00 起（2027 時程待公布）</span></li>
-    <li class="eat"><span class="t">11:30</span><details class="x"><summary>步行 15 分到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%A7%85%20%E4%B8%B8%E3%81%AE%E5%86%85%E9%A7%85%E8%88%8E">東京站</a>，在 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A7%85%E5%BC%81%E5%B1%8B%20%E7%A5%AD%20%E6%9D%B1%E4%BA%AC%E9%A7%85">駅弁屋 祭</a> 挑鐵路便當<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">弁</div><div><h4>駅弁屋 祭<small>東京站內・中央通路</small></h4><p>集合全國約兩百種鐵路便當。挑一個新潟的，當作進雪國前的預習。</p></div></div>
+    <li><span class="t">08:15</span><span class="x">行李箱寄宅急便到石亭（指定 1/5 送達）：當天問 toco 能否協助，或到附近 7-Eleven／FamilyMart 寄；請 toco 幫忙打電話跟石亭說一聲</span></li>
+    <li><span class="t">08:40</span><span class="x">toco 退房 → 入谷搭日比谷線到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A5%E6%AF%94%E8%B0%B7%E9%A7%85">日比谷</a>（約 15 分）→ 步行約 12 分到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%9A%87%E5%B1%85%E6%AD%A3%E9%96%80">皇居正門</a></span></li>
+    <li><span class="t">09:30</span><details class="x"><summary>新年一般參賀：開門入場，約 10:10 天皇第一次出來致意<span class="hint">詳情</span></summary>
+      <div class="eat-card info"><div class="ic">皇</div><div><h4>新年一般參賀<small>一年只有 1/2 與天皇生日開放</small></h4><p>往年 9:30 起入場，一天約 5 次出來致意（10:10、11:00、11:50、13:30、14:20）。入口會檢查隨身包包，背包盡量輕便。</p><span class="warnline">2027 年時程約 12 月由宮內廳公布</span></div></div>
     </details></li>
-    <li><span class="t">12:30</span><span class="x">上越新幹線 Toki 東京 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85">越後湯澤站</a>（約 75–80 分）</span></li>
-    <li><span class="t">14:00</span><span class="x">東口步行約 5 分入住 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Sansan%20Yuzawa%20Backpackers">Sansan</a>；若租青達，14:00–16:00 先到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9D%92%E9%81%94%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%20%E6%9D%B1%E5%8F%A3">青達東口店</a> 取件</span></li>
-    <li class="eat"><span class="t">17:00</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%BD%E3%82%93%E3%81%97%E3%82%85%E9%A4%A8%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">ぽんしゅ館</a> 清酒試飲＋爆彈飯糰<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">酒</div><div><h4>ぽんしゅ館 越後湯澤<small>站內 CoCoLo 湯沢</small></h4><p>投幣式唎酒機約上百種新潟酒，旁邊還有清酒浴，以及用魚沼越光米捏的大飯糰。</p></div></div>
+    <li><span class="t">10:40</span><span class="x">從坂下門離開 → 步行約 15 分到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%A7%85%20%E4%B8%B8%E3%81%AE%E5%86%85%E9%A7%85%E8%88%8E">東京站</a></span></li>
+    <li class="eat"><span class="t">11:15</span><details class="x"><summary>在 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A7%85%E5%BC%81%E5%B1%8B%20%E7%A5%AD%20%E6%9D%B1%E4%BA%AC%E9%A7%85">駅弁屋 祭</a> 挑鐵路便當<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">弁</div><div><h4>駅弁屋 祭<small>東京站內・中央通路</small></h4><p>集合全國約兩百種鐵路便當。</p><p class="rec"><b>推薦點：</b>挑新潟的海鮮便當（例如蝦、鮭魚卵類），避開炸豬排款</p><div class="cost">預估一人 約 ¥1,200–2,000</div></div></div>
     </details></li>
-    <li class="eat"><span class="t">18:30</span><details class="x"><summary>晚餐：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%AD%E9%87%8E%E5%B1%8B%20%E6%B9%AF%E6%B2%A2%E6%9C%AC%E5%BA%97">中野屋</a> 片木蕎麥<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">麵</div><div><h4>中野屋 湯澤本店<small>片木蕎麥（へぎそば）</small></h4><p>以海藻「布海苔」揉進麵體，口感滑韌，盛在木製片木盤上一口一口排好——魚沼地方的鄉土味。</p><div class="meta">東口步行 2 分・11:00–20:00</div><span class="warnline">週四公休（1/2–1/5 都不是週四）</span></div></div>
+    <li><span class="t">12:00</span><span class="x">上越新幹線 Toki 東京 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85">越後湯澤</a>（約 75 分，12/2 開賣先訂位）</span></li>
+    <li><span class="t">13:30</span><span class="x">東口步行約 5 分到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Sansan%20Yuzawa%20Backpackers">Sansan</a>（15:00 起入住，先問能否寄放背包）</span></li>
+    <li class="eat"><span class="t">17:00</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%BD%E3%82%93%E3%81%97%E3%82%85%E9%A4%A8%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">ぽんしゅ館</a>（車站內）清酒試飲＋爆彈飯糰<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">酒</div><div><h4>ぽんしゅ館 越後湯澤<small>車站內 CoCoLo 湯沢・9:30–19:00</small></h4><p>投幣式唎酒機約上百種新潟酒，旁邊有清酒浴。</p><p class="rec"><b>推薦點：</b>唎酒 ¥500（5 枚代幣＋小酒杯，可試 5 種）、魚沼越光米爆彈飯糰</p><div class="cost">預估一人 約 ¥1,000–1,500</div><span class="warnline">營業時間依時期調整，18:30 前到比較保險</span></div></div>
+    </details></li>
+    <li class="eat"><span class="t">18:30</span><details class="x"><summary>晚餐：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%AD%E9%87%8E%E5%B1%8B%20%E6%B9%AF%E6%B2%A2%E6%9C%AC%E5%BA%97">中野屋</a> 片木蕎麥＋舞茸天婦羅<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">麵</div><div><h4>中野屋 湯澤本店<small>片木蕎麥（へぎそば）</small></h4><p>以海藻布海苔揉進麵體，口感滑韌。</p><p class="rec"><b>推薦點：</b>天ざるそば（附天婦羅），加點舞茸天婦羅</p><div class="cost">預估一人 約 ¥1,500–2,000</div><div class="meta">東口步行 2 分・11:00–20:00・週四休</div><span class="warnline">一個人點單人份即可（大盤片木通常是 2 人份）</span></div></div>
     </details></li>
   </ul>
   <div class="photos">
@@ -320,12 +333,19 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </div></details>
   </div>
   <ul class="timeline">
-    <li><span class="t">07:30</span><span class="x">BOO：走到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2">BOO 西口店</a> 取件（約 15 分）；青達：裝備前一天已拿，直接到東口店搭接駁</span></li>
-    <li><span class="t">08:30</span><span class="x">到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4">岩原中腹 RC2</a> → 售票處買票 → 初學區 Wide Burn 練推坡、落葉飄</span></li>
-    <li class="eat"><span class="t">11:15</span><span class="x">提早午餐避開人潮：雪場餐廳的咖哩飯或豬排丼</span></li>
-    <li><span class="t">15:30</span><span class="x">收工（新手最後一小時最易受傷）</span></li>
-    <li><span class="t">16:00</span><span class="x">租借店接送或岩原巴士回站 → 公共溫泉 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E3%81%AE%E6%B9%AF%20%E6%B9%AF%E6%B2%A2">山の湯</a></span></li>
-    <li class="eat"><span class="t">18:30</span><span class="x">晚餐：魚沼越光米＋南魚沼豬（車站周邊食堂或居酒屋）</span></li>
+    <li><span class="t">07:00</span><details class="x"><summary>BOO SPORTS 取件（預約 7:00）→ BOO 接送到岩原<span class="hint">詳情</span></summary>
+      <div class="eat-card info"><div class="ic">板</div><div><h4>BOO SPORTS<small>已確認：Sansan ⇄ 岩原在免費接送範圍</small></h4><p>板＋鞋＋雪衣褲＋安全帽 3 天 ¥18,500（Burton 板）。第一天試穿、調整固定器約 30–45 分，7:00 取件 → 約 8:30 上雪。</p><div class="meta"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2">BOO 西口店</a>（湯沢 498-1，Sansan 步行約 15 分）・17:30 前歸還</div><span class="warnline">還要問 BOO：接送的上車地點與時刻、1/5 中午能否接回、背包可否寄放、岩原優惠雪票（上季 ¥3,800，限現金）</span></div></div>
+    </details></li>
+    <li><span class="t">08:30</span><span class="x">岩原中腹 RC2 → 買票 → 初學區 Wide Burn 練推坡、落葉飄（BOO 接送沒趕上就搭東口岩原免費巴士：假日 8:00、8:30…）</span></li>
+    <li class="eat"><span class="t">11:15</span><span class="x">提早午餐避開人潮：雪場餐廳的咖哩飯或烏龍麵（約 ¥1,500）</span></li>
+    <li><span class="t">15:30</span><span class="x">收工（新手最後一小時最易受傷）→ BOO 接送或 16:00 巴士回去</span></li>
+    <li><span class="t">17:00</span><details class="x"><summary>公共溫泉 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B9%AF%E5%85%83%E5%85%B1%E5%90%8C%E6%B5%B4%E5%A0%B4%20%E5%B1%B1%E3%81%AE%E6%B9%AF">山の湯</a><span class="hint">詳情</span></summary>
+      <div class="eat-card info"><div class="ic">湯</div><div><h4>湯元共同浴場 山の湯<small>當地人也常去的源泉共同浴場</small></h4><p>¥850。離車站步行約 20 分，晚上雪地路滑，穿防滑鞋。</p><div class="meta">10:00–21:00（20:30 最後入場）・週二休</div><span class="warnline">毛巾、肥皂自備</span></div></div>
+    </details></li>
+    <li class="eat"><span class="t">19:00</span><details class="x"><summary>晚餐：西口 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%80%E3%82%89%E3%82%93%E3%81%94%E3%81%A3%E3%81%A4%E3%81%89%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">むらんごっつぉ</a> 魚沼鄉土料理 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9C%B0%E9%85%92BAR%20%E5%B1%B1%E6%96%B0">地酒BAR 山新</a><span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">魚</div><div><h4>むらんごっつぉ<small>HATAGO井仙 2F・魚沼鄉土料理</small></h4><p>當地旅館人員推薦一個人吃飯的店。</p><p class="rec"><b>推薦點：</b>のどぐろ塩焼き（鹽烤喉黑魚）、魚沼へぎ天ぷらそば、魚沼越光米</p><div class="cost">預估一人 約 ¥3,000–5,000</div><div class="meta">西口步行 1 分・025-784-3361</div><span class="warnline">1 月訂位尚未開放，12 月再電話訂；訂不到就改車站內的本陣</span></div></div>
+      <div class="eat-card"><div class="ic">酒</div><div><h4>地酒BAR 山新<small>新潟地酒吧</small></h4><p>小酒吧，容易和其他旅人聊天。</p><p class="rec"><b>推薦點：</b>新潟地酒飲み比べ、丸茄子味噌田楽、ねぎ味噌燒飯糰</p><div class="cost">預估一人 約 ¥2,000</div><div class="meta">湯沢 3-4-10・週二三休</div></div></div>
+    </details></li>
   </ul>
 </article>
 
@@ -342,10 +362,14 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </div></details>
   </div>
   <ul class="timeline">
-    <li><span class="t">08:15</span><span class="x">東口 8:15 或 8:45 岩原巴士，或租借店接送（平日 10:00–13:00 沒有往雪場的巴士）</span></li>
+    <li><span class="t">08:00</span><span class="x">BOO 接送或東口岩原巴士（平日 8:15、8:45；10:00 之後要等到 13:00）</span></li>
     <li><span class="t">09:00</span><span class="x">練換刃、S 彎，熟了再搭纜車上 Main Burn</span></li>
-    <li><span class="t">16:00</span><span class="x">回 Sansan → 公共溫泉</span></li>
-    <li class="eat"><span class="t">18:30</span><span class="x">晚餐：還沒吃過的話，今天補 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%AD%E9%87%8E%E5%B1%8B%20%E6%B9%AF%E6%B2%A2%E6%9C%AC%E5%BA%97">中野屋</a> 片木蕎麥</span></li>
+    <li><span class="t">15:30</span><span class="x">收工 → BOO 接送或 15:30／16:00 巴士回去</span></li>
+    <li class="eat"><span class="t">18:30</span><details class="x"><summary>晚餐（車站內）：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%AC%E9%99%A3%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">本陣</a> 新潟迴轉壽司，或 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AD%9A%E6%B2%BC%E3%81%AE%E7%95%91%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">魚沼の畑</a><span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">鮨</div><div><h4>本陣<small>車站內 CoCoLo がんぎどおり・迴轉壽司</small></h4><p>新潟前壽司，一個人最好入座。</p><p class="rec"><b>推薦點：</b>新潟前寿司、のどぐろ、南蠻蝦（甜蝦）</p><div class="cost">預估一人 約 ¥3,000–5,000</div></div></div>
+      <div class="eat-card"><div class="ic">丼</div><div><h4>魚沼の畑<small>車站內</small></h4><p class="rec"><b>推薦點：</b>鮭いくら丼（鮭魚鮭魚卵丼）、小爆彈飯糰</p><div class="cost">預估一人 約 ¥1,000–2,000</div><span class="warnline">當地名物「たれカツ丼」是豬排，避開</span></div></div>
+      <div class="eat-card"><div class="ic">甜</div><div><h4>飯後：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B0%B4%E5%B1%8B%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">水屋</a><small>HATAGO井仙 1F・咖啡甜點</small></h4><p class="rec"><b>推薦點：</b>笹団子（新潟竹葉艾草麻糬）</p><div class="cost">預估一人 約 ¥800–1,000</div></div></div>
+    </details></li>
   </ul>
 </article>
 
@@ -353,7 +377,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <article class="chapter" data-date="2027-01-05" data-s>
   <div class="ch-head">
     <div class="ch-date"><div class="d">1/5</div><div class="w">火 ・ 二</div></div>
-    <div class="ch-title"><div class="n">第六章</div><h3>霓虹下的橫丁</h3><div class="tag">滑雪半天 → 新大久保・思い出横丁</div></div>
+    <div class="ch-title"><div class="n">第六章</div><h3>霓虹下的橫丁</h3><div class="tag">滑雪到中午 → 新大久保・思い出横丁</div></div>
   </div>
   <div class="story">
     <p>從雪國回到東京，像從黑白片走進彩色片。新宿站一天有三百多萬人進出，是世界上最繁忙的車站。</p>
@@ -364,13 +388,17 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </div></details>
   </div>
   <ul class="timeline">
-    <li><span class="t">07:45</span><span class="x">Sansan 退房，背包寄放租借店</span></li>
-    <li><span class="t">09:00</span><span class="x">最後半天</span></li>
-    <li><span class="t">12:00</span><span class="x">請租借店接回（巴士要等到 13:30 才有回程）→ 還雪具、換裝、取背包</span></li>
-    <li><span class="t">13:30</span><span class="x">Toki 越後湯澤 → 東京（約 75 分）→ 中央線到新宿 → 山手線 1 站到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%E9%A7%85">新大久保</a></span></li>
-    <li><span class="t">15:30</span><span class="x">入住 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%20%E7%9F%B3%E4%BA%AD">石亭旅館</a>，領宅急便行李箱 → 泡個澡休息</span></li>
+    <li><span class="t">07:45</span><span class="x">Sansan 退房（10:00 前），背包帶去 BOO 寄放</span></li>
+    <li><span class="t">08:15</span><span class="x">BOO 接送或 8:15／8:45 巴士 → 最後一次滑</span></li>
+    <li><span class="t">13:00</span><details class="x"><summary>回車站：請 BOO 中午接回，否則搭 13:30 巴士<span class="hint">詳情</span></summary>
+      <div class="eat-card info"><div class="ic">車</div><div><h4>回程方式<small></small></h4><p>BOO 已確認在接送範圍；中午能否接回要再問。免費巴士平日 9:40 之後下一班是 13:30（約 13:50 到車站）。</p><span class="warnline">BOO 若能 12:00 接回，可提早一班新幹線</span></div></div>
+    </details></li>
+    <li><span class="t">14:00</span><span class="x">BOO 還雪具、換裝、取背包</span></li>
+    <li><span class="t">14:45</span><span class="x">Toki 越後湯澤 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%8A%E9%87%8E%E9%A7%85">上野</a>（約 70 分，12/5 開賣先訂位）</span></li>
+    <li><span class="t">16:00</span><span class="x">上野 → 山手線（往池袋方向）不用轉車直達 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%E9%A7%85">新大久保</a>（約 25 分）</span></li>
+    <li><span class="t">16:30</span><span class="x">入住 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%20%E7%9F%B3%E4%BA%AD">石亭旅館</a>（15:00 起可入住），領宅急便行李箱</span></li>
     <li class="eat"><span class="t">18:00</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF">思い出横丁</a>「カブト」鰻魚串 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E8%A1%97">黃金街</a> 小酒吧<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">串</div><div><h4>カブト<small>1948 年創業・鰻魚串</small></h4><p>只賣鰻魚各部位的串燒（鰻肝、鰻頭、鰻皮…），套餐約 ¥1,700，吧檯擠得肩並肩。</p><div class="meta">14:00 開店・<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%96%E3%83%88%20%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81">地圖</a></div><span class="warnline">現金為主；賣完就收</span></div></div>
+      <div class="eat-card"><div class="ic">串</div><div><h4>カブト<small>1948 年創業・鰻魚串</small></h4><p>只賣鰻魚各部位的串燒，吧檯 15 席，多是一個人來的客人。</p><p class="rec"><b>推薦點：</b>「一通り」套餐（各部位串燒一輪，約 ¥1,700）＋ 肝焼き，配一杯燒酎</p><div class="cost">預估一人 約 ¥2,000–3,000</div><div class="meta">週一至五 13:00–20:00、週六 12:00–20:00、週日休・<b>只收現金</b>・<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%96%E3%83%88%20%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81">地圖</a></div><span class="warnline">20:00 打烊，18:30 前到</span></div></div>
     </details></li>
   </ul>
   <div class="photos">
@@ -395,29 +423,27 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </div>
   <ul class="timeline">
     <li><span class="t">08:15</span><span class="x">從石亭步行到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%E9%A7%85">JR 新大久保</a> → 山手線 1 站到新宿 → 轉 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%AC%E7%8E%8B%E7%B7%9A%20%E6%96%B0%E5%AE%BF%E9%A7%85">京王線新宿站</a>（轉乘約 10 分）</span></li>
-    <li><span class="t">08:45</span><details class="x"><summary>京王線特急 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%E5%8F%A3%E9%A7%85">高尾山口</a>（約 50 分，單程約 ¥430）<span class="hint">票券</span></summary>
-      <div class="eat-card info"><div class="ic">券</div><div><h4>高尾山きっぷ<small>京王來回＋纜車／吊椅，約 8 折</small></h4><p>三種買法：京王售票機「おとくなきっぷ」、TAMa-GO 網站的 QR 電子票，或<b>同一張信用卡感應</b>進出京王閘門並搭纜車／吊椅，同日自動折扣。</p><span class="warnline">用 Suica 不會打折；12/31–1/3 不賣，1/6 沒問題；票價出發前看售票機</span></div></div>
+    <li><span class="t">08:45</span><details class="x"><summary>京王線特急 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%E5%8F%A3%E9%A7%85">高尾山口</a>（約 50 分）<span class="hint">票券</span></summary>
+      <div class="eat-card info"><div class="ic">券</div><div><h4>高尾山きっぷ<small>京王來回＋纜車／吊椅，約 8 折</small></h4><p>三種買法：京王售票機「おとくなきっぷ」、TAMa-GO 網站 QR 電子票，或<b>同一張信用卡感應</b>進出京王閘門並搭纜車／吊椅，同日自動折扣。</p><span class="warnline">用 Suica 不會打折；票價以售票機為準</span></div></div>
     </details></li>
     <li><span class="t">09:40</span><span class="x">步行 5 分到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E7%99%BB%E5%B1%B1%E9%9B%BB%E9%89%84%20%E6%B8%85%E6%BB%9D%E9%A7%85">清瀧站</a>，搭地面纜車上山（約 6 分）</span></li>
-    <li><span class="t">10:10</span><span class="x">1 號路：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E3%81%9F%E3%81%93%E6%9D%89">章魚杉</a> → 淨心門 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%E8%96%AC%E7%8E%8B%E9%99%A2">藥王院</a> 參拜，參道吃現烤三福糰子</span></li>
+    <li><span class="t">10:10</span><span class="x">1 號路：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E3%81%9F%E3%81%93%E6%9D%89">章魚杉</a> → 淨心門 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%E8%96%AC%E7%8E%8B%E9%99%A2">藥王院</a> 參拜</span></li>
     <li><span class="t">11:20</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%E5%B1%B1%E9%A0%82">高尾山山頂</a>（599 m）：往西看富士山</span></li>
     <li class="eat"><span class="t">12:00</span><details class="x"><summary>午餐：山藥泥蕎麥（とろろそば）<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">蕎</div><div><h4>山頂茶屋 或 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E9%AB%99%E6%A9%8B%E5%AE%B6">髙橋家</a><small>とろろそば</small></h4><p>山頂有幾間茶屋（如大見晴亭）；冬季平日可能只開部分。沒開就下山後到高尾山口站旁的髙橋家。</p><span class="warnline">髙橋家冬季約有一週休假，出發前先查；背包放個飯糰當保險</span></div></div>
+      <div class="eat-card"><div class="ic">蕎</div><div><h4>山頂茶屋 或 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E9%AB%99%E6%A9%8B%E5%AE%B6">髙橋家</a><small>とろろそば</small></h4><p>山頂茶屋冬季平日可能只開部分；沒開就下山後到高尾山口站旁的髙橋家。</p><p class="rec"><b>推薦點：</b>とろろそば（山藥泥蕎麥），參道邊吃三福糰子</p><div class="cost">預估一人 約 ¥1,000–1,500</div><span class="warnline">髙橋家冬季約有一週休假，出發前先查；背包放個飯糰當保險</span></div></div>
     </details></li>
-    <li><span class="t">13:10</span><span class="x">走回 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E5%B1%B1%E4%B8%8A%E9%A7%85%20%E3%83%AA%E3%83%95%E3%83%88">山上站</a>，搭雙人吊椅下山到山麓（約 12 分，手套戴好）→ 步行到高尾山口站</span></li>
+    <li><span class="t">13:10</span><span class="x">走回 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E5%B1%B1%E4%B8%8A%E9%A7%85%20%E3%83%AA%E3%83%95%E3%83%88">山上站</a>，搭雙人吊椅下山（約 12 分）→ 步行到高尾山口站</span></li>
     <li><span class="t">14:00</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%AC%E7%8E%8B%E9%AB%98%E5%B0%BE%E5%B1%B1%E6%B8%A9%E6%B3%89%20%E6%A5%B5%E6%A5%BD%E6%B9%AF">京王高尾山溫泉 極樂湯</a>（車站旁）<span class="hint">詳情</span></summary>
-      <div class="eat-card info"><div class="ic">湯</div><div><h4>京王高尾山溫泉 極樂湯<small>露天岩風呂・碳酸泉</small></h4><p>平日 ¥1,100、假日 ¥1,300；8:00–22:30，全年無休。毛巾可現場租或自備。泡完在榻榻米休息區躺一下。</p><span class="warnline">偶有設備檢修臨時休館，看官方 X</span></div></div>
+      <div class="eat-card info"><div class="ic">湯</div><div><h4>京王高尾山溫泉 極樂湯<small>露天岩風呂・碳酸泉</small></h4><p>平日 ¥1,100；8:00–22:30 全年無休。毛巾可租或自備。</p><span class="warnline">偶有設備檢修臨時休館，看官方 X</span></div></div>
     </details></li>
     <li><span class="t">15:45</span><span class="x">京王線特急回 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E9%A7%85%20%E8%A5%BF%E5%8F%A3">新宿</a>（約 50 分）</span></li>
-    <li><span class="t">16:50</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E5%8D%97%E5%B1%95%E6%9C%9B%E5%AE%A4">東京都廳 南展望室</a>（45 樓，免費）<span class="hint">詳情</span></summary>
-      <div class="eat-card info"><div class="ic">景</div><div><h4>都廳展望室＋光雕投影<small>西口步行約 10 分</small></h4><p>南展望室開到 21:30，有安檢、可能小排隊。下樓後在 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4">都民廣場</a> 看投影在都廳外牆的光雕秀「TOKYO Night &amp; Light」，每晚每 30 分一場，約 15 分鐘。</p><span class="warnline">1 月日落約 16:45，這時上去剛好看天色從黃昏轉成夜景；光雕可以吃完晚餐再回來看，冬季場次以官網為準</span></div></div>
+    <li><span class="t">16:50</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E5%8D%97%E5%B1%95%E6%9C%9B%E5%AE%A4">東京都廳 南展望室</a>（45 樓，免費）→ 17:30 下樓看光雕<span class="hint">詳情</span></summary>
+      <div class="eat-card info"><div class="ic">景</div><div><h4>都廳展望室＋光雕投影<small>西口步行約 10 分</small></h4><p>1 月日落約 16:45，上去剛好看天色轉夜景。光雕「TOKYO Night &amp; Light」投在都廳外牆，從 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4">都民廣場</a> 看，17:30 起每 30 分一場、約 15 分鐘。</p><span class="warnline">場次以官網為準</span></div></div>
     </details></li>
-    <li class="eat"><span class="t">18:00</span><details class="x"><summary>晚餐（訂 18:00）：代代木 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%B3%A5%E8%8C%82%20%E4%BB%A3%E3%80%85%E6%9C%A8">鳥茂</a> 炭火串燒<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">串</div><div><h4>鳥茂<small>昭和路邊攤起家・2026 米其林必比登推介</small></h4><p>名字有「鳥」，賣的其實是豬、牛內臟的炭火串燒（もつ焼き）——早年豬肉串也叫「焼き鳥」。招牌是上タン（豬舌根部）、不加黏著劑的軟骨つくね，和據說從這裡發源的青椒鑲肉。吃的時候用兩支竹籤代替筷子。</p><div class="meta">澀谷區代代木 2-6-5（新宿南口步行約 5 分）・週二至六 17:00–24:00，週日一休・<b>只收現金</b>・特選串套餐 ¥5,000，一人約 ¥5,000–7,000</div><span class="warnline">上タン常賣完：訂位時請店家保留，或一入座先點</span></div></div>
-      <div class="eat-card"><div class="ic">天</div><div><h4>備案：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A9%E3%81%B7%E3%82%89%E6%96%B0%E5%AE%BF%E3%81%A4%E3%81%AA%E5%85%AB%20%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%88%A5%E9%A4%A8">天ぷら新宿つな八 總本店 別館</a><small>1924 年創業・天婦羅吧檯</small></h4><p>總本店 2026/5 起改建休業，暫時搬到 TRES SHINJUKU 營業。6 樓是吧檯座，師傅在你面前一件一件炸。</p><div class="meta">新宿 3-28-4 TRES SHINJUKU 6F・11:00–22:00（L.O. 21:00）</div></div></div>
+    <li class="eat"><span class="t">19:00</span><details class="x"><summary>晚餐（訂 19:00）：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A9%E3%81%B7%E3%82%89%E6%96%B0%E5%AE%BF%E3%81%A4%E3%81%AA%E5%85%AB%20%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%88%A5%E9%A4%A8">天ぷら新宿つな八 總本店 別館</a> 天婦羅吧檯<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">天</div><div><h4>天ぷら新宿つな八 總本店 別館<small>1924 年創業・天婦羅吧檯</small></h4><p>6 樓以吧檯為主，師傅在你面前一件一件炸。總本店改建中，暫時在 TRES SHINJUKU 營業。</p><p class="rec"><b>推薦點：</b>江戶前特選套餐 ¥5,940（吧檯現炸），想省一點點定食 ¥3,630</p><div class="cost">預估一人 ¥3,630–6,500</div><div class="meta">新宿 3-28-4 TRES SHINJUKU 6F・11:00–22:00（L.O. 21:00）</div><span class="warnline">TableCheck 可訂 1 人，備註寫想坐吧檯；都廳走過去約 20 分</span></div></div>
     </details></li>
-    <li><span class="t">19:30</span><span class="x">（可選）走回 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4">都民廣場</a> 看都廳光雕「TOKYO Night &amp; Light」（約 15 分）</span></li>
-    <li><span class="t">20:30</span><span class="x">回石亭（新宿 → 新大久保 1 站）整理行李，明早要去明治神宮</span></li>
+    <li><span class="t">20:45</span><span class="x">新宿 → 山手線 1 站回新大久保，整理行李</span></li>
   </ul>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Cab_view_on_Mount_Takao_funicular_2013-04-12.jpg/500px-Cab_view_on_Mount_Takao_funicular_2013-04-12.jpg" alt="高尾山纜車"><figcaption>高尾山纜車</figcaption></figure>
@@ -438,14 +464,15 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </div></details>
   </div>
   <ul class="timeline">
+    <li><span class="t">07:15</span><span class="x">石亭退房（<b>10:00 前</b>），背包寄放 24 小時櫃檯</span></li>
     <li><span class="t">07:30</span><span class="x">新大久保 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8E%9F%E5%AE%BF%E9%A7%85">原宿</a>（山手線約 7 分）</span></li>
-    <li><span class="t">08:00</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE">明治神宮</a> 森林步道，平日早晨人最少</span></li>
-    <li class="eat"><span class="t">09:45</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=AFURI%20%E5%8E%9F%E5%AE%BF">AFURI 原宿</a> 柚子鹽拉麵<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">麵</div><div><h4>AFURI 原宿<small>柚子鹽拉麵</small></h4><p>雞湯加柚子皮的清爽鹽味拉麵，名字取自神奈川的阿夫利山。</p><span class="warnline">營業時間未確認，若還沒開 → 新宿站內早午餐</span></div></div>
+    <li><span class="t">08:00</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE">明治神宮</a> 森林步道，平日早晨人最少 → 表參道散步</span></li>
+    <li class="eat"><span class="t">11:00</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=AFURI%20%E5%8E%9F%E5%AE%BF">AFURI 原宿</a> 柚子鹽拉麵（開門就吃）<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">麵</div><div><h4>AFURI 原宿<small>柚子鹽拉麵</small></h4><p>湯頭以雞、海鮮、昆布熬成，不是豬骨。</p><p class="rec"><b>推薦點：</b>柚子塩らーめん（約 ¥1,390）</p><div class="cost">預估一人 約 ¥1,400–1,800</div><div class="meta">千駄ヶ谷 3-63-1</div><span class="warnline">原宿店營業時間未確認（多數分店 11:00 開）；沒開就回新宿站內吃</span></div></div>
     </details></li>
-    <li><span class="t">10:45</span><span class="x">回石亭退房、取行李</span></li>
-    <li><span class="t">12:00</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E9%A7%85%20%E6%88%90%E7%94%B0%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AC%E3%82%B9">新宿站</a> 搭 N'EX（約 80 分）→ 13:30 成田</span></li>
-    <li><span class="t">16:35</span><span class="x">樂桃 MM625 → 20:00 桃園（出發前確認航廈）</span></li>
+    <li><span class="t">11:45</span><span class="x">回石亭取背包</span></li>
+    <li><span class="t">12:30</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E9%A7%85%20%E6%88%90%E7%94%B0%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AC%E3%82%B9">新宿站</a> 搭 N'EX（¥3,330，約 80–90 分）→ 14:00 成田第一航廈</span></li>
+    <li><span class="t">16:35</span><span class="x">樂桃 MM625 → 20:00 桃園</span></li>
   </ul>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Meiji_Jingu_Shrine_%40_Yoyogi_%2811931297683%29.jpg/960px-Meiji_Jingu_Shrine_%40_Yoyogi_%2811931297683%29.jpg" alt="明治神宮"><figcaption>明治神宮</figcaption></figure>
@@ -457,7 +484,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <h2><span class="no">卷二</span>住宿</h2>
 <div class="grid3">
   <div class="card stay"><span class="hanko">已訂</span><div class="when">12/31 – 1/2</div><h3><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Guesthouse%20toco%20Tokyo">Guesthouse toco</a></h3><div class="small">台東區下谷 2-13-21（入谷站）・百年木造老屋改建・混合合宿・NT$4,395（12/28 扣款）・入住到 22:00</div></div>
-  <div class="card stay"><span class="hanko">已訂</span><div class="when">1/2 – 1/5</div><h3><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Sansan%20Yuzawa%20Backpackers">Sansan Yuzawa</a></h3><div class="small">湯沢 4-1-36（東口步行約 5 分）・混合合宿・有乾燥室・¥28,050 已付</div></div>
+  <div class="card stay"><span class="hanko">已訂</span><div class="when">1/2 – 1/5</div><h3><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Sansan%20Yuzawa%20Backpackers">Sansan Yuzawa</a></h3><div class="small">湯沢 4-1-36（東口步行約 5 分）・混合合宿・有乾燥室・15:00 入住／10:00 退房・¥28,050 已付</div></div>
   <div class="card stay"><span class="hanko">已訂</span><div class="when">1/5 – 1/7</div><h3><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%20%E7%9F%B3%E4%BA%AD">新大久保 石亭旅館</a></h3><div class="small">新宿區百人町 2-15-10・榻榻米和室・獨立衛浴・24 小時櫃檯・NT$3,543（1/1 扣款）</div></div>
 </div>
 <div class="small">待辦：寫信請石亭代收 1/5 送達的宅急便行李箱。</div>
@@ -502,14 +529,14 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <div class="card scroll">
 <table>
 <tr><th>日期</th><th>路線</th><th>方式</th></tr>
-<tr><td>12/31</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Narita+International+Airport&destination=Guesthouse+toco+Tokyo&travelmode=transit">成田 → toco</a></td><td>Skyliner 41 分＋步行</td></tr>
-<tr><td>1/1</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Tabata+Station+Tokyo&destination=Shinobazunoike+Bentendo&travelmode=walking">田端 → 谷中 → 不忍池</a></td><td>步行 5.2 km</td></tr>
+<tr><td>12/31</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Narita+International+Airport&destination=Guesthouse+toco+Tokyo&travelmode=transit">成田 → toco</a></td><td>Skyliner 41 分＋日比谷線 1 站</td></tr>
+<tr><td>1/1</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Nippori+Station&destination=Shinobazunoike+Bentendo&travelmode=walking">日暮里 → 谷中 → 不忍池</a></td><td>步行約 2 km</td></tr>
 <tr><td>1/1</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Ueno+Station&destination=Sensoji+Temple&travelmode=transit">上野 → 淺草寺</a></td><td>銀座線 5 分</td></tr>
 <tr><td>1/2</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Guesthouse+toco+Tokyo&destination=Imperial+Palace+Tokyo&travelmode=transit">toco → 皇居</a></td><td>地鐵約 25 分</td></tr>
 <tr><td>1/2</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Tokyo+Station&destination=Echigo-Yuzawa+Station&travelmode=transit">東京 → 越後湯澤</a></td><td>新幹線 75–80 分</td></tr>
 <tr><td>1/2</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Echigo-Yuzawa+Station&destination=Sansan+Yuzawa+Backpackers&travelmode=walking">車站 → Sansan</a></td><td>東口步行 5 分</td></tr>
 <tr><td>1/3–1/5</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Echigo-Yuzawa+Station&destination=Iwappara+Ski+Resort&travelmode=driving">車站 → 岩原</a></td><td>巴士／接送約 15 分</td></tr>
-<tr><td>1/5</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Echigo-Yuzawa+Station&destination=Shin-Okubo+Station&travelmode=transit">越後湯澤 → 新大久保</a></td><td>新幹線＋中央線＋山手線</td></tr>
+<tr><td>1/5</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Echigo-Yuzawa+Station&destination=Shin-Okubo+Station&travelmode=transit">越後湯澤 → 新大久保</a></td><td>新幹線到上野＋山手線直達</td></tr>
 <tr><td>1/6</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Shin-Okubo+Station&destination=Takaosanguchi+Station&travelmode=transit">新大久保 → 高尾山口</a></td><td>山手線＋京王線約 70 分</td></tr>
 <tr><td>1/6</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Shinjuku+Station&destination=Tokyo+Metropolitan+Government+Building&travelmode=walking">新宿站 → 都廳</a></td><td>步行約 10 分</td></tr>
 <tr><td>1/7</td><td><a href="https://www.google.com/maps/dir/?api=1&origin=Shin-Okubo+Station&destination=Meiji+Jingu&travelmode=transit">新大久保 → 明治神宮</a></td><td>山手線約 7 分</td></tr>
@@ -544,19 +571,36 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <tr><td>Sansan 3 晚</td><td>NT$5,842（¥28,050）</td><td><span class="pill ok">已付</span></td></tr>
 <tr><td>toco 2 晚</td><td>NT$4,395</td><td><span class="pill info">12/28 扣款</span></td></tr>
 <tr><td>石亭 2 晚</td><td>NT$3,543</td><td><span class="pill info">1/1 扣款</span></td></tr>
-<tr><td>雪具 3 天</td><td>NT$5,990 或 ¥18,500</td><td><span class="pill warn">待定</span></td></tr>
+<tr><td>雪具 3 天（BOO）</td><td>¥18,500</td><td><span class="pill warn">網路預約中</span></td></tr>
 <tr><td>纜車 3 天</td><td>約 ¥11,400–17,400</td><td>現場／優惠</td></tr>
 <tr><td>新幹線來回</td><td>約 ¥14,800</td><td><span class="pill warn">12/2、12/5 開賣</span></td></tr>
-<tr><td>Skyliner＋N'EX</td><td>約 ¥5,800</td><td></td></tr>
+<tr><td>Skyliner 優惠票＋N'EX</td><td>¥2,310＋¥3,330</td><td><span class="pill warn">Skyliner 12/1 開賣</span></td></tr>
 <tr><td>餐飲、交通、門票</td><td>約 ¥48,000</td><td></td></tr>
 </table>
 <div class="small">預估總計約 NT$46,900。已付 NT$17,527・待扣 NT$7,938。</div>
+</div>
+<div class="card scroll" id="food-budget">
+<h3>餐飲預估（一人）</h3>
+<table>
+<tr><th>日期</th><th>店家・推薦</th><th>預估</th></tr>
+<tr><td>12/31</td><td>便利商店年越しそば</td><td>¥500</td></tr>
+<tr><td>1/1</td><td>伊豆榮 うな重・梅園 あわぜんざい・大黑家 天丼</td><td>¥7,100–9,200</td></tr>
+<tr><td>1/2</td><td>駅弁・ぽんしゅ館 唎酒＋飯糰・中野屋 天ざるそば</td><td>¥3,700–5,500</td></tr>
+<tr><td>1/3</td><td>雪場午餐・むらんごっつぉ のどぐろ・山新 地酒</td><td>¥6,500–8,500</td></tr>
+<tr><td>1/4</td><td>雪場午餐・本陣 壽司（或魚沼の畑）・水屋 笹団子</td><td>¥3,300–7,500</td></tr>
+<tr><td>1/5</td><td>カブト 鰻魚串</td><td>¥2,000–3,000</td></tr>
+<tr><td>1/6</td><td>とろろそば・つな八 天婦羅</td><td>¥4,600–8,000</td></tr>
+<tr><td>1/7</td><td>AFURI 柚子塩らーめん</td><td>¥1,400–1,800</td></tr>
+<tr><td>每天</td><td>早餐・飲料・零食（約 ¥600 × 7）</td><td>¥4,200</td></tr>
+<tr><td><b>合計</b></td><td></td><td><b>約 ¥33,000–48,000</b></td></tr>
+</table>
+<div class="small">價格來自店家／訂位網站與評論，僅供參考；不含酒錢加點。</div>
 </div>
 </section>
 
 <section class="sec" id="tips" data-s>
 <h2><span class="no">附錄</span>緊急與提醒</h2>
-<div class="card small">日本報警 110、救護車／消防 119。航班延誤先傳訊息給 toco。行李箱：1/2 宅急便寄石亭，備案 ecbo cloak。新年期間（1/1–1/3）不少餐廳休息，標黃色提醒的出發前再確認。</div>
+<div class="card small">日本報警 110、救護車／消防 119。航班延誤先傳訊息給 toco。行李箱：1/2 宅急便寄石亭，備案 ecbo cloak。石亭 15:00 入住、10:00 退房，櫃檯 24 小時。Sansan 15:00 入住、10:00 退房，有乾燥室。新年期間（1/1–1/3）不少餐廳休息，標黃色提醒的出發前再確認。</div>
 </section>
 
 <footer class="colophon">
