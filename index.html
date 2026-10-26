@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f4efe4">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="旅之書">
 <title>雪國與東京 旅之書</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,6 +174,33 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 .totop{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));width:48px;height:48px;border-radius:50%;border:1.5px solid var(--shu);background:var(--card);color:var(--shu);font:800 18px var(--serif);display:grid;place-items:center;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .3s;z-index:30}
 .totop.on{opacity:1;pointer-events:auto}
 @media (max-width:480px){.eat-card{grid-template-columns:1fr;padding:12px}.eat-card .ic{display:none}.timeline::before{left:50px}.timeline li::before{left:47px}.timeline .t{flex-basis:44px}.timeline li{gap:16px}}
+
+/* ---------- v9: today / now / countdown ---------- */
+.cd{display:inline-block;margin-top:10px;font:700 15px var(--sans);color:var(--shu);background:var(--shu-soft);padding:3px 12px;border-radius:999px}
+.cd:empty{display:none}
+.chips a.today-chip{border-color:var(--shu);background:var(--shu);color:#fff}
+.timeline li.now .t{color:var(--shu)}
+.timeline li.now::before{background:var(--shu);border-color:var(--shu);box-shadow:0 0 0 4px var(--shu-soft)}
+.timeline li.now>.x{background:var(--shu-soft);border-radius:8px;margin:-2px -8px;padding:2px 8px}
+.timeline li.now .t::after{content:"現在";display:block;font:700 11px var(--sans);letter-spacing:.1em}
+/* route */
+.route{display:inline-flex;align-items:center;gap:8px;margin-top:14px;border:1.5px solid var(--ai);color:var(--ai);background:var(--card);font:700 15px var(--sans);padding:7px 16px 7px 12px;border-radius:999px;text-decoration:none}
+.route .ico{width:22px;height:22px;border-radius:50%;background:var(--ai);display:grid;place-items:center}
+.route .ico svg{width:12px;height:12px;fill:#fff}
+.route-note{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+/* offline */
+.offline{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:10px;background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:10px 14px;font-size:15px;color:var(--ink2)}
+.offline b{font-family:var(--serif);color:var(--ink)}
+.offline button{margin-left:auto;border:1.5px solid var(--matcha);background:var(--card);color:var(--matcha);font:700 14.5px var(--sans);padding:5px 14px;border-radius:999px;cursor:pointer}
+.offline button:disabled{opacity:.6;cursor:default}
+.offline.done{border-style:solid;border-color:var(--matcha)}
+.offline .small{flex-basis:100%;font-size:13.5px;color:var(--muted)}
+/* todo list */
+.due{display:inline-block;min-width:4.6em;font:700 13.5px var(--sans);color:var(--ai);background:var(--ai-soft);border-radius:6px;padding:0 7px;margin-right:8px;text-align:center}
+.check label.late .due{color:#fff;background:var(--shu)}
+.check input:checked+span .due{background:var(--paper2);color:var(--muted)}
+.todo-h{font:700 14px var(--sans);letter-spacing:.12em;color:var(--muted);margin:14px 0 2px}
+.todo-h:first-child{margin-top:0}
 @media (prefers-reduced-motion:reduce){.chapter{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -180,6 +213,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   <div class="kicker">TOKYO ✕ ECHIGO-YUZAWA<br>2026 — 2027</div>
   <h1>穿過長長的<br>隧道，<em>便是雪國</em></h1>
   <div class="sub">2026/12/31（四）– 2027/1/7（四）・一人旅<br>上野 2 晚 → 越後湯澤 3 晚 → 新大久保 2 晚</div>
+  <div class="cd" id="cd"></div>
   <svg class="mountains" viewBox="0 0 780 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 56 L90 22 L130 36 L210 4 L260 30 L300 18 L380 46 L450 14 L520 38 L600 10 L680 34 L780 20 L780 56Z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M196 10 L210 4 L224 12 M588 16 L600 10 L612 17" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
 </header>
 
@@ -191,7 +225,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     <button type="button" id="clear" aria-label="清除">×</button>
   </label>
   <nav class="chips" aria-label="章節">
-    <a href="#days">每日章節</a><a href="#stay">住宿</a><a href="#ski">滑雪</a><a href="#bus">岩原巴士</a><a href="#go">交通</a><a href="#breakfast">早餐</a><a href="#plan-b">備案</a><a href="#gifts">伴手禮</a><a href="#pack">打包</a><a href="#money">預算</a>
+    <a href="#days">每日章節</a><a href="#stay">住宿</a><a href="#ski">滑雪</a><a href="#bus">岩原巴士</a><a href="#go">交通</a><a href="#breakfast">早餐</a><a href="#plan-b">備案</a><a href="#gifts">伴手禮</a><a href="#pack">打包</a><a href="#money">預算</a><a href="#todo">待確認</a>
   </nav>
 </div>
 <p class="nores" id="nores">找不到相符的段落。換個關鍵字試試。</p>
@@ -205,6 +239,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     <div class="st"><span class="hanko todo">預約</span><b>雪具 BOO</b><small>1/3 7:00 取件・含接送</small></div>
     <div class="st"><span class="hanko todo">待訂</span><b>新幹線</b><small>12/2、12/5 開賣</small></div>
   </div>
+  <div class="offline" id="offline"><span><b>離線版</b>　<span id="offst">在日本沒訊號也能打開</span></span><button type="button" id="offbtn">存到這支手機</button>
+    <span class="small">會存網頁、照片和 8 章朗讀（約 11 MB）。iPhone：Safari「分享 → 加入主畫面」後，從主畫面圖示打開再按一次（主畫面版和 Safari 是分開存的，打包勾選也分開）。</span></div>
 </section>
 
 <section class="sec" id="days">
@@ -236,6 +272,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
       <div class="eat-card"><div class="ic">蕎</div><div><h4>年越しそば<small>大晦日的傳統</small></h4><p>除夕晚上餐廳大多提早打烊（上野藪そば平日最後點餐 20:30），帶著行李也不適合再出門。便利商店 12/31 會賣現成的年越しそば，微波就能吃。</p><p class="rec"><b>推薦點：</b>天婦羅年越しそば（加炸蝦或炸什錦）</p><div class="cost">預估一人 約 ¥400–600</div></div></div>
     </details></li>
   </ul>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;destination=Guesthouse%20toco%20%E6%9D%B1%E4%BA%AC%20%E4%B8%8B%E8%B0%B7&amp;waypoints=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">Skyliner → 日比谷線 → toco（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Ameyoko_June_2022.jpg/960px-Ameyoko_June_2022.jpg" alt="阿美橫町"><figcaption>阿美橫町</figcaption></figure>
   </div>
@@ -273,6 +310,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </details></li>
     <li><span class="t">19:30</span><span class="x">銀座線淺草 → 上野 → 日比谷線 1 站回入谷</span></li>
   </ul>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%97%A5%E6%9A%AE%E9%87%8C%E9%A7%85&amp;destination=%E6%B5%85%E8%8D%89%E5%AF%BA&amp;waypoints=%E5%A4%A9%E7%8E%8B%E5%AF%BA%20%E8%B0%B7%E4%B8%AD%7C%E4%B8%8D%E5%BF%8D%E6%B1%A0%E8%BE%AF%E5%A4%A9%E5%A0%82%7C%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">日暮里 → 谷中 → 不忍池 → 東博 → 淺草（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Yanaka_Ginza_2.jpg/960px-Yanaka_Ginza_2.jpg" alt="谷中銀座"><figcaption>谷中銀座</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Shinobazupond-bentendo-fallleaves-dec24-2015.jpg/960px-Shinobazupond-bentendo-fallleaves-dec24-2015.jpg" alt="不忍池辯天堂"><figcaption>不忍池辯天堂</figcaption></figure>
@@ -314,6 +352,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
       <div class="eat-card"><div class="ic">麵</div><div><h4>中野屋 湯澤本店<small>片木蕎麥（へぎそば）</small></h4><p>以海藻布海苔揉進麵體，口感滑韌。</p><p class="rec"><b>推薦點：</b>天ざるそば（附天婦羅），加點舞茸天婦羅</p><div class="cost">預估一人 約 ¥1,500–2,000</div><div class="meta">東口步行 2 分・11:00–20:00・週四休</div><span class="warnline">一個人點單人份即可（大盤片木通常是 2 人份）</span></div></div>
     </details></li>
   </ul>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Guesthouse%20toco%20%E6%9D%B1%E4%BA%AC%20%E4%B8%8B%E8%B0%B7&amp;destination=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&amp;waypoints=%E7%9A%87%E5%B1%85%20%E6%AD%A3%E9%96%80%7C%E6%9D%B1%E4%BA%AC%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">toco → 皇居 → 東京站 → 越後湯澤（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Imperial_Palace_Tokyo_Nijubashi_Bridge.JPG/960px-Imperial_Palace_Tokyo_Nijubashi_Bridge.JPG" alt="皇居二重橋"><figcaption>皇居二重橋</figcaption></figure>
   </div>
@@ -347,6 +386,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
       <div class="eat-card"><div class="ic">酒</div><div><h4>地酒BAR 山新<small>新潟地酒吧</small></h4><p>小酒吧，容易和其他旅人聊天。</p><p class="rec"><b>推薦點：</b>新潟地酒飲み比べ、丸茄子味噌田楽、ねぎ味噌燒飯糰</p><div class="cost">預估一人 約 ¥2,000</div><div class="meta">湯沢 3-4-10・週二三休</div></div></div>
     </details></li>
   </ul>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sansan%20Yuzawa%20Backpackers&amp;destination=%E3%82%80%E3%82%89%E3%82%93%E3%81%94%E3%81%A3%E3%81%A4%E3%81%89%20%E6%B9%AF%E6%B2%A2&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4%7C%E5%B1%B1%E3%81%AE%E6%B9%AF%20%E6%B9%AF%E6%B2%A2"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">Sansan → BOO → 岩原 → 山の湯 → 晚餐（地圖開啟後可切換大眾運輸看每段）</span>
 </article>
 
 <!-- ===== 1/4 ===== -->
@@ -364,13 +404,19 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   <ul class="timeline">
     <li><span class="t">08:00</span><span class="x">BOO 接送或東口岩原巴士（平日 8:15、8:45；10:00 之後要等到 13:00）</span></li>
     <li><span class="t">09:00</span><span class="x">練換刃、S 彎，熟了再搭纜車上 Main Burn</span></li>
-    <li><span class="t">15:30</span><span class="x">收工 → BOO 接送或 15:30／16:00 巴士回去</span></li>
+    <li><span class="t">15:30</span><span class="x">收工 → BOO 接送或 15:30／16:00 巴士回去，雪衣放 Sansan 乾燥室</span></li>
+    <li><span class="t">16:30</span><details class="x"><summary>公共溫泉 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A7%92%E5%AD%90%E3%81%AE%E6%B9%AF%20%E6%B9%AF%E6%B2%A2">駒子の湯</a>（和昨天的山の湯換一間）<span class="hint">詳情</span></summary>
+      <div class="eat-card info"><div class="ic">湯</div><div><h4>下湯沢共同浴場 駒子の湯<small>名字來自《雪國》女主角駒子</small></h4><p>¥850。湯沢 148，離車站步行約 20 分，晚上雪地路滑，穿防滑鞋。</p><div class="meta">10:00–21:00（20:30 最後入場）・週四休（1/4 週一有開）</div><span class="warnline">毛巾、肥皂自備</span></div></div>
+    </details></li>
+    <li><span class="t">18:00</span><span class="x">伴手禮：車站內 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=CoCoLo%E6%B9%AF%E6%B2%A2%20%E3%81%8C%E3%82%93%E3%81%8E%E3%81%A9%E3%81%8A%E3%82%8A">CoCoLo 湯沢 がんぎどおり</a> 買同事的新潟米菓（19:00 關，清單見<a href="#gifts">卷八</a>）</span></li>
     <li class="eat"><span class="t">18:30</span><details class="x"><summary>晚餐（車站內）：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%AC%E9%99%A3%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">本陣</a> 新潟迴轉壽司，或 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AD%9A%E6%B2%BC%E3%81%AE%E7%95%91%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">魚沼の畑</a><span class="hint">詳情</span></summary>
       <div class="eat-card"><div class="ic">鮨</div><div><h4>本陣<small>車站內 CoCoLo がんぎどおり・迴轉壽司</small></h4><p>新潟前壽司，一個人最好入座。</p><p class="rec"><b>推薦點：</b>新潟前寿司、のどぐろ、南蠻蝦（甜蝦）</p><div class="cost">預估一人 約 ¥3,000–5,000</div></div></div>
       <div class="eat-card"><div class="ic">丼</div><div><h4>魚沼の畑<small>車站內</small></h4><p class="rec"><b>推薦點：</b>鮭いくら丼（鮭魚鮭魚卵丼）、小爆彈飯糰</p><div class="cost">預估一人 約 ¥1,000–2,000</div><span class="warnline">當地名物「たれカツ丼」是豬排，避開</span></div></div>
       <div class="eat-card"><div class="ic">甜</div><div><h4>飯後：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B0%B4%E5%B1%8B%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2">水屋</a><small>HATAGO井仙 1F・咖啡甜點</small></h4><p class="rec"><b>推薦點：</b>笹団子（新潟竹葉艾草麻糬）</p><div class="cost">預估一人 約 ¥800–1,000</div></div></div>
     </details></li>
+    <li class="eat"><span class="t">20:00</span><span class="x">再去一次 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9C%B0%E9%85%92BAR%20%E5%B1%B1%E6%96%B0%20%E6%B9%AF%E6%B2%A2">地酒BAR 山新</a>（週二三休，週一有開）：坐吧檯，跟昨天認識的老闆和旅人聊天</span></li>
   </ul>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sansan%20Yuzawa%20Backpackers&amp;destination=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&amp;waypoints=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">Sansan → 岩原 → 車站晚餐（地圖開啟後可切換大眾運輸看每段）</span>
 </article>
 
 <!-- ===== 1/5 ===== -->
@@ -401,6 +447,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
       <div class="eat-card"><div class="ic">串</div><div><h4>カブト<small>1948 年創業・鰻魚串</small></h4><p>只賣鰻魚各部位的串燒，吧檯 15 席，多是一個人來的客人。</p><p class="rec"><b>推薦點：</b>「一通り」套餐（各部位串燒一輪，約 ¥1,700）＋ 肝焼き，配一杯燒酎</p><div class="cost">預估一人 約 ¥2,000–3,000</div><div class="meta">週一至五 13:00–20:00、週六 12:00–20:00、週日休・<b>只收現金</b>・<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%96%E3%83%88%20%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81">地圖</a></div><span class="warnline">20:00 打烊，18:30 前到</span></div></div>
     </details></li>
   </ul>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4&amp;destination=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85%7C%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">岩原 → BOO → 新幹線 → 石亭 → 思い出横丁（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Shinjuku-West_Omoide-Yokocho.jpg/960px-Shinjuku-West_Omoide-Yokocho.jpg" alt="思い出横丁"><figcaption>思い出横丁</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/2024-10-20_Shinjuku_Golden_Gai_at_night.jpg/960px-2024-10-20_Shinjuku_Golden_Gai_at_night.jpg" alt="新宿黃金街"><figcaption>新宿黃金街</figcaption></figure>
@@ -440,11 +487,15 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     <li><span class="t">16:50</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E5%8D%97%E5%B1%95%E6%9C%9B%E5%AE%A4">東京都廳 南展望室</a>（45 樓，免費）→ 17:30 下樓看光雕<span class="hint">詳情</span></summary>
       <div class="eat-card info"><div class="ic">景</div><div><h4>都廳展望室＋光雕投影<small>西口步行約 10 分</small></h4><p>1 月日落約 16:45，上去剛好看天色轉夜景。光雕「TOKYO Night &amp; Light」投在都廳外牆，從 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4">都民廣場</a> 看，17:30 起每 30 分一場、約 15 分鐘。</p><span class="warnline">場次以官網為準</span></div></div>
     </details></li>
+    <li><span class="t">18:00</span><details class="x"><summary>伴手禮：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%97%E3%83%AC%E3%82%B9%E3%83%90%E3%82%BF%E3%83%BC%E3%82%B5%E3%83%B3%E3%83%89%20%E3%83%AB%E3%83%9F%E3%83%8D%E3%82%A8%E3%82%B9%E3%83%88%E6%96%B0%E5%AE%BF">PRESS BUTTER SAND ルミネエスト新宿</a>（B1）<span class="hint">詳情</span></summary>
+      <div class="eat-card info"><div class="ic">禮</div><div><h4>PRESS BUTTER SAND ルミネエスト新宿<small>新宿 3-38-1 B1・JR 新宿站東口</small></h4><p>看完 17:30 光雕，從都廳走到新宿站東口約 20 分（或大江戶線 都庁前 → 新宿）。買朋友的 5 入 ×4（約 ¥1,215／盒），買完走約 3 分到つな八。</p><span class="warnline">賞味期限約 7–9 天，回台後一週內送出；營業時間與新年庫存出發前再確認</span></div></div>
+    </details></li>
     <li class="eat"><span class="t">19:00</span><details class="x"><summary>晚餐（訂 19:00）：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A9%E3%81%B7%E3%82%89%E6%96%B0%E5%AE%BF%E3%81%A4%E3%81%AA%E5%85%AB%20%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%88%A5%E9%A4%A8">天ぷら新宿つな八 總本店 別館</a> 天婦羅吧檯<span class="hint">詳情</span></summary>
       <div class="eat-card"><div class="ic">天</div><div><h4>天ぷら新宿つな八 總本店 別館<small>1924 年創業・天婦羅吧檯</small></h4><p>6 樓以吧檯為主，師傅在你面前一件一件炸。總本店改建中，暫時在 TRES SHINJUKU 營業。</p><p class="rec"><b>推薦點：</b>江戶前特選套餐 ¥5,940（吧檯現炸），想省一點點定食 ¥3,630</p><div class="cost">預估一人 ¥3,630–6,500</div><div class="meta">新宿 3-28-4 TRES SHINJUKU 6F・11:00–22:00（L.O. 21:00）</div><span class="warnline">TableCheck 可訂 1 人，備註寫想坐吧檯；都廳走過去約 20 分</span></div></div>
     </details></li>
     <li><span class="t">20:45</span><span class="x">新宿 → 山手線 1 站回新大久保，整理行李</span></li>
   </ul>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%E9%A7%85&amp;destination=%E5%A4%A9%E3%81%B7%E3%82%89%E6%96%B0%E5%AE%BF%E3%81%A4%E3%81%AA%E5%85%AB%20%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%88%A5%E9%A4%A8&amp;waypoints=%E9%AB%98%E5%B0%BE%E5%B1%B1%E5%8F%A3%E9%A7%85%7C%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E5%B1%B1%E9%A0%82%7C%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">新大久保 → 高尾山 → 都廳 → つな八（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Cab_view_on_Mount_Takao_funicular_2013-04-12.jpg/500px-Cab_view_on_Mount_Takao_funicular_2013-04-12.jpg" alt="高尾山纜車"><figcaption>高尾山纜車</figcaption></figure>
   </div>
@@ -474,6 +525,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     <li><span class="t">12:30</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E9%A7%85%20%E6%88%90%E7%94%B0%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AC%E3%82%B9">新宿站</a> 搭 N'EX（¥3,330，約 80–90 分）→ 14:00 成田第一航廈</span></li>
     <li><span class="t">16:35</span><span class="x">樂桃 MM625 → 20:00 桃園</span></li>
   </ul>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D&amp;destination=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;waypoints=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%7CAFURI%20%E5%8E%9F%E5%AE%BF%7C%E6%96%B0%E5%AE%BF%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">石亭 → 明治神宮 → AFURI → 新宿 → 成田（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Meiji_Jingu_Shrine_%40_Yoyogi_%2811931297683%29.jpg/960px-Meiji_Jingu_Shrine_%40_Yoyogi_%2811931297683%29.jpg" alt="明治神宮"><figcaption>明治神宮</figcaption></figure>
   </div>
@@ -509,8 +561,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <div class="card">
 <h3><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4">岩原雪場</a>・雪票</h3>
 <div class="small">初學從中腹 RC2 進場（Wide Burn、Grand Burn）。現場 1 日券 ¥5,800。<br>
-・BOO 租借客優惠：上一季 ¥3,800（限現金），今年價格詢問中<br>
-・SURF&amp;SNOW 早割 1 日券＋：¥3,900，<b>12/4 截止</b>，12/19–3/28 可用、無排除日，到售票窗口兌換<br>
+・<b>1/3（假日）：買 SURF&amp;SNOW 早割 1 日券＋ ¥3,900</b>，保證有票。12/4 截止或賣完為止，12/19–3/28 可用、無排除日，當天到售票窗口兌換<br>
+・1/4、1/5（平日）：預設在 BOO 買租借客優惠 ¥3,800（官網價，限現金、當天買、限量「完売次第終了」，所以假日不靠它）<br>
 ・官方學校只有日文課；免費巴士可能改為預約制</div>
 <a class="btn" href="https://ec.surfsnow.jp/shopdetail/000000003246/">早割票（スマリフ）</a> <a class="btn" href="https://iwa-ppara.com/">岩原官網</a>
 </div>
@@ -557,7 +609,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <tr><td>1/1</td><td>08:15 toco 附近</td><td>便利商店。元旦早上店家多休息，前一晚先買好飯糰</td></tr>
 <tr><td>1/2</td><td>08:15 toco 附近</td><td>便利商店簡單吃，中午東京站吃駅弁</td></tr>
 <tr><td>1/3–1/5</td><td>06:45 越後湯澤</td><td>前一晚在車站附近便利商店買好：鮭魚飯糰、雞蛋三明治、熱咖啡</td></tr>
-<tr><td>1/6</td><td>08:30 新宿站</td><td><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%99%E3%83%AB%E3%82%AF%20%E6%96%B0%E5%AE%BF">BERG（ベルク）</a>：LUMINE EST B1 平價老咖啡店，點蛋吐司配咖啡（熱狗是豬肉）；營業時間出發前確認</td></tr>
+<tr><td>1/6</td><td>08:00 新大久保</td><td>石亭附近便利商店簡單吃（飯糰、溏心蛋、熱咖啡），多帶一個飯糰上山當保險；12:00 山上吃山藥泥蕎麥</td></tr>
 <tr><td>1/7</td><td>07:15 新大久保</td><td>便利商店簡單吃，11:00 吃 AFURI</td></tr>
 </table>
 <div class="small">便利商店推薦：冬天關東煮（白蘿蔔、雞蛋）、溏心蛋、玉子燒三明治、新潟限定飯糰口味。</div></div>
@@ -577,17 +629,24 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 
 <section class="sec" id="gifts" data-s>
 <h2><span class="no">卷八</span>伴手禮清單</h2>
+<div class="card scroll">
+<div class="small"><b>什麼時候買</b>（1/2 起只背背包，不要提早買會一路扛的東西）</div>
+<table>
+<tr><th>日期</th><th>地點</th><th>買什麼</th></tr>
+<tr><td>1/1</td><td>淺草</td><td>只買當場吃的（人形燒、芋羊羹），不帶回</td></tr>
+<tr><td>1/4 18:00</td><td>越後湯澤站 CoCoLo</td><td>同事的新潟米菓（輕、可放很久）</td></tr>
+<tr><td>1/6 18:00</td><td>PRESS BUTTER SAND ルミネエスト新宿 B1</td><td>朋友的 PRESS BUTTER SAND</td></tr>
+</table>
+<div class="small" style="margin-top:6px">成田 T1 不一定有 PRESS BUTTER SAND（已知機場店在第二航廈），請在新宿買齊。</div>
+</div>
 <div class="card check" id="giftlist">
-<div class="small"><b>新潟・湯澤</b>（越後湯澤站 CoCoLo、ぽんしゅ館）</div>
-<label><input type="checkbox"><span>日本酒：八海山（南魚沼）、久保田、越乃寒梅、鶴齡——先在ぽんしゅ館試喝再買，選 720ml</span></label>
-<label><input type="checkbox"><span>浪花屋 柿の種（長岡是發源地）</span></label>
-<label><input type="checkbox"><span>笹団子（保存期限短，當場吃）</span></label>
-<label><input type="checkbox"><span>へぎそば乾麵</span></label>
-<label><input type="checkbox"><span>魚沼越光米米菓、煎餅（生米要檢疫，買加工品）</span></label>
-<div class="small" style="margin-top:8px"><b>東京</b></div>
-<label><input type="checkbox"><span>淺草（1/1）：木村家人形燒、常盤堂雷おこし、舟和芋羊羹（保存期限幾天）</span></label>
-<label><input type="checkbox"><span>東京站（1/2）或成田機場：PRESS BUTTER SAND、東京ばな奈、ねんりん家、Tokyo Milk Cheese Factory</span></label>
-<div class="small" style="margin-top:8px">帶回台灣：酒類年滿 18 歲、總量 <b>1.5 公升內免稅</b>（一升瓶 1.8L 就超過）；<b>肉製品一律不帶</b>（肉乾、香腸、火腿、含肉調理包，真空也不行）；酒要放託運，樂桃沒買託運就在成田免稅店買。</div>
+<div class="small"><b>同事 3 位</b>（放辦公室分著吃）</div>
+<label><input type="checkbox"><span>浪花屋 化粧箱ピー入り柿の種（10 小袋，約 ¥756，賞味 150 天）——長岡是柿の種發源地</span></label>
+<label><input type="checkbox"><span>亀田製菓 サラダホープ（新潟限定，6 小袋約 ¥250）×2</span></label>
+<div class="small" style="margin-top:8px"><b>朋友 4 位</b></div>
+<label><input type="checkbox"><span>PRESS BUTTER SAND 5 入 ×4（約 ¥1,215／盒；賞味約 7–9 天，25℃ 以下保存）</span></label>
+<div class="small" style="margin-top:8px"><b>預算</b>：約 ¥6,100，上限 ¥10,000。價格為網路參考價。</div>
+<div class="small" style="margin-top:8px">帶回台灣：<b>肉製品一律不帶</b>（肉乾、香腸、火腿、含肉調理包，真空也不行）；生米要檢疫，買加工品。甜點盒放手提或託運行李箱上層，避免壓扁。</div>
 </div>
 </section>
 
@@ -601,6 +660,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <label><input type="checkbox"><span>防曬乳、護唇膏、暖暖包、痠痛貼布</span></label>
 <label><input type="checkbox"><span>防滑鞋、羽絨外套</span></label>
 <label><input type="checkbox"><span>耳塞、小毛巾（合宿、溫泉）</span></label>
+<label><input type="checkbox"><span>摺疊購物袋（裝伴手禮）</span></label>
 <label><input type="checkbox"><span>護照、信用卡 ×2（一張可感應，高尾山用）、日幣現金 ¥30,000、手機 Suica</span></label>
 <label><input type="checkbox"><span>eSIM、行動電源（手提）、轉接頭</span></label>
 <label><input type="checkbox"><span>旅平險（含滑雪意外）</span></label>
@@ -618,12 +678,13 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <tr><td>toco 2 晚</td><td>NT$4,395</td><td><span class="pill info">12/28 扣款</span></td></tr>
 <tr><td>石亭 2 晚</td><td>NT$3,543</td><td><span class="pill info">1/1 扣款</span></td></tr>
 <tr><td>雪具 3 天（BOO）</td><td>¥18,500</td><td><span class="pill warn">網路預約中</span></td></tr>
-<tr><td>纜車 3 天</td><td>約 ¥11,400–17,400</td><td>現場／優惠</td></tr>
+<tr><td>纜車 3 天</td><td>約 ¥11,500（1/3 早割 ¥3,900＋BOO ¥3,800×2）</td><td>1/3 於 12/4 前網購・其餘現場</td></tr>
 <tr><td>新幹線來回</td><td>約 ¥14,800</td><td><span class="pill warn">12/2、12/5 開賣</span></td></tr>
 <tr><td>Skyliner 優惠票＋N'EX</td><td>¥2,310＋¥3,330</td><td><span class="pill warn">Skyliner 12/1 開賣</span></td></tr>
 <tr><td>餐飲、交通、門票</td><td>約 ¥48,000</td><td></td></tr>
+<tr><td>伴手禮</td><td>約 ¥6,100（上限 ¥10,000）</td><td>1/4、1/6 採買</td></tr>
 </table>
-<div class="small">預估總計約 NT$46,900。已付 NT$17,527・待扣 NT$7,938。</div>
+<div class="small">預估總計約 NT$48,800（含伴手禮、1/4 溫泉與地酒）。已付 NT$17,527・待扣 NT$7,938。</div>
 </div>
 <div class="card scroll" id="food-budget">
 <h3>餐飲預估（一人）</h3>
@@ -633,14 +694,43 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <tr><td>1/1</td><td>伊豆榮 うな重・梅園 あわぜんざい・大黑家 天丼</td><td>¥7,100–9,200</td></tr>
 <tr><td>1/2</td><td>駅弁・ぽんしゅ館 唎酒＋飯糰・中野屋 天ざるそば</td><td>¥3,700–5,500</td></tr>
 <tr><td>1/3</td><td>雪場午餐・むらんごっつぉ のどぐろ・山新 地酒</td><td>¥6,500–8,500</td></tr>
-<tr><td>1/4</td><td>雪場午餐・本陣 壽司（或魚沼の畑）・水屋 笹団子</td><td>¥3,300–7,500</td></tr>
+<tr><td>1/4</td><td>雪場午餐・駒子の湯・本陣 壽司（或魚沼の畑）・水屋 笹団子・山新 地酒</td><td>¥6,200–10,400</td></tr>
 <tr><td>1/5</td><td>カブト 鰻魚串</td><td>¥2,000–3,000</td></tr>
 <tr><td>1/6</td><td>とろろそば・つな八 天婦羅</td><td>¥4,600–8,000</td></tr>
 <tr><td>1/7</td><td>AFURI 柚子塩らーめん</td><td>¥1,400–1,800</td></tr>
 <tr><td>每天</td><td>早餐・飲料・零食（約 ¥600 × 7）</td><td>¥4,200</td></tr>
-<tr><td><b>合計</b></td><td></td><td><b>約 ¥33,000–48,000</b></td></tr>
+<tr><td><b>合計</b></td><td></td><td><b>約 ¥36,000–51,000</b></td></tr>
 </table>
 <div class="small">價格來自店家／訂位網站與評論，僅供參考；不含酒錢加點。</div>
+</div>
+</section>
+
+<section class="sec" id="todo" data-s>
+<h2><span class="no">卷十一</span>待確認・待辦</h2>
+<div class="card check" id="todolist">
+<div class="todo-h">要訂／要買</div>
+<label data-due="2026-11-01"><input type="checkbox"><span><b class="due">11/1 後</b>KKday eSIM（#144030 DOCOMO 吃到飽 8 日 NT$450，收到後 60 天內要用）</span></label>
+<label data-due="2026-11-01"><input type="checkbox"><span><b class="due">11/1</b>TableCheck 訂 つな八 別館 1/6 19:00 吧檯（1 月未開放就 12/1 再看）</span></label>
+<label data-due="2026-12-01"><input type="checkbox"><span><b class="due">12/1</b>買 Skyliner 外國旅客優惠票 ¥2,310（兌換要帶護照）</span></label>
+<label data-due="2026-12-01"><input type="checkbox"><span><b class="due">12/1</b>電話訂 むらんごっつぉ 1/3 19:00（<a href="tel:+81257843361">+81-25-784-3361</a>）</span></label>
+<label data-due="2026-12-02"><input type="checkbox"><span><b class="due">12/2</b>訂 Toki 1/2 東京 → 越後湯澤（JR-EAST Train Reservation）</span></label>
+<label data-due="2026-12-04"><input type="checkbox"><span><b class="due">12/4 前</b>岩原雪票：BOO 租借客優惠 vs <a href="https://ec.surfsnow.jp/shopdetail/000000003246/">SURF&amp;SNOW 早割</a>（¥3,900×3，12/4 截止）</span></label>
+<label data-due="2026-12-05"><input type="checkbox"><span><b class="due">12/5</b>訂 Toki 1/5 越後湯澤 → 上野</span></label>
+<label data-due="2026-12-07"><input type="checkbox"><span><b class="due">12/7</b>訂 N'EX 1/7 新宿 → 成田</span></label>
+<label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>旅平險：確認休閒滑雪有承保（富邦需電話問）</span></label>
+<label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>寫信請石亭代收 1/5 送達的宅急便行李箱</span></label>
+<label data-due="2026-12-29"><input type="checkbox"><span><b class="due">出發前</b>換日幣約 ¥30,000、帶可感應付款的信用卡</span></label>
+<label data-due="2026-12-29"><input type="checkbox"><span><b class="due">12/29–30</b>酷航 TR874 線上報到；1/5–6 樂桃 MM625 線上報到</span></label>
+<label data-due="2026-12-30"><input type="checkbox"><span><b class="due">出發前</b>在手機按上方「存到這支手機」下載離線版</span></label>
+<div class="todo-h">等官方公布／再確認</div>
+<label data-due="2026-12-20"><input type="checkbox"><span><b class="due">12 月</b>皇居新年一般參賀 2027 時程（入場時間、出場次數）</span></label>
+<label data-due="2026-12-20"><input type="checkbox"><span><b class="due">12 月</b>岩原 2026–27 免費巴士班表（可能改預約制）</span></label>
+<label data-due="2026-12-20"><input type="checkbox"><span><b class="due">12 月</b>東京國立博物館 2027 新年開館時間</span></label>
+<label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>大黑家天麩羅、淺草梅園 元旦是否營業</span></label>
+<label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>高尾山 髙橋家 冬休日期</span></label>
+<label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>AFURI 原宿 1/7 營業時間</span></label>
+<label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>雪國館 新年是否開館（備案用）</span></label>
+<div class="small" style="margin-top:6px">日期到了還沒勾的會變紅。勾選只存在這支手機的瀏覽器。</div>
 </div>
 </section>
 
@@ -665,11 +755,29 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   /* tapping a map link inside a <summary> should not toggle the dropdown */
   document.querySelectorAll('summary a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();window.open(a.href,'_blank','noopener');})});
 
-  /* today highlight */
-  var t=new Date(),p=function(n){return n<10?'0'+n:''+n};
-  var d=t.getFullYear()+'-'+p(t.getMonth()+1)+'-'+p(t.getDate());
-  var el=document.querySelector('.chapter[data-date="'+d+'"]');
-  if(el){el.classList.add('today','in');setTimeout(function(){el.scrollIntoView({block:'start'})},300);}
+  /* today (Japan time) — test with ?d=2027-01-03&t=10:30 */
+  function jst(){
+    var qs=new URLSearchParams(location.search),o={};
+    try{new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'})
+      .formatToParts(new Date()).forEach(function(x){o[x.type]=x.value});}catch(e){var t=new Date(Date.now()+9*3600e3);o={year:t.getUTCFullYear(),month:('0'+(t.getUTCMonth()+1)).slice(-2),day:('0'+t.getUTCDate()).slice(-2),hour:t.getUTCHours(),minute:t.getUTCMinutes()}}
+    var d=qs.get('d')||(o.year+'-'+o.month+'-'+o.day),tm=qs.get('t'),mins=tm?(+tm.split(':')[0]*60+ +tm.split(':')[1]):(+o.hour*60+ +o.minute);
+    return {d:d,m:mins};
+  }
+  var now=jst(),el=document.querySelector('.chapter[data-date="'+now.d+'"]');
+  var cd=document.getElementById('cd'),days=Math.round((Date.parse('2026-12-31')-Date.parse(now.d))/864e5);
+  if(days>0)cd.textContent='距離出發還有 '+days+' 天';else if(el)cd.textContent='旅途中・今天是'+el.querySelector('.n').textContent;
+  function markNow(){
+    if(!el)return;var n=jst().m,lis=el.querySelectorAll('.timeline>li'),cur=null;
+    lis.forEach(function(li){li.classList.remove('now');var t=li.querySelector('.t').textContent.split(':');if(t.length===2&&(+t[0]*60+ +t[1])<=n)cur=li;});
+    if(cur)cur.classList.add('now');
+  }
+  if(el){
+    el.classList.add('today','in');markNow();setInterval(markNow,60000);
+    var chip=document.createElement('a');chip.href='#';chip.className='today-chip';chip.textContent='今天';
+    chip.addEventListener('click',function(e){e.preventDefault();var li=el.querySelector('li.now')||el;li.scrollIntoView({block:li===el?'start':'center',behavior:'smooth'})});
+    var nav=document.querySelector('.chips');nav.insertBefore(chip,nav.firstChild);
+    if(!location.hash)setTimeout(function(){el.scrollIntoView({block:'start'})},300);
+  }
 
   /* reveal on scroll */
   var chs=document.querySelectorAll('.chapter');
@@ -679,7 +787,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   } else chs.forEach(function(c){c.classList.add('in')});
 
   /* packing list */
-  [['#packlist input','pack-v1'],['#giftlist input','gift-v1']].forEach(function(cfg){var boxes=document.querySelectorAll(cfg[0]),key=cfg[1],s=[];
+  [['#packlist input','pack-v1'],['#giftlist input','gift-v1'],['#todolist input','todo-v1']].forEach(function(cfg){var boxes=document.querySelectorAll(cfg[0]),key=cfg[1],s=[];
   try{s=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}
   boxes.forEach(function(b,i){b.checked=!!s[i];b.addEventListener('change',function(){var v=[];boxes.forEach(function(x){v.push(x.checked)});try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}})});});
 
@@ -767,6 +875,32 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   q.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,180)});
   clr.addEventListener('click',function(){q.value='';run();q.focus()});
   document.querySelectorAll('.chips a').forEach(function(a){a.addEventListener('click',function(){if(q.value){q.value='';run();}})});
+
+  /* overdue to-dos */
+  function lateMark(){document.querySelectorAll('#todolist label[data-due]').forEach(function(l){l.classList.toggle('late',!l.querySelector('input').checked&&l.dataset.due<=now.d)})}
+  lateMark();document.querySelectorAll('#todolist input').forEach(function(b){b.addEventListener('change',lateMark)});
+
+  /* ---------- offline ---------- */
+  var ob=document.getElementById('offbtn'),os=document.getElementById('offst'),obox=document.getElementById('offline');
+  var media=[];document.querySelectorAll('.chapter').forEach(function(c){media.push('audio/'+c.dataset.date+'.mp3')});
+  function offDone(){obox.classList.add('done');os.textContent='已存好，沒網路也能看和聽';ob.textContent='重新下載';ob.disabled=false;}
+  if(!('serviceWorker' in navigator)||!window.caches||location.protocol!=='https:'){obox.style.display='none';}
+  else{
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+    try{if(localStorage.getItem('offline-v9'))offDone()}catch(e){}
+    ob.addEventListener('click',function(){
+      ob.disabled=true;var imgs=[].map.call(document.querySelectorAll('img'),function(i){return i.src}),done=0,fail=0,all=media.length+imgs.length;
+      os.textContent='下載中 0/'+all;
+      caches.open('trip-media').then(function(c){
+        var jobs=media.map(function(u){return c.add(u)}).concat(imgs.map(function(u){return fetch(u,{mode:'no-cors'}).then(function(r){return c.put(u,r)})}));
+        jobs.push(fetch('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap').catch(function(){}));
+        return Promise.all(jobs.map(function(j){return Promise.resolve(j).then(function(){done++},function(){fail++}).then(function(){os.textContent='下載中 '+Math.min(done+fail,all)+'/'+all})}));
+      }).then(function(){
+        if(fail>0){os.textContent='有 '+fail+' 個檔案沒下載成功，連上網路再按一次';ob.disabled=false;}
+        else{try{localStorage.setItem('offline-v9','1')}catch(e){}offDone();}
+      });
+    });
+  }
 
   /* back to top */
   var tt=document.getElementById('totop');
