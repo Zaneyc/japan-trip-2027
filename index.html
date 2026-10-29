@@ -192,6 +192,26 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 .check input:checked+span .due{background:var(--paper2);color:var(--muted)}
 .todo-h{font:700 14px var(--sans);letter-spacing:.12em;color:var(--muted);margin:14px 0 2px}
 .todo-h:first-child{margin-top:0}
+
+/* ---------- 天氣・穿搭 ---------- */
+.wxbtn{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0 8px;border:1.5px solid var(--matcha);color:var(--matcha);background:var(--card);font:700 15px var(--sans);padding:7px 14px 7px 12px;border-radius:999px;cursor:pointer;vertical-align:top}
+.wxbtn .ico{width:22px;height:22px;border-radius:50%;background:var(--matcha);color:#fff;display:grid;place-items:center;font-size:13px}
+.wxbtn .bd{font:700 13.5px var(--sans);color:var(--ink2);background:var(--matcha-soft);border-radius:999px;padding:0 8px}
+.wxbtn[aria-expanded="true"]{background:var(--matcha);color:#fff}
+.wxbtn[aria-expanded="true"] .ico{background:#fff;color:var(--matcha)}
+.wx{display:none;margin-top:10px;background:var(--matcha-soft);border-radius:12px;padding:12px 14px;font-size:15.5px;line-height:1.65}
+.wx.on{display:block}
+.wx .src{font-size:13px;color:var(--muted);margin-bottom:6px}
+.wx table{font-size:15px;background:transparent}
+.wx td{border-top:1px solid color-mix(in srgb,var(--matcha) 25%,transparent);padding:7px 6px}
+.wx td.tm{font:700 14.5px var(--sans);color:var(--ai);white-space:nowrap;font-variant-numeric:tabular-nums}
+.wx .tp{font:800 18px var(--serif);white-space:nowrap}
+.wx .fl,.wx .rg{display:block;font-size:13px;color:var(--ink2);white-space:nowrap}
+.wx .pr{white-space:nowrap}
+.wx ul{margin:8px 0 0;padding-left:1.2em}
+.wx li{margin:3px 0}
+.wx .tip{margin-top:8px;padding-top:8px;border-top:1px dashed color-mix(in srgb,var(--matcha) 35%,transparent);color:var(--ink2);font-size:15px}
+@media (max-width:480px){.wxbtn{margin-left:0}}
 @media (prefers-reduced-motion:reduce){.chapter{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -261,7 +281,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
       <div class="eat-card"><div class="ic">蕎</div><div><h4>年越しそば<small>大晦日的傳統</small></h4><p>除夕晚上餐廳大多提早打烊（上野藪そば平日最後點餐 20:30），帶著行李也不適合再出門。便利商店 12/31 會賣現成的年越しそば，微波就能吃。</p><p class="rec"><b>推薦點：</b>天婦羅年越しそば（加炸蝦或炸什錦）</p><div class="cost">預估一人 約 ¥400–600</div></div></div>
     </details></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;destination=Guesthouse%20toco%20%E6%9D%B1%E4%BA%AC%20%E4%B8%8B%E8%B0%B7&amp;waypoints=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">Skyliner → 日比谷線 → toco（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;destination=Guesthouse%20toco%20%E6%9D%B1%E4%BA%AC%20%E4%B8%8B%E8%B0%B7&amp;waypoints=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2026-12-31" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">Skyliner → 日比谷線 → toco（地圖開啟後可切換大眾運輸看每段）</span>
+  <div class="wx" id="wx-2026-12-31"></div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Ameyoko_June_2022.jpg/960px-Ameyoko_June_2022.jpg" alt="阿美橫町"><figcaption>阿美橫町</figcaption></figure>
   </div>
@@ -299,7 +320,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </details></li>
     <li><span class="t">19:30</span><span class="x">銀座線淺草 → 上野 → 日比谷線 1 站回入谷</span></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%97%A5%E6%9A%AE%E9%87%8C%E9%A7%85&amp;destination=%E6%B5%85%E8%8D%89%E5%AF%BA&amp;waypoints=%E5%A4%A9%E7%8E%8B%E5%AF%BA%20%E8%B0%B7%E4%B8%AD%7C%E4%B8%8D%E5%BF%8D%E6%B1%A0%E8%BE%AF%E5%A4%A9%E5%A0%82%7C%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">日暮里 → 谷中 → 不忍池 → 東博 → 淺草（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%97%A5%E6%9A%AE%E9%87%8C%E9%A7%85&amp;destination=%E6%B5%85%E8%8D%89%E5%AF%BA&amp;waypoints=%E5%A4%A9%E7%8E%8B%E5%AF%BA%20%E8%B0%B7%E4%B8%AD%7C%E4%B8%8D%E5%BF%8D%E6%B1%A0%E8%BE%AF%E5%A4%A9%E5%A0%82%7C%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-01" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">日暮里 → 谷中 → 不忍池 → 東博 → 淺草（地圖開啟後可切換大眾運輸看每段）</span>
+  <div class="wx" id="wx-2027-01-01"></div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Yanaka_Ginza_2.jpg/960px-Yanaka_Ginza_2.jpg" alt="谷中銀座"><figcaption>谷中銀座</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Shinobazupond-bentendo-fallleaves-dec24-2015.jpg/960px-Shinobazupond-bentendo-fallleaves-dec24-2015.jpg" alt="不忍池辯天堂"><figcaption>不忍池辯天堂</figcaption></figure>
@@ -341,7 +363,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
       <div class="eat-card"><div class="ic">麵</div><div><h4>中野屋 湯澤本店<small>片木蕎麥（へぎそば）</small></h4><p>以海藻布海苔揉進麵體，口感滑韌。</p><p class="rec"><b>推薦點：</b>天ざるそば（附天婦羅），加點舞茸天婦羅</p><div class="cost">預估一人 約 ¥1,500–2,000</div><div class="meta">東口步行 2 分・11:00–20:00・週四休</div><span class="warnline">一個人點單人份即可（大盤片木通常是 2 人份）</span></div></div>
     </details></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Guesthouse%20toco%20%E6%9D%B1%E4%BA%AC%20%E4%B8%8B%E8%B0%B7&amp;destination=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&amp;waypoints=%E7%9A%87%E5%B1%85%20%E6%AD%A3%E9%96%80%7C%E6%9D%B1%E4%BA%AC%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">toco → 皇居 → 東京站 → 越後湯澤（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Guesthouse%20toco%20%E6%9D%B1%E4%BA%AC%20%E4%B8%8B%E8%B0%B7&amp;destination=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&amp;waypoints=%E7%9A%87%E5%B1%85%20%E6%AD%A3%E9%96%80%7C%E6%9D%B1%E4%BA%AC%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-02" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">toco → 皇居 → 東京站 → 越後湯澤（地圖開啟後可切換大眾運輸看每段）</span>
+  <div class="wx" id="wx-2027-01-02"></div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Imperial_Palace_Tokyo_Nijubashi_Bridge.JPG/960px-Imperial_Palace_Tokyo_Nijubashi_Bridge.JPG" alt="皇居二重橋"><figcaption>皇居二重橋</figcaption></figure>
   </div>
@@ -364,7 +387,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     <li><span class="t">07:00</span><details class="x"><summary>BOO SPORTS 取件（預約 7:00）→ BOO 接送到岩原<span class="hint">詳情</span></summary>
       <div class="eat-card info"><div class="ic">板</div><div><h4>BOO SPORTS<small>已確認：Sansan ⇄ 岩原在免費接送範圍</small></h4><p>板＋鞋＋雪衣褲＋安全帽 3 天 ¥18,500（Burton 板）。第一天試穿、調整固定器約 30–45 分，7:00 取件 → 約 8:30 上雪。</p><div class="meta"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2">BOO 西口店</a>（湯沢 498-1，Sansan 步行約 15 分）・17:30 前歸還</div><span class="warnline">還要問 BOO：接送的上車地點與時刻、1/5 中午能否接回、背包可否寄放、岩原優惠雪票（上季 ¥3,800，限現金）</span></div></div>
     </details></li>
-    <li><span class="t">08:30</span><span class="x">岩原中腹 RC2 → 買票 → 初學區 Wide Burn 練推坡、落葉飄（BOO 接送沒趕上就搭東口岩原免費巴士：假日 8:00、8:30…）</span></li>
+    <li><span class="t">08:30</span><span class="x">岩原中腹 RC2 → 售票窗口兌換早割票（手機開スマリフ）→ 初學區 Wide Burn 練推坡、落葉飄（BOO 接送沒趕上就搭東口岩原免費巴士：假日 8:00、8:30…）</span></li>
     <li class="eat"><span class="t">11:15</span><span class="x">提早午餐避開人潮：雪場餐廳的咖哩飯或烏龍麵（約 ¥1,500）</span></li>
     <li><span class="t">15:30</span><span class="x">收工（新手最後一小時最易受傷）→ BOO 接送或 16:00 巴士回去</span></li>
     <li><span class="t">17:00</span><details class="x"><summary>公共溫泉 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B9%AF%E5%85%83%E5%85%B1%E5%90%8C%E6%B5%B4%E5%A0%B4%20%E5%B1%B1%E3%81%AE%E6%B9%AF">山の湯</a><span class="hint">詳情</span></summary>
@@ -375,7 +398,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
       <div class="eat-card"><div class="ic">酒</div><div><h4>地酒BAR 山新<small>新潟地酒吧</small></h4><p>小酒吧，容易和其他旅人聊天。</p><p class="rec"><b>推薦點：</b>新潟地酒飲み比べ、丸茄子味噌田楽、ねぎ味噌燒飯糰</p><div class="cost">預估一人 約 ¥2,000</div><div class="meta">湯沢 3-4-10・週二三休</div></div></div>
     </details></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sansan%20Yuzawa%20Backpackers&amp;destination=%E3%82%80%E3%82%89%E3%82%93%E3%81%94%E3%81%A3%E3%81%A4%E3%81%89%20%E6%B9%AF%E6%B2%A2&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4%7C%E5%B1%B1%E3%81%AE%E6%B9%AF%20%E6%B9%AF%E6%B2%A2"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">Sansan → BOO → 岩原 → 山の湯 → 晚餐（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sansan%20Yuzawa%20Backpackers&amp;destination=%E3%82%80%E3%82%89%E3%82%93%E3%81%94%E3%81%A3%E3%81%A4%E3%81%89%20%E6%B9%AF%E6%B2%A2&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4%7C%E5%B1%B1%E3%81%AE%E6%B9%AF%20%E6%B9%AF%E6%B2%A2"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-03" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">Sansan → BOO → 岩原 → 山の湯 → 晚餐（地圖開啟後可切換大眾運輸看每段）</span>
+  <div class="wx" id="wx-2027-01-03"></div>
 </article>
 
 <!-- ===== 1/4 ===== -->
@@ -405,7 +429,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </details></li>
     <li class="eat"><span class="t">20:00</span><span class="x">再去一次 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9C%B0%E9%85%92BAR%20%E5%B1%B1%E6%96%B0%20%E6%B9%AF%E6%B2%A2">地酒BAR 山新</a>（週二三休，週一有開）：坐吧檯，跟昨天認識的老闆和旅人聊天</span></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sansan%20Yuzawa%20Backpackers&amp;destination=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&amp;waypoints=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">Sansan → 岩原 → 車站晚餐（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sansan%20Yuzawa%20Backpackers&amp;destination=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&amp;waypoints=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-04" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">Sansan → 岩原 → 車站晚餐（地圖開啟後可切換大眾運輸看每段）</span>
+  <div class="wx" id="wx-2027-01-04"></div>
 </article>
 
 <!-- ===== 1/5 ===== -->
@@ -436,7 +461,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
       <div class="eat-card"><div class="ic">串</div><div><h4>カブト<small>1948 年創業・鰻魚串</small></h4><p>只賣鰻魚各部位的串燒，吧檯 15 席，多是一個人來的客人。</p><p class="rec"><b>推薦點：</b>「一通り」套餐（各部位串燒一輪，約 ¥1,700）＋ 肝焼き，配一杯燒酎</p><div class="cost">預估一人 約 ¥2,000–3,000</div><div class="meta">週一至五 13:00–20:00、週六 12:00–20:00、週日休・<b>只收現金</b>・<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%96%E3%83%88%20%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81">地圖</a></div><span class="warnline">20:00 打烊，18:30 前到</span></div></div>
     </details></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4&amp;destination=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85%7C%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">岩原 → BOO → 新幹線 → 石亭 → 思い出横丁（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4&amp;destination=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85%7C%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-05" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">岩原 → BOO → 新幹線 → 石亭 → 思い出横丁（地圖開啟後可切換大眾運輸看每段）</span>
+  <div class="wx" id="wx-2027-01-05"></div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Shinjuku-West_Omoide-Yokocho.jpg/960px-Shinjuku-West_Omoide-Yokocho.jpg" alt="思い出横丁"><figcaption>思い出横丁</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/2024-10-20_Shinjuku_Golden_Gai_at_night.jpg/960px-2024-10-20_Shinjuku_Golden_Gai_at_night.jpg" alt="新宿黃金街"><figcaption>新宿黃金街</figcaption></figure>
@@ -484,7 +510,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     </details></li>
     <li><span class="t">20:45</span><span class="x">新宿 → 山手線 1 站回新大久保，整理行李</span></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%E9%A7%85&amp;destination=%E5%A4%A9%E3%81%B7%E3%82%89%E6%96%B0%E5%AE%BF%E3%81%A4%E3%81%AA%E5%85%AB%20%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%88%A5%E9%A4%A8&amp;waypoints=%E9%AB%98%E5%B0%BE%E5%B1%B1%E5%8F%A3%E9%A7%85%7C%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E5%B1%B1%E9%A0%82%7C%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">新大久保 → 高尾山 → 都廳 → つな八（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%E9%A7%85&amp;destination=%E5%A4%A9%E3%81%B7%E3%82%89%E6%96%B0%E5%AE%BF%E3%81%A4%E3%81%AA%E5%85%AB%20%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%88%A5%E9%A4%A8&amp;waypoints=%E9%AB%98%E5%B0%BE%E5%B1%B1%E5%8F%A3%E9%A7%85%7C%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E5%B1%B1%E9%A0%82%7C%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-06" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">新大久保 → 高尾山 → 都廳 → つな八（地圖開啟後可切換大眾運輸看每段）</span>
+  <div class="wx" id="wx-2027-01-06"></div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Cab_view_on_Mount_Takao_funicular_2013-04-12.jpg/500px-Cab_view_on_Mount_Takao_funicular_2013-04-12.jpg" alt="高尾山纜車"><figcaption>高尾山纜車</figcaption></figure>
   </div>
@@ -514,7 +541,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     <li><span class="t">12:30</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E9%A7%85%20%E6%88%90%E7%94%B0%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AC%E3%82%B9">新宿站</a> 搭 N'EX（¥3,330，約 80–90 分）→ 14:00 成田第一航廈</span></li>
     <li><span class="t">16:35</span><span class="x">樂桃 MM625 → 20:00 桃園</span></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D&amp;destination=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;waypoints=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%7CAFURI%20%E5%8E%9F%E5%AE%BF%7C%E6%96%B0%E5%AE%BF%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><span class="route-note">石亭 → 明治神宮 → AFURI → 新宿 → 成田（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D&amp;destination=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;waypoints=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%7CAFURI%20%E5%8E%9F%E5%AE%BF%7C%E6%96%B0%E5%AE%BF%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-07" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">石亭 → 明治神宮 → AFURI → 新宿 → 成田（地圖開啟後可切換大眾運輸看每段）</span>
+  <div class="wx" id="wx-2027-01-07"></div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Meiji_Jingu_Shrine_%40_Yoyogi_%2811931297683%29.jpg/960px-Meiji_Jingu_Shrine_%40_Yoyogi_%2811931297683%29.jpg" alt="明治神宮"><figcaption>明治神宮</figcaption></figure>
   </div>
@@ -550,7 +578,8 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <div class="card">
 <h3><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4">岩原雪場</a>・雪票</h3>
 <div class="small">初學從中腹 RC2 進場（Wide Burn、Grand Burn）。現場 1 日券 ¥5,800。<br>
-・<b>1/3（假日）：買 SURF&amp;SNOW 早割 1 日券＋ ¥3,900</b>，保證有票。12/4 截止或賣完為止，12/19–3/28 可用、無排除日，當天到售票窗口兌換<br>
+・<b>✅ 已買 1 張 SURF&amp;SNOW 早割 1 日入場券＋ ¥3,900（約 NT$810，10/29 刷卡）</b>：預定 1/3 用；12/19–3/28 任一天可用，1/3 天氣不好可改在 1/4 或 1/5 用<br>
+・<b>兌換方式</b>：到 RC2 售票窗口 → 手機開購買確認信的「スマリフ発行 URL」或 SURF&amp;SNOW mypage → 「利用枚数を選択」選 1 → 手機交給窗口人員輸入認證碼 → 換成當天纜車票。截圖、列印不能用，手機要有網路；到窗口前不要自己輸入認證碼<br>
 ・1/4、1/5（平日）：預設在 BOO 買租借客優惠 ¥3,800（官網價，限現金、當天買、限量「完売次第終了」，所以假日不靠它）<br>
 ・官方學校只有日文課；免費巴士可能改為預約制</div>
 <a class="btn" href="https://ec.surfsnow.jp/shopdetail/000000003246/">早割票（スマリフ）</a> <a class="btn" href="https://iwa-ppara.com/">岩原官網</a>
@@ -667,30 +696,31 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <tr><td>toco 2 晚</td><td>NT$4,395</td><td><span class="pill info">12/28 扣款</span></td></tr>
 <tr><td>石亭 2 晚</td><td>NT$3,543</td><td><span class="pill info">1/1 扣款</span></td></tr>
 <tr><td>雪具 3 天（BOO）</td><td>¥18,500</td><td><span class="pill warn">網路預約中</span></td></tr>
-<tr><td>纜車 3 天</td><td>約 ¥11,500（1/3 早割 ¥3,900＋BOO ¥3,800×2）</td><td>1/3 於 12/4 前網購・其餘現場</td></tr>
+<tr><td>岩原雪票 1/3（SURF&amp;SNOW 早割）</td><td>¥3,900（約 NT$810）</td><td><span class="pill ok">已付 10/29</span></td></tr>
+<tr><td>岩原雪票 1/4、1/5（BOO）</td><td>¥3,800 × 2 = ¥7,600</td><td>當天現金</td></tr>
 <tr><td>新幹線來回</td><td>約 ¥14,800</td><td><span class="pill warn">12/2、12/5 開賣</span></td></tr>
 <tr><td>Skyliner 優惠票＋N'EX</td><td>¥2,310＋¥3,330</td><td><span class="pill warn">Skyliner 12/1 開賣</span></td></tr>
 <tr><td>餐飲、交通、門票</td><td>約 ¥48,000</td><td></td></tr>
 <tr><td>伴手禮</td><td>約 ¥6,100（上限 ¥10,000）</td><td>1/4、1/6 採買</td></tr>
 </table>
-<div class="small">預估總計約 NT$48,800（含伴手禮、1/4 溫泉與地酒）。已付 NT$17,527・待扣 NT$7,938。</div>
+<div class="small">預估總計約 NT$48,800（含伴手禮、1/4 溫泉與地酒）。已付約 NT$18,340（含雪票 1/3 約 NT$810，實際以信用卡帳單為準）・待扣 NT$7,938。</div>
 </div>
 <div class="card scroll" id="food-budget">
 <h3>餐飲預估（一人）</h3>
 <table>
 <tr><th>日期</th><th>店家・推薦</th><th>預估</th></tr>
-<tr><td>12/31</td><td>便利商店年越しそば</td><td>¥500</td></tr>
-<tr><td>1/1</td><td>伊豆榮 うな重・梅園 あわぜんざい・大黑家 天丼</td><td>¥7,100–9,200</td></tr>
-<tr><td>1/2</td><td>駅弁・ぽんしゅ館 唎酒＋飯糰・中野屋 天ざるそば</td><td>¥3,700–5,500</td></tr>
-<tr><td>1/3</td><td>雪場午餐・むらんごっつぉ のどぐろ・山新 地酒</td><td>¥6,500–8,500</td></tr>
-<tr><td>1/4</td><td>雪場午餐・駒子の湯・本陣 壽司（或魚沼の畑）・水屋 笹団子・山新 地酒</td><td>¥6,200–10,400</td></tr>
-<tr><td>1/5</td><td>カブト 鰻魚串</td><td>¥2,000–3,000</td></tr>
-<tr><td>1/6</td><td>とろろそば・つな八 天婦羅</td><td>¥4,600–8,000</td></tr>
-<tr><td>1/7</td><td>AFURI 柚子塩らーめん</td><td>¥1,400–1,800</td></tr>
-<tr><td>每天</td><td>早餐・飲料・零食（約 ¥600 × 7）</td><td>¥4,200</td></tr>
-<tr><td><b>合計</b></td><td></td><td><b>約 ¥36,000–51,000</b></td></tr>
+<tr><td>12/31</td><td>便利商店年越しそば</td><td>¥500<br><small>（NT$100）</small></td></tr>
+<tr><td>1/1</td><td>伊豆榮 うな重・梅園 あわぜんざい・大黑家 天丼</td><td>¥7,100–9,200<br><small>（NT$1,480–1,920）</small></td></tr>
+<tr><td>1/2</td><td>駅弁・ぽんしゅ館 唎酒＋飯糰・中野屋 天ざるそば</td><td>¥3,700–5,500<br><small>（NT$770–1,150）</small></td></tr>
+<tr><td>1/3</td><td>雪場午餐・むらんごっつぉ のどぐろ・山新 地酒</td><td>¥6,500–8,500<br><small>（NT$1,350–1,770）</small></td></tr>
+<tr><td>1/4</td><td>雪場午餐・駒子の湯・本陣 壽司（或魚沼の畑）・水屋 笹団子・山新 地酒</td><td>¥6,200–10,400<br><small>（NT$1,290–2,170）</small></td></tr>
+<tr><td>1/5</td><td>カブト 鰻魚串</td><td>¥2,000–3,000<br><small>（NT$420–620）</small></td></tr>
+<tr><td>1/6</td><td>とろろそば・つな八 天婦羅</td><td>¥4,600–8,000<br><small>（NT$960–1,670）</small></td></tr>
+<tr><td>1/7</td><td>AFURI 柚子塩らーめん</td><td>¥1,400–1,800<br><small>（NT$290–370）</small></td></tr>
+<tr><td>每天</td><td>早餐・飲料・零食（約 ¥600 × 7）</td><td>¥4,200<br><small>（NT$870）</small></td></tr>
+<tr><td><b>合計</b></td><td></td><td><b>約 NT$7,500–10,600</b><br><small>（¥36,000–51,000）</small></td></tr>
 </table>
-<div class="small">價格來自店家／訂位網站與評論，僅供參考；不含酒錢加點。</div>
+<div class="small">價格來自店家／訂位網站與評論，僅供參考；不含酒錢加點。台幣以 1 円 ≈ NT$0.208 換算（Sansan 實際扣款匯率）。</div>
 </div>
 </section>
 
@@ -703,7 +733,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <label data-due="2026-12-01"><input type="checkbox"><span><b class="due">12/1</b>買 Skyliner 外國旅客優惠票 ¥2,310（兌換要帶護照）</span></label>
 <label data-due="2026-12-01"><input type="checkbox"><span><b class="due">12/1</b>電話訂 むらんごっつぉ 1/3 19:00（<a href="tel:+81257843361">+81-25-784-3361</a>）</span></label>
 <label data-due="2026-12-02"><input type="checkbox"><span><b class="due">12/2</b>訂 Toki 1/2 東京 → 越後湯澤（JR-EAST Train Reservation）</span></label>
-<label data-due="2026-12-04"><input type="checkbox"><span><b class="due">12/4 前</b>岩原雪票：BOO 租借客優惠 vs <a href="https://ec.surfsnow.jp/shopdetail/000000003246/">SURF&amp;SNOW 早割</a>（¥3,900×3，12/4 截止）</span></label>
+<label data-due="2026-12-04"><input type="checkbox"><span><b class="due">12/4 前</b>岩原雪票：✅ 1/3 早割已買（¥3,900）；1/4、1/5 預設 BOO ¥3,800 現金，想全鎖定再加買 <a href="https://ec.surfsnow.jp/shopdetail/000000003246/">SURF&amp;SNOW 早割</a>（12/4 截止）</span></label>
 <label data-due="2026-12-05"><input type="checkbox"><span><b class="due">12/5</b>訂 Toki 1/5 越後湯澤 → 上野</span></label>
 <label data-due="2026-12-07"><input type="checkbox"><span><b class="due">12/7</b>訂 N'EX 1/7 新宿 → 成田</span></label>
 <label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>旅平險：確認休閒滑雪有承保（富邦需電話問）</span></label>
@@ -868,6 +898,70 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   /* overdue to-dos */
   function lateMark(){document.querySelectorAll('#todolist label[data-due]').forEach(function(l){l.classList.toggle('late',!l.querySelector('input').checked&&l.dataset.due<=now.d)})}
   lateMark();document.querySelectorAll('#todolist input').forEach(function(b){b.addEventListener('change',lateMark)});
+
+  /* ---------- 天氣・穿搭 ---------- */
+  (function(){
+    var SP={"A": ["成田機場", 35.772, 140.386, 40], "B": ["上野・入谷", 35.72, 139.783, 10], "C": ["谷中", 35.726, 139.768, 20], "D": ["淺草", 35.7148, 139.7967, 5], "E": ["皇居", 35.6838, 139.7531, 10], "F": ["越後湯澤 市區", 36.935, 138.815, 360], "G": ["岩原 雪道（約 700 m）", 36.91, 138.83, 700], "H": ["新宿・新大久保", 35.693, 139.7, 40], "I": ["高尾山 山頂（599 m）", 35.6251, 139.2437, 599], "J": ["明治神宮", 35.676, 139.699, 40]},CL={"2026-12-31": [{"k": "A", "hr": 19, "T": 4.4, "T10": 1.3, "T90": 7.6, "A": 0.7, "W": 10, "pWet": 6, "pSnow": 0}, {"k": "B", "hr": 21, "T": 3.7, "T10": 1.3, "T90": 6.7, "A": -0.7, "W": 14, "pWet": 3, "pSnow": 0}], "2027-01-01": [{"k": "C", "hr": 9, "T": 4.3, "T10": 2.2, "T90": 6.6, "A": 0.4, "W": 11, "pWet": 6, "pSnow": 0}, {"k": "D", "hr": 17, "T": 7, "T10": 3.9, "T90": 10.3, "A": 3, "W": 14, "pWet": 6, "pSnow": 0}], "2027-01-02": [{"k": "E", "hr": 10, "T": 6.4, "T10": 4, "T90": 9.1, "A": 2.2, "W": 13, "pWet": 7, "pSnow": 0}, {"k": "F", "hr": 17, "T": 0.7, "T10": -2, "T90": 4.8, "A": -2.6, "W": 6, "pWet": 69, "pSnow": 63}], "2027-01-03": [{"k": "G", "hr": 9, "T": -1.2, "T10": -3.5, "T90": 2.7, "A": -5, "W": 9, "pWet": 64, "pSnow": 57}, {"k": "G", "hr": 14, "T": 0.1, "T10": -3.5, "T90": 4.8, "A": -4.1, "W": 11, "pWet": 67, "pSnow": 50}, {"k": "F", "hr": 18, "T": 0.3, "T10": -2.1, "T90": 3.2, "A": -2.9, "W": 6, "pWet": 71, "pSnow": 63}], "2027-01-04": [{"k": "G", "hr": 9, "T": -1.2, "T10": -3.5, "T90": 1.8, "A": -5.2, "W": 9, "pWet": 66, "pSnow": 60}, {"k": "G", "hr": 14, "T": 0, "T10": -3, "T90": 4.1, "A": -4.1, "W": 11, "pWet": 67, "pSnow": 53}, {"k": "F", "hr": 18, "T": 0.3, "T10": -1.9, "T90": 3.2, "A": -3, "W": 6, "pWet": 71, "pSnow": 63}], "2027-01-05": [{"k": "G", "hr": 9, "T": -1.1, "T10": -3.5, "T90": 2.1, "A": -5, "W": 9, "pWet": 64, "pSnow": 57}, {"k": "F", "hr": 13, "T": 2.4, "T10": -0.4, "T90": 6.1, "A": -1.2, "W": 8, "pWet": 56, "pSnow": 53}, {"k": "H", "hr": 18, "T": 5.5, "T10": 2.8, "T90": 9.3, "A": 1.3, "W": 14, "pWet": 10, "pSnow": 3}], "2027-01-06": [{"k": "I", "hr": 11, "T": 5.8, "T10": 2.8, "T90": 9.1, "A": 2.3, "W": 6, "pWet": 6, "pSnow": 3}, {"k": "H", "hr": 17, "T": 6.3, "T10": 3.4, "T90": 8.8, "A": 2.2, "W": 14, "pWet": 10, "pSnow": 3}], "2027-01-07": [{"k": "J", "hr": 8, "T": 1.8, "T10": -1.4, "T90": 5.4, "A": -2.6, "W": 13, "pWet": 3, "pSnow": 0}, {"k": "A", "hr": 14, "T": 9.2, "T10": 6.6, "T90": 13, "A": 5.2, "W": 12, "pWet": 7, "pSnow": 1}]},TIP={"2026-12-31": "整晚多在機場、電車和室內，羽絨外套方便穿脫最重要；出成田時把外套先拿出來。", "2027-01-01": "早上谷中散步是一天最冷的時候，口袋放暖暖包；東博、淺草室內很暖，裡面穿薄一點。", "2027-01-02": "皇居排隊會在戶外站 30–40 分鐘，腳底最冷，穿厚襪；到湯澤換防滑鞋，傍晚常在下雪。", "2027-01-03": "滑雪：發熱衣＋刷毛＋BOO 雪衣褲就夠，羽絨不要穿上雪道（流汗後會更冷）；雪鏡、防水手套、脖圍必帶，多帶一雙襪子。", "2027-01-04": "滑雪：同昨天。手套和雪靴晚上放 Sansan 乾燥室；纜車上山頂風大，比下面冷好幾度。", "2027-01-05": "早上滑雪穿雪衣褲；還完雪具換回羽絨＋防滑鞋。回東京後明顯變暖，晚上橫丁穿羽絨就好。", "2027-01-06": "山頂常比市區冷、早上步道可能結冰，穿防滑鞋、洋蔥式穿法（爬坡會熱）；泡完極樂湯頭髮吹乾再出門，都廳傍晚風大。", "2027-01-07": "明治神宮早上在森林裡更冷；之後要搭機，穿好脫的層次，羽絨可以收進背包。"};
+    var KEY='wx-v1',FROM='2026-12-16',live=null,SKI={'2027-01-03':1,'2027-01-04':1,'2027-01-05':1};
+    try{live=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
+    function f1(x){x=Math.round(x);return (x<0?'−':'')+Math.abs(x)}
+    function code(c){if(c==null)return '';if(c<=1)return '晴';if(c<=2)return '晴時多雲';if(c===3)return '陰';if(c<=48)return '霧';if(c<=57)return '毛毛雨';if(c<=67)return '雨';if(c<=77)return '雪';if(c<=82)return '陣雨';if(c<=86)return '陣雪';return '雷雨';}
+    function liveRow(d,r){ /* 從快取找該地點該小時 */
+      if(!live||!live.data)return null;var i=Object.keys(SP).indexOf(r.k),h=live.data[i]&&live.data[i].hourly;if(!h)return null;
+      var n=h.time.indexOf(d+'T'+('0'+r.hr).slice(-2)+':00');if(n<0||h.temperature_2m[n]==null)return null;
+      return {T:h.temperature_2m[n],A:h.apparent_temperature[n],P:h.precipitation_probability[n],S:h.snowfall[n],R:h.precipitation[n],W:h.wind_speed_10m[n],C:h.weather_code[n]};
+    }
+    function rows(d){return CL[d].map(function(r){var L=liveRow(d,r);return {r:r,L:L}})}
+    function advice(d,rs){
+      var fmin=99,wet=0,snow=0,wind=0;
+      rs.forEach(function(x){var v=x.L||x.r;fmin=Math.min(fmin,x.L?x.L.A:x.r.A);wind=Math.max(wind,x.L?x.L.W:x.r.W);
+        if(x.L){var sn=x.L.S>0||(x.L.C>=71&&x.L.C<=77)||x.L.C===85||x.L.C===86;if(sn)snow=Math.max(snow,x.L.P||50);else wet=Math.max(wet,x.L.P||0);}
+        else{snow=Math.max(snow,x.r.pSnow);wet=Math.max(wet,x.r.pWet-x.r.pSnow);}});
+      var a=[];
+      if(SKI[d]&&fmin<=3)a.push('體感最低約 '+f1(fmin)+'°C：雪道上穿發熱衣＋刷毛＋雪衣褲（不穿羽絨），安全帽下戴薄帽、手套、脖圍；收工後、晚上出門再換羽絨');
+      else if(fmin<=-3)a.push('體感最低約 '+f1(fmin)+'°C：發熱衣上下＋刷毛＋羽絨，毛帽、手套、脖圍都要');
+      else if(fmin<=3)a.push('體感最低約 '+f1(fmin)+'°C：發熱衣＋刷毛＋羽絨，帶手套和脖圍');
+      else if(fmin<=9)a.push('體感最低約 '+f1(fmin)+'°C：發熱衣＋刷毛或毛衣＋羽絨');
+      else a.push('體感最低約 '+f1(fmin)+'°C：長袖＋薄刷毛＋外套，室內熱，選好穿脫的');
+      if(snow>=40)a.push('很可能下雪（'+snow+'%）：防滑鞋、防水外套，手機放內袋保暖');
+      else if(snow>=15)a.push('有機會下雪（'+snow+'%）：穿防滑鞋');
+      if(wet>=40)a.push('可能下雨（'+wet+'%）：帶折傘');
+      if(wind>=25)a.push('風大（約 '+Math.round(wind)+' km/h）：脖圍拉高，體感會再低幾度');
+      return {list:a,fmin:fmin,snow:snow,wet:wet};
+    }
+    function render(d){
+      var box=document.getElementById('wx-'+d);if(!box)return;var rs=rows(d),ad=advice(d,rs),anyLive=rs.some(function(x){return x.L});
+      var src=anyLive?('即時預報（Open-Meteo／日本氣象廳模型）・更新於 '+live.at+(navigator.onLine===false?'・目前離線，顯示上次結果':'')):
+        '往年同期參考：2015–2025 年 12/28–1/10 在這些時間、地點的平均（Open-Meteo 再分析資料）。'+(now.d<FROM?'12/16 起點開會自動換成即時預報。':'（這天還不在預報範圍，或還沒連上網路）');
+      var h='<div class="src">'+src+'</div><table>';
+      rs.forEach(function(x){var r=x.r,L=x.L,nm=SP[r.k][0],tm=('0'+r.hr).slice(-2)+':00';
+        if(L)h+='<tr><td class="tm">'+tm+'</td><td>'+nm+'<span class="fl">'+code(L.C)+'</span></td><td><span class="tp">'+f1(L.T)+'°</span><span class="fl">體感 '+f1(L.A)+'°</span></td><td class="pr">'+(L.S>0?'雪 ':'降水 ')+(L.P==null?'–':L.P+'%')+'<span class="fl">風 '+Math.round(L.W)+' km/h</span></td></tr>';
+        else h+='<tr><td class="tm">'+tm+'</td><td>'+nm+'<span class="rg">多在 '+f1(r.T10)+'～'+f1(r.T90)+'°C</span></td><td><span class="tp">'+f1(r.T)+'°</span><span class="fl">體感 '+f1(r.A)+'°</span></td><td class="pr">'+(r.pSnow>=r.pWet/2&&r.pSnow>0?'雪 '+r.pSnow+'%':'降水 '+r.pWet+'%')+'<span class="fl">風 '+r.W+' km/h</span></td></tr>';
+      });
+      h+='</table><ul>'+ad.list.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul><div class="tip">'+TIP[d]+'</div>';
+      box.innerHTML=h;
+      var b=document.querySelector('.wxbtn[data-wx="'+d+'"] .bd');if(b)b.textContent='體感 '+f1(ad.fmin)+'°'+(ad.snow>=40?'・雪':ad.wet>=40?'・雨':'');
+    }
+    function fetchLive(cb){
+      if(now.d<FROM||now.d>'2027-01-07'||navigator.onLine===false)return cb();
+      if(live&&live.ts&&Date.now()-live.ts<3600e3)return cb();
+      var ks=Object.keys(SP),q=function(i){return ks.map(function(k){return SP[k][i]}).join(',')};
+      var st=now.d>'2026-12-31'?now.d:'2026-12-31';
+      var u='https://api.open-meteo.com/v1/forecast?latitude='+q(1)+'&longitude='+q(2)+'&elevation='+q(3)+
+        '&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,snowfall,weather_code,wind_speed_10m&timezone=Asia%2FTokyo&start_date='+st+'&end_date=2027-01-07';
+      fetch(u).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
+        var t=new Date(),p=function(n){return ('0'+n).slice(-2)};
+        live={ts:Date.now(),at:(t.getMonth()+1)+'/'+t.getDate()+' '+p(t.getHours())+':'+p(t.getMinutes()),data:Array.isArray(j)?j:[j]};
+        try{localStorage.setItem(KEY,JSON.stringify(live))}catch(e){}
+      }).catch(function(){}).then(cb);
+    }
+    Object.keys(CL).forEach(render);
+    document.querySelectorAll('.wxbtn').forEach(function(b){b.addEventListener('click',function(){
+      var d=b.dataset.wx,box=document.getElementById('wx-'+d),on=!box.classList.contains('on');
+      box.classList.toggle('on',on);b.setAttribute('aria-expanded',on);
+      if(on)fetchLive(function(){Object.keys(CL).forEach(render)});
+    })});
+  })();
 
   /* back to top */
   var tt=document.getElementById('totop');
