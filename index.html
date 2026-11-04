@@ -140,7 +140,12 @@ mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
 .eat-card .cost{display:inline-block;margin-top:6px;font:700 15px var(--sans);color:var(--shu)}
 .warnline{display:inline-block;font-size:14.5px;line-height:1.6;color:var(--kin);background:var(--kin-soft);padding:2px 9px;border-radius:6px;margin-top:6px}
 
-.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px}
+/* ---------- 照片橫滑 ---------- */
+.photos{display:flex;gap:12px;margin-top:6px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.photos figure{flex:0 0 240px;scroll-snap-align:start}
+.photos figure a{display:block}
+.ph-hint{margin-top:18px;font-size:13.5px;color:var(--muted);text-align:right}
+@media (max-width:520px){.photos figure{flex-basis:72%}}
 figure{margin:0;background:#fff;padding:6px 6px 4px;box-shadow:0 6px 16px -10px rgba(0,0,0,.4);transform:rotate(-.6deg)}
 figure:nth-child(2n){transform:rotate(.7deg)}
 figure img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--paper2);border-radius:3px;filter:saturate(.9) contrast(1.02)}
@@ -288,8 +293,12 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;destination=Guesthouse%20toco%20%E6%9D%B1%E4%BA%AC%20%E4%B8%8B%E8%B0%B7&amp;waypoints=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2026-12-31" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">Skyliner → 日比谷線 → toco（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="wx" id="wx-2026-12-31"></div>
+  <div class="ph-hint">左右滑看更多・共 4 張</div>
   <div class="photos">
+    <figure><a href="https://commons.wikimedia.org/wiki/File:%E5%B9%B4%E8%B6%8A%E3%81%97%E3%81%9D%E3%81%B0_with_fish%2C_a_local_family_tradition.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/%E5%B9%B4%E8%B6%8A%E3%81%97%E3%81%9D%E3%81%B0_with_fish%2C_a_local_family_tradition.jpg/500px-%E5%B9%B4%E8%B6%8A%E3%81%97%E3%81%9D%E3%81%B0_with_fish%2C_a_local_family_tradition.jpg" alt="年越しそば"></a><figcaption>年越しそば</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Ameyoko_June_2022.jpg/960px-Ameyoko_June_2022.jpg" alt="阿美橫町"><figcaption>阿美橫町</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:AMEYOKO_Street_in_New_Year%27s_Eve_-_panoramio.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/AMEYOKO_Street_in_New_Year%27s_Eve_-_panoramio.jpg/500px-AMEYOKO_Street_in_New_Year%27s_Eve_-_panoramio.jpg" alt="大晦日的阿美橫町"></a><figcaption>大晦日的阿美橫町</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Tokudai-ji_%28Ueno%2C_Taito%29_01.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Tokudai-ji_%28Ueno%2C_Taito%29_01.jpg/500px-Tokudai-ji_%28Ueno%2C_Taito%29_01.jpg" alt="摩利支天 徳大寺"></a><figcaption>摩利支天 徳大寺</figcaption></figure>
   </div>
 </article>
 
@@ -327,11 +336,16 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%97%A5%E6%9A%AE%E9%87%8C%E9%A7%85&amp;destination=%E6%B5%85%E8%8D%89%E5%AF%BA&amp;waypoints=%E5%A4%A9%E7%8E%8B%E5%AF%BA%20%E8%B0%B7%E4%B8%AD%7C%E4%B8%8D%E5%BF%8D%E6%B1%A0%E8%BE%AF%E5%A4%A9%E5%A0%82%7C%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-01" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">日暮里 → 谷中 → 不忍池 → 東博 → 淺草（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="wx" id="wx-2027-01-01"></div>
+  <div class="ph-hint">左右滑看更多・共 8 張</div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Yanaka_Ginza_2.jpg/960px-Yanaka_Ginza_2.jpg" alt="谷中銀座"><figcaption>谷中銀座</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Tenno-ji_by_kolshica_in_Yanaka%2C_Tokyo_2.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Tenno-ji_by_kolshica_in_Yanaka%2C_Tokyo_2.jpg/500px-Tenno-ji_by_kolshica_in_Yanaka%2C_Tokyo_2.jpg" alt="谷中 天王寺"></a><figcaption>谷中 天王寺</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Shinobazupond-bentendo-fallleaves-dec24-2015.jpg/960px-Shinobazupond-bentendo-fallleaves-dec24-2015.jpg" alt="不忍池辯天堂"><figcaption>不忍池辯天堂</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Unaju_at_Unagi-Naruse.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Unaju_at_Unagi-Naruse.jpg/500px-Unaju_at_Unagi-Naruse.jpg" alt="鰻魚飯（示意）"></a><figcaption>鰻魚飯（示意）</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Tokyo_National_Museum%2C_Honkan_2010.jpg/960px-Tokyo_National_Museum%2C_Honkan_2010.jpg" alt="東京國立博物館"><figcaption>東京國立博物館</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:The_Kaminarimon_at_Asakusa%3B_November_2008.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/The_Kaminarimon_at_Asakusa%3B_November_2008.jpg/500px-The_Kaminarimon_at_Asakusa%3B_November_2008.jpg" alt="淺草 雷門"></a><figcaption>淺草 雷門</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Sensoji_at_night_7.jpg/960px-Sensoji_at_night_7.jpg" alt="淺草寺夜景"><figcaption>淺草寺夜景</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Tendon_002.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Tendon_002.jpg/500px-Tendon_002.jpg" alt="天丼（示意）"></a><figcaption>天丼（示意）</figcaption></figure>
   </div>
 </article>
 
@@ -371,8 +385,13 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Guesthouse%20toco%20%E6%9D%B1%E4%BA%AC%20%E4%B8%8B%E8%B0%B7&amp;destination=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&amp;waypoints=%E7%9A%87%E5%B1%85%20%E6%AD%A3%E9%96%80%7C%E6%9D%B1%E4%BA%AC%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-02" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">toco → 皇居 → 東京站 → 越後湯澤（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="wx" id="wx-2027-01-02"></div>
+  <div class="ph-hint">左右滑看更多・共 5 張</div>
   <div class="photos">
+    <figure><a href="https://commons.wikimedia.org/wiki/File:%E6%96%B0%E5%B9%B4%E4%B8%80%E8%88%AC%E5%8F%82%E8%B3%802018-3_%2825578659078%29.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/%E6%96%B0%E5%B9%B4%E4%B8%80%E8%88%AC%E5%8F%82%E8%B3%802018-3_%2825578659078%29.jpg/500px-%E6%96%B0%E5%B9%B4%E4%B8%80%E8%88%AC%E5%8F%82%E8%B3%802018-3_%2825578659078%29.jpg" alt="新年一般參賀"></a><figcaption>新年一般參賀</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Imperial_Palace_Tokyo_Nijubashi_Bridge.JPG/960px-Imperial_Palace_Tokyo_Nijubashi_Bridge.JPG" alt="皇居二重橋"><figcaption>皇居二重橋</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Tokyo_Station_Marunouchi_Building_P5228787.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg/500px-Tokyo_Station_Marunouchi_Building_P5228787.jpg" alt="東京站 丸之內站舍"></a><figcaption>東京站 丸之內站舍</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:KITTE_Garden%2C_Tokyo%3B_September_2022_%2804%29.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/KITTE_Garden%2C_Tokyo%3B_September_2022_%2804%29.jpg/500px-KITTE_Garden%2C_Tokyo%3B_September_2022_%2804%29.jpg" alt="KITTE 屋上庭園"></a><figcaption>KITTE 屋上庭園</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Hegi_soba%2C_Kojima-ya%2C_Niigata_station.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Hegi_soba%2C_Kojima-ya%2C_Niigata_station.jpg/500px-Hegi_soba%2C_Kojima-ya%2C_Niigata_station.jpg" alt="片木蕎麥（示意）"></a><figcaption>片木蕎麥（示意）</figcaption></figure>
   </div>
 </article>
 
@@ -406,6 +425,12 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sansan%20Yuzawa%20Backpackers&amp;destination=%E3%82%80%E3%82%89%E3%82%93%E3%81%94%E3%81%A3%E3%81%A4%E3%81%89%20%E6%B9%AF%E6%B2%A2&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4%7C%E5%B1%B1%E3%81%AE%E6%B9%AF%20%E6%B9%AF%E6%B2%A2"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-03" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">Sansan → BOO → 岩原 → 山の湯 → 晚餐（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="wx" id="wx-2027-01-03"></div>
+  <div class="ph-hint">左右滑看更多・共 3 張</div>
+  <div class="photos">
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Snow_-_Yuzawa%2C_Niigata_-_DSC09411.JPG"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Snow_-_Yuzawa%2C_Niigata_-_DSC09411.JPG/500px-Snow_-_Yuzawa%2C_Niigata_-_DSC09411.JPG" alt="湯澤的雪"></a><figcaption>湯澤的雪</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Iwappara.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Iwappara.jpg/500px-Iwappara.jpg" alt="岩原滑雪場"></a><figcaption>岩原滑雪場</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Yuzawa_Nakazato_Snow_Resort_on_5_January_2020.JPG"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Yuzawa_Nakazato_Snow_Resort_on_5_January_2020.JPG/500px-Yuzawa_Nakazato_Snow_Resort_on_5_January_2020.JPG" alt="湯澤的雪場（中里，示意）"></a><figcaption>湯澤的雪場（中里，示意）</figcaption></figure>
+  </div>
 </article>
 
 <!-- ===== 1/4 ===== -->
@@ -442,6 +467,12 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sansan%20Yuzawa%20Backpackers&amp;destination=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&amp;waypoints=%E8%88%9E%E5%AD%90%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-04" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">Sansan → 舞子（接駁巴士）→ 車站晚餐（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="wx" id="wx-2027-01-04"></div>
+  <div class="ph-hint">左右滑看更多・共 3 張</div>
+  <div class="photos">
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Maiko_-_panoramio.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Maiko_-_panoramio.jpg/500px-Maiko_-_panoramio.jpg" alt="舞子"></a><figcaption>舞子</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Echigo-Yuzawa_Station_2018.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Echigo-Yuzawa_Station_2018.jpg/500px-Echigo-Yuzawa_Station_2018.jpg" alt="越後湯澤站"></a><figcaption>越後湯澤站</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Echigo-Yuzawa_Station_CoCoLo_Yuzawa.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Echigo-Yuzawa_Station_CoCoLo_Yuzawa.jpg/500px-Echigo-Yuzawa_Station_CoCoLo_Yuzawa.jpg" alt="CoCoLo 湯沢"></a><figcaption>CoCoLo 湯沢</figcaption></figure>
+  </div>
 </article>
 
 <!-- ===== 1/5 ===== -->
@@ -475,7 +506,10 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4&amp;destination=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85%7C%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-05" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">岩原 → BOO → 新幹線 → 石亭 → 思い出横丁（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="wx" id="wx-2027-01-05"></div>
+  <div class="ph-hint">左右滑看更多・共 4 張</div>
   <div class="photos">
+    <figure><a href="https://commons.wikimedia.org/wiki/File:20180122_Joetsu_Shinkansen-Uonogawa_Bridge.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/20180122_Joetsu_Shinkansen-Uonogawa_Bridge.jpg/500px-20180122_Joetsu_Shinkansen-Uonogawa_Bridge.jpg" alt="雪中的上越新幹線"></a><figcaption>雪中的上越新幹線</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Shin-Okubo_Station_-_2022_April_7_various.jpeg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Shin-Okubo_Station_-_2022_April_7_various.jpeg/500px-Shin-Okubo_Station_-_2022_April_7_various.jpeg" alt="新大久保站"></a><figcaption>新大久保站</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Shinjuku-West_Omoide-Yokocho.jpg/960px-Shinjuku-West_Omoide-Yokocho.jpg" alt="思い出横丁"><figcaption>思い出横丁</figcaption></figure>
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/2024-10-20_Shinjuku_Golden_Gai_at_night.jpg/960px-2024-10-20_Shinjuku_Golden_Gai_at_night.jpg" alt="新宿黃金街"><figcaption>新宿黃金街</figcaption></figure>
   </div>
@@ -525,8 +559,14 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%E9%A7%85&amp;destination=%E5%A4%A9%E3%81%B7%E3%82%89%E6%96%B0%E5%AE%BF%E3%81%A4%E3%81%AA%E5%85%AB%20%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%88%A5%E9%A4%A8&amp;waypoints=%E9%AB%98%E5%B0%BE%E5%B1%B1%E5%8F%A3%E9%A7%85%7C%E9%AB%98%E5%B0%BE%E5%B1%B1%20%E5%B1%B1%E9%A0%82%7C%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-06" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">新大久保 → 高尾山 → 都廳 → つな八（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="wx" id="wx-2027-01-06"></div>
+  <div class="ph-hint">左右滑看更多・共 6 張</div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Cab_view_on_Mount_Takao_funicular_2013-04-12.jpg/500px-Cab_view_on_Mount_Takao_funicular_2013-04-12.jpg" alt="高尾山纜車"><figcaption>高尾山纜車</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Yakuoin_Temple_%40_Mount_Takao_%2813778879464%29.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Yakuoin_Temple_%40_Mount_Takao_%2813778879464%29.jpg/500px-Yakuoin_Temple_%40_Mount_Takao_%2813778879464%29.jpg" alt="藥王院"></a><figcaption>藥王院</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Mount_Fuji_from_Mount_Takao_%289407396089%29.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Mount_Fuji_from_Mount_Takao_%289407396089%29.jpg/500px-Mount_Fuji_from_Mount_Takao_%289407396089%29.jpg" alt="從高尾山看富士山"></a><figcaption>從高尾山看富士山</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:%E3%81%A8%E3%82%8D%E3%82%8D%E3%81%9D%E3%81%B0%EF%BC%88%E9%AB%98%E5%B0%BE%E5%B1%B1%E8%95%8E%E9%BA%A6%E7%B4%85%E8%91%89%E5%B1%8B%EF%BC%8920221009-P1004526.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/%E3%81%A8%E3%82%8D%E3%82%8D%E3%81%9D%E3%81%B0%EF%BC%88%E9%AB%98%E5%B0%BE%E5%B1%B1%E8%95%8E%E9%BA%A6%E7%B4%85%E8%91%89%E5%B1%8B%EF%BC%8920221009-P1004526.jpg/500px-%E3%81%A8%E3%82%8D%E3%82%8D%E3%81%9D%E3%81%B0%EF%BC%88%E9%AB%98%E5%B0%BE%E5%B1%B1%E8%95%8E%E9%BA%A6%E7%B4%85%E8%91%89%E5%B1%8B%EF%BC%8920221009-P1004526.jpg" alt="高尾山 とろろそば"></a><figcaption>高尾山 とろろそば</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Keio-Takaosan-Onsen-Gokurakuyu.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Keio-Takaosan-Onsen-Gokurakuyu.jpg/500px-Keio-Takaosan-Onsen-Gokurakuyu.jpg" alt="京王高尾山溫泉 極樂湯"></a><figcaption>京王高尾山溫泉 極樂湯</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Night_view_from_the_Tokyo_Metropolitan_Government_Building%2C_20101002-005.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Night_view_from_the_Tokyo_Metropolitan_Government_Building%2C_20101002-005.jpg/500px-Night_view_from_the_Tokyo_Metropolitan_Government_Building%2C_20101002-005.jpg" alt="都廳展望室夜景"></a><figcaption>都廳展望室夜景</figcaption></figure>
   </div>
 </article>
 
@@ -556,8 +596,13 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D&amp;destination=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;waypoints=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%7CAFURI%20%E5%8E%9F%E5%AE%BF%7C%E6%96%B0%E5%AE%BF%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-07" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">石亭 → 明治神宮 → AFURI → 新宿 → 成田（地圖開啟後可切換大眾運輸看每段）</span>
   <div class="wx" id="wx-2027-01-07"></div>
+  <div class="ph-hint">左右滑看更多・共 5 張</div>
   <div class="photos">
     <figure><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Meiji_Jingu_Shrine_%40_Yoyogi_%2811931297683%29.jpg/960px-Meiji_Jingu_Shrine_%40_Yoyogi_%2811931297683%29.jpg" alt="明治神宮"><figcaption>明治神宮</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Meiji-jingu_Torii_1.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Meiji-jingu_Torii_1.jpg/500px-Meiji-jingu_Torii_1.jpg" alt="明治神宮 大鳥居"></a><figcaption>明治神宮 大鳥居</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Sake_barrels_at_Meiji_Shrine.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Sake_barrels_at_Meiji_Shrine.jpg/500px-Sake_barrels_at_Meiji_Shrine.jpg" alt="明治神宮 酒樽"></a><figcaption>明治神宮 酒樽</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Omotesando_Avenue_at_sunset_from_pedestrian_bridge%2C_Jingumae%2C_Shibuya%2C_Tokyo.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Omotesando_Avenue_at_sunset_from_pedestrian_bridge%2C_Jingumae%2C_Shibuya%2C_Tokyo.jpg/500px-Omotesando_Avenue_at_sunset_from_pedestrian_bridge%2C_Jingumae%2C_Shibuya%2C_Tokyo.jpg" alt="表參道"></a><figcaption>表參道</figcaption></figure>
+    <figure><a href="https://commons.wikimedia.org/wiki/File:Yuzu_Shio_Ramen_%40_Afuri_%40_Ebisu_%2814018053090%29.jpg"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Yuzu_Shio_Ramen_%40_Afuri_%40_Ebisu_%2814018053090%29.jpg/500px-Yuzu_Shio_Ramen_%40_Afuri_%40_Ebisu_%2814018053090%29.jpg" alt="AFURI 柚子鹽拉麵（惠比壽店）"></a><figcaption>AFURI 柚子鹽拉麵（惠比壽店）</figcaption></figure>
   </div>
 </article>
 </section>
@@ -709,16 +754,17 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <tr><td>Sansan 3 晚</td><td>NT$5,842（¥28,050）</td><td><span class="pill ok">已付</span></td></tr>
 <tr><td>toco 2 晚</td><td>NT$4,395</td><td><span class="pill info">12/28 扣款</span></td></tr>
 <tr><td>石亭 2 晚</td><td>NT$3,543</td><td><span class="pill info">1/1 扣款</span></td></tr>
-<tr><td>雪具 3 天（BOO）</td><td>¥18,500<br><small>（約 NT$3,850）</small></td><td><span class="pill warn">網路預約中</span></td></tr>
+<tr><td>雪具 3 天（BOO）</td><td>¥18,500<br><small>（約 NT$3,850）</small></td><td><span class="pill info">已確認・1/3 當天刷卡扣款</span></td></tr>
 <tr><td>岩原雪票 1/3（SURF&amp;SNOW 早割）</td><td>¥3,900（約 NT$810）</td><td><span class="pill ok">已付 10/29</span></td></tr>
 <tr><td>舞子雪票 1/4（早割）</td><td>¥4,600（NT$957）</td><td><span class="pill ok">已付 10/31</span></td></tr>
 <tr><td>岩原雪票 1/5（BOO）</td><td>¥3,800<br><small>（約 NT$790）</small></td><td>當天現金</td></tr>
 <tr><td>新幹線來回</td><td>約 ¥14,800<br><small>（約 NT$3,080）</small></td><td><span class="pill warn">12/2、12/5 開賣</span></td></tr>
+<tr><td>eSIM 8 日不限速（已買）</td><td>NT$426</td><td><span class="pill ok">已付 11/4</span></td></tr>
 <tr><td>Skyliner 優惠票＋N'EX</td><td>¥2,310＋¥3,330<br><small>（約 NT$1,170）</small></td><td><span class="pill warn">Skyliner 12/1 開賣</span></td></tr>
 <tr><td>餐飲、交通、門票</td><td>約 ¥48,000<br><small>（約 NT$10,000）</small></td><td></td></tr>
 <tr><td>伴手禮</td><td>約 ¥6,100（上限 ¥10,000）<br><small>（約 NT$1,270，上限 NT$2,080）</small></td><td>1/4、1/6 採買</td></tr>
 </table>
-<div class="small">預估總計（日幣以 1 円 ≈ NT$0.208 換算）約 NT$49,000（含伴手禮、1/4 舞子與溫泉、地酒）。已付約 NT$19,300（含雪票 1/3 約 NT$810、1/4 舞子 NT$957；1/3 實際以信用卡帳單為準）・待扣 NT$7,938。</div>
+<div class="small">預估總計（日幣以 1 円 ≈ NT$0.208 換算）約 NT$49,000（含伴手禮、1/4 舞子與溫泉、地酒）。已付約 NT$19,730（含雪票 1/3 約 NT$810、1/4 舞子 NT$957、eSIM NT$426；1/3 實際以信用卡帳單為準）・待扣 NT$7,938。</div>
 </div>
 <!--gear-log:aa71d3b9--><!--gear-start-->
 <div class="card scroll" id="gear-log">
@@ -758,11 +804,13 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <tr><td>Sansan 3 晚</td><td>NT$5,842</td></tr>
 <tr><td>岩原雪票 1/3（SURF&amp;SNOW 早割）</td><td>NT$810</td></tr>
 <tr><td>舞子雪票 1/4（早割）</td><td>NT$957</td></tr>
+<tr><td>eSIM 8 日不限速（已買）</td><td>NT$426</td></tr>
 <tr><td>自備裝備（2 項）</td><td>NT$969</td></tr>
-<tr><td><b>目前已花費</b></td><td><b>NT$20,263</b></td></tr>
+<tr><td><b>目前已花費</b></td><td><b>NT$20,689</b></td></tr>
 <tr><td>待扣：toco 2 晚（12/28 扣款）</td><td>NT$4,395</td></tr>
 <tr><td>待扣：石亭 2 晚（1/1 扣款）</td><td>NT$3,543</td></tr>
-<tr><td><b>扣款後合計</b></td><td><b>NT$28,201</b></td></tr>
+<tr><td>待扣：雪具 3 天（BOO）（已確認・1/3 當天刷卡扣款）</td><td>NT$3,850</td></tr>
+<tr><td><b>扣款後合計</b></td><td><b>NT$32,477</b></td></tr>
 <tr><td>預估整趟旅費（不含裝備）</td><td>約 NT$49,000</td></tr>
 </table>
 <div class="small">從上方預算表（狀態「已付」「扣款」）與自備裝備表自動加總；1/3 雪票台幣為估算，以帳單為準。</div>
@@ -774,22 +822,22 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 <h2><span class="no">卷十一</span>待確認・待辦</h2>
 <div class="card check" id="todolist">
 <div class="todo-h">要訂／要買</div>
-<label data-due="2026-11-01"><input type="checkbox"><span><b class="due">11/1 後</b>KKday eSIM（#144030 DOCOMO 吃到飽 8 日 NT$450，收到後 60 天內要用）</span></label>
+<label><input type="checkbox"><span><b class="due">✅ 11/4</b>eSIM 8 日不限速已買 NT$426；收到後 60 天內要開通，12/31 在成田落地後開就好</span></label>
 <label data-due="2026-11-01"><input type="checkbox"><span><b class="due">11/1</b>つな八 別館：TableCheck 最少 2 人 → 不訂，1/6 18:30 現場候位（備案 船橋屋）</span></label>
 <label data-due="2026-12-01"><input type="checkbox"><span><b class="due">12/1</b>買 Skyliner 外國旅客優惠票 ¥2,310（兌換要帶護照）</span></label>
 <label data-due="2026-12-01"><input type="checkbox"><span><b class="due">12/1</b>電話訂 むらんごっつぉ 1/3 19:00（<a href="tel:+81257843361">+81-25-784-3361</a>）</span></label>
 <label data-due="2026-12-02"><input type="checkbox"><span><b class="due">12/2</b>訂 Toki 1/2 東京 → 越後湯澤（JR-EAST Train Reservation）</span></label>
-<label data-due="2026-12-04"><input type="checkbox"><span><b class="due">12/4 前</b>岩原雪票：✅ 1/3 早割已買（¥3,900）；1/4、1/5 預設 BOO ¥3,800 現金，想全鎖定再加買 <a href="https://ec.surfsnow.jp/shopdetail/000000003246/">SURF&amp;SNOW 早割</a>（12/4 截止）</span></label>
+<label data-due="2026-12-04"><input type="checkbox"><span><b class="due">12/4 前</b>雪票：✅ 1/3 岩原早割（¥3,900）、✅ 1/4 舞子早割（¥4,600）都已買；1/5 在 BOO 買岩原 ¥3,800 現金</span></label>
 <label data-due="2026-12-05"><input type="checkbox"><span><b class="due">12/5</b>訂 Toki 1/5 越後湯澤 → 上野</span></label>
 <label data-due="2026-12-07"><input type="checkbox"><span><b class="due">12/7</b>訂 N'EX 1/7 新宿 → 成田</span></label>
 <label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>旅平險：確認休閒滑雪有承保（富邦需電話問）</span></label>
 <label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>寫信請石亭代收 1/5 送達的宅急便行李箱</span></label>
 <label data-due="2026-12-29"><input type="checkbox"><span><b class="due">出發前</b>換日幣約 ¥30,000、帶可感應付款的信用卡</span></label>
 <label data-due="2026-12-29"><input type="checkbox"><span><b class="due">12/29–30</b>酷航 TR874 線上報到；1/5–6 樂桃 MM625 線上報到</span></label>
-<label data-due="2026-12-30"><input type="checkbox"><span><b class="due">出發前</b>在手機按上方「存到這支手機」下載離線版</span></label>
 <div class="todo-h">等官方公布／再確認</div>
 <label data-due="2026-12-20"><input type="checkbox"><span><b class="due">12 月</b>皇居新年一般參賀 2027 時程（入場時間、出場次數）</span></label>
 <label data-due="2026-12-20"><input type="checkbox"><span><b class="due">12 月</b>岩原 2026–27 免費巴士班表（可能改預約制）</span></label>
+<label data-due="2026-12-03"><input type="checkbox"><span><b class="due">12/3</b>舞子 2026–27 接駁巴士 B 線時刻表（官網「準備中」，網站暫用去年平日班次）</span></label>
 <label data-due="2026-12-20"><input type="checkbox"><span><b class="due">12 月</b>東京國立博物館 2027 新年開館時間</span></label>
 <label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>大黑家天麩羅、淺草梅園 元旦是否營業</span></label>
 <label data-due="2026-12-24"><input type="checkbox"><span><b class="due">出發前</b>高尾山 髙橋家 冬休日期</span></label>
@@ -806,7 +854,7 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 
 <footer class="colophon">
   <div class="end">— 完 —</div>
-  照片來源：Wikimedia Commons（Syced CC0；Christophe95、Kakidai、MaedaAkihiko CC BY-SA 4.0；Nesnad、Wiiii、Chris 73、Dandy1022 CC BY-SA 3.0；Alexkom000 CC BY 4.0；Guilhem Vellut、Aapo Haapanen CC BY 2.0）。
+  照片來源：Wikimedia Commons（Syced CC0；Christophe95、Kakidai、MaedaAkihiko CC BY-SA 4.0；Nesnad、Wiiii、Chris 73、Dandy1022 CC BY-SA 3.0；Alexkom000 CC BY 4.0；Guilhem Vellut、Aapo Haapanen CC BY 2.0）。每日章節新增照片：Higa4、Syced、妖精書士、Ocdp（CC0）；Famifamifami、Abasaa（公有領域）；AMANO Jun-ichi（CC BY 3.0）；kolshica、MIKI Yoshihito、Dick Thomas Johnson、Guilhem Vellut、Rob Young（CC BY 2.0）；Nesnad、くろふね、gog.creator（CC BY 4.0）；TAKA@P.P.R.S、Yuki Shimazu（CC BY-SA 2.0）；ebio（CC BY-SA 3.0）；Kestrel、Rebirth10、Tyutyanya、Thirteen-fri、掬茶、Zairon、Grendelkhan（CC BY-SA 4.0）。點照片可看原始檔與授權。標「示意」的料理照片不是行程中的那家店。
 </footer>
 </main>
 <a href="#top" class="totop" id="totop" aria-label="回到頂端">↑</a>
