@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f6f1e7">
+<title>滑雪攻略｜雪國與東京 旅之書</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6f1e7;--ink:#2a2622;--sub:#6d655b;--line:#d9cfbf;--shu:#c8442f;--g:#2f8f5b;--b:#2f63b8;--k:#222;--card:#fffaf1}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 "Zen Kaku Gothic New",sans-serif;
+background-image:radial-gradient(rgba(120,100,70,.06) 1px,transparent 1px);background-size:5px 5px}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 80px}
+h1,h2,h3{font-family:"Shippori Mincho",serif;line-height:1.35;margin:0}
+h1{font-size:clamp(28px,6vw,42px);font-weight:800}
+h1 small{display:block;font-size:15px;color:var(--shu);letter-spacing:.2em;font-family:"Zen Kaku Gothic New";font-weight:700;margin-bottom:6px}
+.lead{color:var(--sub);margin:12px 0 0}
+h2{font-size:24px;margin:48px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink);display:flex;gap:10px;align-items:baseline}
+h2 .n{color:var(--shu);font-size:15px;font-family:"Zen Kaku Gothic New";font-weight:700}
+h3{font-size:18px;margin:22px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.note{font-size:13px;color:var(--sub)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:1px 8px;border-radius:99px;color:#fff;margin-right:4px;vertical-align:2px}
+.tg{background:var(--g)}.tb{background:var(--b)}.tk{background:var(--k)}.ts{background:var(--shu)}
+svg{width:100%;height:auto;display:block}
+.svgbox{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:700;color:var(--sub);font-size:12px;letter-spacing:.05em}
+.tl{border-left:3px solid var(--shu);margin:10px 0 0 6px;padding-left:16px}
+.tl div{position:relative;margin:0 0 10px}
+.tl div::before{content:"";position:absolute;left:-23px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:3px solid var(--shu)}
+.alt{background:#fbf3e3;border:1px dashed #d9b77a;border-radius:8px;padding:6px 10px;font-size:14px}
+.tl .alt::before{border-color:#d9b77a}
+.tl b{font-family:"Shippori Mincho";color:var(--shu);margin-right:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.ok li::marker{content:"✓ ";color:var(--g)} .ng li::marker{content:"✕ ";color:var(--shu)}
+ul{padding-left:20px;margin:6px 0}
+.drill{counter-reset:d}.drill li{list-style:none;position:relative;padding-left:34px;margin:8px 0}
+.drill li::before{counter-increment:d;content:counter(d);position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;text-align:center;line-height:24px}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.dcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.dhd{font-family:"Shippori Mincho";font-weight:800;font-size:19px;display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.dhd small{font-family:"Zen Kaku Gothic New";font-weight:500;font-size:12px;color:var(--sub);margin-left:auto}
+.dn{width:26px;height:26px;border-radius:50%;background:var(--shu);color:#fff;font:700 14px/26px "Zen Kaku Gothic New";text-align:center}
+.dcard svg{background:#fff;border-radius:6px;margin:4px 0 8px}
+.dcard ul{font-size:14px;margin:0 0 8px}
+.pass{font-size:13px;font-weight:700;color:var(--g);background:#e4f1e9;border-radius:6px;padding:4px 10px}
+.ro{font-size:.45em;color:var(--sub);font-family:"Zen Kaku Gothic New";font-weight:500;letter-spacing:.05em}
+.pagetabs{position:sticky;top:0;z-index:20;display:flex;gap:6px;margin:0 -16px 18px;padding:10px 16px 8px;background:rgba(246,241,231,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.pagetabs a{flex:1;text-align:center;font:700 15px "Zen Kaku Gothic New",sans-serif;padding:7px 0;border-radius:10px;border:1px solid var(--line);color:#433d35;text-decoration:none;background:var(--card)}
+.pagetabs a.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pagetabs a:not(.on):hover{border-color:var(--shu);color:var(--shu)}
+[id^="d01"]{scroll-margin-top:70px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="pagetabs" aria-label="分頁"><a href="./">📖 行程</a><a class="on" href="ski.html" aria-current="page">🏂 滑雪攻略</a></nav>
+
+<header>
+<h1><small>SNOWBOARD ROUTE GUIDE</small>岩原 <span class="ro">Iwappara</span>・舞子 <span class="ro">Maiko</span> 三日滑行攻略</h1>
+<p class="lead">給「單板滑過 2 次、不請教練」的你。1/3 岩原全天 → 1/4 舞子全天 → 1/5 岩原半天。目標：三天內從「能下來」進步到「能穩定連續轉彎、滑完一條長距離雪道」。</p>
+<p class="note">地圖為示意圖（非比例），用來理解相對位置與路線邏輯；纜車編號與實際開放雪道以當天現場地圖、看板為準。1 月初屬季初，上方雪道可能尚未全開。</p>
+</header>
+
+<!-- ============ 1 ============ -->
+<h2><span class="n">01</span>三天的進步曲線</h2>
+<div class="svgbox">
+<svg viewBox="0 0 720 260" role="img" aria-label="三天技能進步階梯">
+ <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c8442f"/></marker></defs>
+ <g font-family="Zen Kaku Gothic New" font-size="13" fill="#2a2622">
+  <line x1="40" y1="225" x2="700" y2="225" stroke="#d9cfbf"/>
+  <!-- steps -->
+  <rect x="50"  y="175" width="140" height="50" fill="#e4f1e9" stroke="#2f8f5b"/>
+  <rect x="200" y="140" width="140" height="85" fill="#d3eadc" stroke="#2f8f5b"/>
+  <rect x="350" y="100" width="140" height="125" fill="#d7e2f3" stroke="#2f63b8"/>
+  <rect x="500" y="70"  width="190" height="155" fill="#f5dfd8" stroke="#c8442f"/>
+  <text x="120" y="196" text-anchor="middle" font-weight="700">1/3 上午</text>
+  <text x="120" y="214" text-anchor="middle" font-size="12">找回感覺・側滑・落葉</text>
+  <text x="270" y="162" text-anchor="middle" font-weight="700">1/3 下午</text>
+  <text x="270" y="180" text-anchor="middle" font-size="12">換刃・連續轉彎</text>
+  <text x="270" y="198" text-anchor="middle" font-size="12">Wide／Grand 反覆</text>
+  <text x="420" y="122" text-anchor="middle" font-weight="700">1/4 舞子</text>
+  <text x="420" y="140" text-anchor="middle" font-size="12">換場地・坡長變長</text>
+  <text x="420" y="158" text-anchor="middle" font-size="12">パラダイス (Paradaisu) → ランラン (Ran-ran)</text>
+  <text x="595" y="92" text-anchor="middle" font-weight="700">1/5 岩原半天</text>
+  <text x="595" y="110" text-anchor="middle" font-size="12">驗收：山頂經 Cruise</text>
+  <text x="595" y="128" text-anchor="middle" font-size="12">一路滑回中腹，不摔</text>
+  <text x="595" y="146" text-anchor="middle" font-size="12" fill="#c8442f">12:15 收板，不加碼</text>
+  <path d="M60 165 Q 300 120 680 55" fill="none" stroke="#c8442f" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+ </g>
+</svg>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2><span class="n">02</span>坡度：你的安全區在哪</h2>
+<p>新手單板的舒適區大約在 <b>最大 15° 以下</b>；15–20° 是「轉得過來就能滑、轉不過來會很累」；20° 以上先別碰。下面是兩場地有公布坡度、跟你有關的雪道（最大坡度）。</p>
+<div class="svgbox">
+<svg viewBox="0 0 740 440" role="img" aria-label="各雪道最大坡度比較">
+ <g font-family="Zen Kaku Gothic New" font-size="13" fill="#2a2622">
+  <!-- zones: x = 190 + deg*14 -->
+  <rect x="250" y="10" width="195" height="400" fill="#e4f1e9"/>
+  <rect x="445" y="10" width="65" height="400" fill="#f3ecd9"/>
+  <rect x="510" y="10" width="225" height="400" fill="#f5dfd8"/>
+  <text x="347" y="28" text-anchor="middle" font-size="12" fill="#2f8f5b" font-weight="700">舒適區 ≤15°</text>
+  <text x="477" y="28" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">挑戰</text>
+  <text x="620" y="28" text-anchor="middle" font-size="12" fill="#c8442f" font-weight="700">先不要</text>
+  <g id="bars">
+   <!-- label, deg, color -->
+  </g>
+  <text x="250" y="430" font-size="11" fill="#6d655b" text-anchor="middle">0°</text>
+  <text x="445" y="430" font-size="11" fill="#6d655b" text-anchor="middle">15°</text>
+  <text x="510" y="430" font-size="11" fill="#6d655b" text-anchor="middle">20°</text>
+  <text x="575" y="430" font-size="11" fill="#6d655b" text-anchor="middle">25°</text>
+  <text x="705" y="430" font-size="11" fill="#6d655b" text-anchor="middle">35°</text>
+ </g>
+</svg>
+</div>
+<p class="note">「最大坡度」通常只是其中一小段；例如 Cruise 最大 12°、最小 7°，平坦段反而是單板的難點（見 05）。舞子多數初級道官方只公布長度，未列坡度者不放進圖。</p>
+
+<!-- ============ 3 ============ -->
+<h2><span class="n">03</span>1/3・1/5 岩原 (Iwappara)</h2>
+<div class="card">
+<b>場地性格：</b>岩原的強項是<b>中腹一大片寬又緩的斜面</b>（最寬約 500 m），新手可以在這裡無壓力反覆練轉彎；而且 <b>Cruise Course 讓初級者也能從山頂一路滑下來</b>（1,600 m，林間道）。BOO 接送會停在中腹的 RC2（更衣室、置物櫃、いわっぱらの湯 (Iwappara no Yu)都在這），所以你整天基本上都在中腹以上活動，不需要下到山腳 RC1。
+</div>
+<div class="svgbox">
+<svg viewBox="0 0 720 520" role="img" aria-label="岩原滑雪場示意圖">
+ <g font-family="Zen Kaku Gothic New" font-size="13" fill="#2a2622">
+  <!-- mountain -->
+  <path d="M10 500 L250 70 Q 330 30 410 70 L710 500 Z" fill="#f2f6fa" stroke="#c9d4df"/>
+  <!-- forest band left -->
+  <g fill="#9cc4a6" opacity=".7">
+   <circle cx="150" cy="300" r="9"/><circle cx="170" cy="270" r="8"/><circle cx="130" cy="335" r="9"/><circle cx="190" cy="240" r="8"/><circle cx="115" cy="370" r="9"/><circle cx="205" cy="205" r="8"/><circle cx="160" cy="345" r="7"/><circle cx="185" cy="300" r="7"/>
+  </g>
+  <text x="70" y="250" font-size="11" fill="#2f8f5b">森林區</text>
+  <!-- summit -->
+  <circle cx="330" cy="62" r="6" fill="#2a2622"/>
+  <text x="345" y="58" font-weight="700">山頂 985m</text>
+  <!-- Cruise green long -->
+  <path d="M325 70 C 250 110, 230 160, 215 210 S 160 300, 150 340 S 210 390, 270 360" fill="none" stroke="#2f8f5b" stroke-width="5" stroke-linecap="round"/>
+  <text x="80" y="200" fill="#2f8f5b" font-weight="700">16 Cruise</text>
+  <text x="80" y="216" fill="#2f8f5b" font-size="11">1,600m｜初級・最大12°</text>
+  <!-- expert right -->
+  <path d="M340 72 C 400 140, 430 200, 470 260" fill="none" stroke="#222" stroke-width="4"/>
+  <path d="M350 75 C 430 130, 480 180, 540 250" fill="none" stroke="#222" stroke-width="4"/>
+  <text x="520" y="160" font-weight="700">12 Giant／15 Technical</text>
+  <text x="520" y="176" font-size="11">上級 35°・不要誤入</text>
+  <!-- Sky blue -->
+  <path d="M335 75 C 330 150, 330 220, 360 300" fill="none" stroke="#2f63b8" stroke-width="4"/>
+  <text x="365" y="200" fill="#2f63b8" font-weight="700">13 Sky</text>
+  <text x="365" y="216" fill="#2f63b8" font-size="11">中級 25°</text>
+  <!-- mid wide zone -->
+  <ellipse cx="330" cy="370" rx="150" ry="45" fill="#bfe3cc" stroke="#2f8f5b" stroke-width="2"/>
+  <text x="330" y="362" text-anchor="middle" font-weight="700" fill="#1f6b43">中腹 寬緩斜面</text>
+  <text x="330" y="380" text-anchor="middle" font-size="12" fill="#1f6b43">3 Wide Bahn・2 Grand Bahn・4 Smile</text>
+  <text x="330" y="396" text-anchor="middle" font-size="11" fill="#1f6b43">10–14°｜你的主練習場</text>
+  <!-- RC2 -->
+  <rect x="455" y="400" width="90" height="34" rx="6" fill="#c8442f"/>
+  <text x="500" y="422" text-anchor="middle" fill="#fff" font-weight="700">RC2 中腹</text>
+  <text x="555" y="414" font-size="11" fill="#c8442f">BOO 接送下車</text>
+  <text x="555" y="428" font-size="11" fill="#c8442f">更衣・置物・溫泉</text>
+  <!-- lift from mid to summit -->
+  <line x1="420" y1="350" x2="338" y2="72" stroke="#c8442f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="470" y="305" font-size="11" fill="#c8442f">往山頂纜車（現場確認）</text>
+  <!-- RC1 base -->
+  <path d="M300 410 C 290 440, 300 460, 310 480" fill="none" stroke="#2f63b8" stroke-width="4"/>
+  <text x="200" y="455" fill="#2f63b8" font-size="12">1 Main Bahn 往山腳</text>
+  <rect x="270" y="478" width="90" height="28" rx="6" fill="#2a2622"/>
+  <text x="315" y="497" text-anchor="middle" fill="#fff" font-size="12">RC1 山腳 400m</text>
+ </g>
+</svg>
+</div>
+<p class="note">雪道編號依官方 gelande 頁。哪一條纜車上 Wide／Grand、哪一條到山頂，請在 RC2 拿紙本地圖或看大看板確認（第一趟就先搞清楚）。</p>
+
+<h3 id="d0103">1/3 全天（BOO 07:00 出發、15:30 接回）</h3>
+<div class="tl">
+ <div><b>08:30</b>RC2 換好裝、寄物。先在平地單腳滑行、上下纜車練 2–3 次。</div>
+ <div><b>09:00–10:30</b>中腹 <span class="tag tg">初</span>Wide Bahn（最緩 6°）：後刃側滑 → 落葉飄（左右移動）→ 前刃側滑。</div>
+ <div><b>10:30–11:30</b>Grand／Smile：花環轉（同一刃左右拉 C 形）→ 嘗試第一個換刃。</div>
+ <div><b>11:30</b>早點吃午餐（RC2 或スノーマンズ (Sunōmanzu)），避開 12:00 人潮。</div>
+ <div><b>12:30–14:30</b>回 Wide／Smile 反覆練<b>連續轉彎</b>，一趟目標「不停地轉 6 次以上」。</div>
+ <div><b>14:30</b>若連續轉彎 OK、雙腿還有力 → 上山頂走 <span class="tag tg">初</span>Cruise 一趟；不 OK 就繼續中腹。</div>
+ <div><b>15:15</b>收板回 RC2，15:30 BOO 接回 Sansan，雪具放乾燥室。</div>
+ <div class="alt"><b>想多滑</b>滑到約 17:00（白天纜車到 17:00），搭<b>岩原免費接駁</b> RC2 → 越後湯澤站東口（上季年末年始末班 <b>18:20</b>，免預約、可帶板），再走 5 分到 Sansan。記得當天 LINE 告訴 BOO 不用 15:30 接。</div>
+</div>
+
+<h3 id="d0105">1/5 半天（BOO 07:45 接、12:30–13:00 回）</h3>
+<div class="tl">
+ <div><b>08:30–09:30</b>中腹 2–3 趟暖身（同 1/3 的動作快速過一遍）。</div>
+ <div><b>09:30–11:30</b>本日主菜：山頂 → Cruise → 中腹，重複 2–3 趟。人少、雪也最好。</div>
+ <div><b>11:30–12:15</b>中腹輕鬆滑，<b>最後一趟不加碼</b>，12:15 收板。下午要搭 Toki 回東京，別在最後一天受傷。</div>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="d0104"><span class="n">04</span>1/4 舞子 (Maiko)</h2>
+<div class="card">
+<b>場地性格：</b>舞子比岩原大得多，分成三區：<b>舞子</b>（山腳、日帰りスキーセンター (Higaeri Sukī Sentā)所在）、<b>長峰 (Nagamine)</b>、最上方的<b>奥添地 (Okusoechi)</b>。初級道多但<b>彎道多、需要一點轉彎能力</b>；上級道常有短陡段。最大亮點是 <b>ランラン (Ran-ran) 6,000 m 長距離初級道</b>（平均 6°），從山頂一路滑到山下要 40–60 分鐘。
+</div>
+<div class="svgbox">
+<svg viewBox="0 0 720 540" role="img" aria-label="舞子滑雪場示意圖">
+ <g font-family="Zen Kaku Gothic New" font-size="13" fill="#2a2622">
+  <path d="M10 520 L230 60 Q 300 30 380 60 L710 520 Z" fill="#f2f6fa" stroke="#c9d4df"/>
+  <!-- zones -->
+  <ellipse cx="300" cy="120" rx="140" ry="48" fill="#e8eef7" stroke="#9fb2cf"/>
+  <text x="300" y="105" text-anchor="middle" font-weight="700">奥添地 (Okusoechi) 920m</text>
+  <text x="300" y="122" text-anchor="middle" font-size="11">ルンルン (Run-run)・ラクラク (Raku-raku)（初）</text>
+  <text x="300" y="137" text-anchor="middle" font-size="11">風大，先在纜車內戴好雪鏡</text>
+  <ellipse cx="200" cy="300" rx="110" ry="50" fill="#eef1ea" stroke="#b8c4a8"/>
+  <text x="200" y="295" text-anchor="middle" font-weight="700">長峰 (Nagamine)</text>
+  <text x="200" y="312" text-anchor="middle" font-size="10">チョイチョイ (Choi-choi)（初）・ガンガン (Gan-gan)（上）</text>
+  <ellipse cx="470" cy="420" rx="190" ry="70" fill="#bfe3cc" stroke="#2f8f5b" stroke-width="2"/>
+  <text x="480" y="392" text-anchor="middle" font-weight="700" fill="#1f6b43">舞子區 初級群</text>
+  <text x="480" y="410" text-anchor="middle" font-size="12" fill="#1f6b43">パラダイス (Paradaisu) 10°・ファミリー (Famirī)</text>
+  <text x="480" y="426" text-anchor="middle" font-size="12" fill="#1f6b43">キンダー (Kindā)・バンビ (Banbi)</text>
+  <text x="480" y="442" text-anchor="middle" font-size="12" fill="#1f6b43">イージー (Ījī)・ロマンス (Romansu)</text>
+  <!-- RanRan -->
+  <path d="M290 165 C 330 220, 330 270, 320 320 S 270 400, 270 500" fill="none" stroke="#2f8f5b" stroke-width="5" stroke-linecap="round"/>
+  <text x="30" y="215" fill="#2f8f5b" font-weight="700">ランラン (Ran-ran) 6,000m</text>
+  <text x="30" y="231" fill="#2f8f5b" font-size="11">平均 6°｜岔路多、跟著指標</text>
+  <!-- gondola -->
+  <line x1="380" y1="470" x2="310" y2="140" stroke="#c8442f" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <text x="395" y="215" fill="#c8442f" font-weight="700">A ゴンドラ (Gondora)</text>
+  <text x="395" y="231" fill="#c8442f" font-size="11">2,800m・約 20 分</text>
+  <text x="395" y="246" fill="#c8442f" font-size="11">（乘車口位置現場確認）</text>
+  <!-- day center -->
+  <rect x="440" y="478" width="270" height="32" rx="6" fill="#c8442f"/>
+  <text x="575" y="499" text-anchor="middle" fill="#fff" font-weight="700" font-size="12">日帰りスキーセンター (Higaeri Sukī Sentā)</text>
+  <text x="440" y="528" font-size="11" fill="#c8442f">免費接駁回湯澤 15:30–17:40（上季）</text>
+  <!-- upper advanced -->
+  <path d="M395 130 C 470 150, 540 180, 620 230" fill="none" stroke="#222" stroke-width="4"/>
+  <text x="560" y="258" font-weight="700">グングン (Gun-gun)</text>
+  <text x="560" y="276" font-weight="700">ゾクゾク (Zoku-zoku)</text>
+  <text x="560" y="292" font-size="11">上級・避開</text>
+ </g>
+</svg>
+</div>
+<p class="note">三區相對位置與纜車路線為示意；舞子官方地圖區塊多、岔路多，到日帰りセンター (Higaeri Sentā)先拿一份紙本地圖，用手機拍下來。</p>
+
+<h3>1/4 全天（08:00 東口接駁出發、15:30 接駁回）</h3>
+<div class="tl">
+ <div><b>08:30</b>到日帰りセンター (Higaeri Sentā)：My Page 開 QR → 售票機換票卡；更衣、寄物。</div>
+ <div><b>09:00–10:30</b>舞子區 <span class="tag tg">初</span>パラダイス (Paradaisu)（寬、10°）暖身 + 複習昨天的連續轉彎，再滑 ファミリー (Famirī)／キンダー (Kindā)（930m）適應「彎道雪道」。</div>
+ <div><b>10:30</b>判斷點：パラダイス (Paradaisu) 能連續轉彎下來、不靠側滑救場 → 往下一步；否則今天就在舞子區把初級道一條條滑過。</div>
+ <div><b>10:45</b>搭 ゴンドラ (Gondora) 上奥添地 (Okusoechi)（約 20 分，在車廂裡戴好雪鏡、拉好脖圍）。山頂只有 1 間廁所、沒販賣機，上山前先去。</div>
+ <div><b>11:05–12:00</b>ランラン (Ran-ran) 長滑一趟，<b>中途找寬處休息</b>，跟著 ランラン (Ran-ran) 指標不轉進岔路。</div>
+ <div><b>12:00</b>回到山下吃午餐（或 11:15 先吃再上山，避開人潮）。</div>
+ <div><b>13:00–14:45</b>喜歡就再一趟 ランラン (Ran-ran)；累了就在 パラダイス (Paradaisu) 練。</div>
+ <div><b>14:45</b>最後一趟結束、回センター換裝，搭 15:30 接駁回湯澤。</div>
+ <div class="alt"><b>想多滑</b>平日纜車 <b>16:45</b> 關（1/4 無夜滑）。16:15 收板 → 搭 <b>16:40 或 17:00</b> 接駁（上季平日回程：15:30、16:00、16:20、16:40、17:00、17:20、17:40）。錯過末班 → 計程車約 20 分、約 ¥4,000–5,000（估計）。</div>
+</div>
+
+<!-- drills -->
+<h2><span class="n">05</span>練習卡：照順序一張一張練</h2>
+<p>左邊是<b>側面姿勢</b>（虛線＝視線方向），右邊是<b>從上往下看的軌跡動畫</b>（黑色＝板子，紅線＝板子走過的路線，會自動重播）。<br><span class="tag" style="background:#2f63b8">L</span>＝左腳端、<span class="tag" style="background:#e0a21b">R</span>＝右腳端（以 regular 左腳在前為例；若你是 goofy 右腳在前，L／R 對調）。轉彎時永遠是前腳那端先走。一張練到「過關」再換下一張。</p>
+<div class="dgrid">
+<div class="dcard"><div class="dhd"><span class="dn">1</span>起身<small>Standing up</small></div><svg viewBox="0 0 340 182" font-family="Zen Kaku Gothic New" fill="#2a2622"><defs><marker id="dn" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9fb2cf"/></marker><marker id="gn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f8f5b"/></marker></defs><g transform="translate(4,22) scale(0.86)"><path d="M8 40 L150 150 L150 180 L8 180Z" fill="#eef3f8"/><line x1="8" y1="40" x2="150" y2="150" stroke="#9fb2cf" stroke-width="2"/><text x="14" y="34" font-size="10" fill="#6d655b">山上</text><text x="120" y="174" font-size="10" fill="#6d655b">山下</text><rect x="56" y="97" width="44" height="6" rx="3" fill="#c8442f" transform="rotate(-14 78 99)"/><polyline points="78,97 80,73 60,83 68,53" fill="none" stroke="#2a2622" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="68" y1="53" x2="48" y2="72" stroke="#2a2622" stroke-width="3" stroke-linecap="round"/><circle cx="74" cy="41" r="8" fill="#2a2622"/></g><text x="78" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#2a2622">坐在後刃上</text><rect x="168" y="22" width="166" height="152" rx="6" fill="#f7fafc" stroke="#d9cfbf"/><line x1="324" y1="34" x2="324" y2="160" stroke="#9fb2cf" stroke-width="1.5" marker-end="url(#dn)"/><text x="318" y="170" font-size="9" fill="#6d655b" text-anchor="end">往山下</text><text x="251" y="16" text-anchor="middle" font-size="11" font-weight="700">坐 → 站</text><path d="M190 120 q 20 -50 50 -45" fill="none" stroke="#2f8f5b" stroke-width="2" marker-end="url(#gn)"/><rect x="188" y="126" width="34" height="8" rx="4" fill="#2a2622" opacity="0.2" transform="rotate(0 205 130)"/><rect x="253" y="66" width="34" height="8" rx="4" fill="#2a2622" opacity="0.2" transform="rotate(0 270 70)"/><path d="M205 130 C 215 95, 240 72, 270 70" fill="none" stroke="#c8442f" stroke-width="2.5" opacity=".18"/><path d="M205 130 C 215 95, 240 72, 270 70" fill="none" stroke="#c8442f" stroke-width="2.5" pathLength="1" stroke-dasharray="1 1"><animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;.85;1" dur="3s" repeatCount="indefinite"/></path><g><rect x="-19" y="-5" width="38" height="10" rx="5" fill="#2a2622"/><circle cx="12" cy="0" r="5.5" fill="#2f63b8"/><text x="12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">L</text><circle cx="-12" cy="0" r="5.5" fill="#e0a21b"/><text x="-12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">R</text><animateMotion dur="3s" repeatCount="indefinite" rotate="0" keyPoints="0;1;1" keyTimes="0;.85;1" calcMode="linear" path="M205 130 C 215 95, 240 72, 270 70"/></g><text x="200" y="152" font-size="10" fill="#6d655b">坐姿</text><text x="262" y="95" font-size="10" fill="#6d655b">站起</text></svg><ul><li>板子橫放、垂直於下坡方向（不然一站起來就滑走）</li><li>後刃踩進雪裡，一手撐雪、往前拉膝蓋把屁股抬起</li><li>站穩再看山下</li></ul><div class="pass">過關：不靠別人、3 秒內站起</div></div>
+<div class="dcard"><div class="dhd"><span class="dn">2</span>後刃側滑<small>Heel-side slip</small></div><svg viewBox="0 0 340 182" font-family="Zen Kaku Gothic New" fill="#2a2622"><defs><marker id="dn" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9fb2cf"/></marker><marker id="gn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f8f5b"/></marker></defs><g transform="translate(4,22) scale(0.86)"><path d="M8 40 L150 150 L150 180 L8 180Z" fill="#eef3f8"/><line x1="8" y1="40" x2="150" y2="150" stroke="#9fb2cf" stroke-width="2"/><text x="14" y="34" font-size="10" fill="#6d655b">山上</text><text x="120" y="174" font-size="10" fill="#6d655b">山下</text><rect x="56" y="97" width="44" height="6" rx="3" fill="#c8442f" transform="rotate(-14 78 99)"/><polyline points="78,97 88,77 75,59 83,33" fill="none" stroke="#2a2622" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="83" y1="33" x2="102" y2="49" stroke="#2a2622" stroke-width="3" stroke-linecap="round"/><circle cx="87" cy="21" r="8" fill="#2a2622"/><line x1="99" y1="21" x2="127" y2="29" stroke="#c8442f" stroke-width="1.5" stroke-dasharray="3 3"/></g><text x="78" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#2a2622">面向山下・重心在腳跟</text><rect x="168" y="22" width="166" height="152" rx="6" fill="#f7fafc" stroke="#d9cfbf"/><line x1="324" y1="34" x2="324" y2="160" stroke="#9fb2cf" stroke-width="1.5" marker-end="url(#dn)"/><text x="318" y="170" font-size="9" fill="#6d655b" text-anchor="end">往山下</text><text x="251" y="16" text-anchor="middle" font-size="11" font-weight="700">軌跡：直直往下</text><line x1="246" y1="45" x2="246" y2="128" stroke="#c8442f" stroke-width="2" stroke-dasharray="3 4" opacity=".4"/><g><rect x="227" y="40" width="38" height="10" rx="5" fill="#2a2622"/><circle cx="258" cy="45" r="5.5" fill="#2f63b8"/><text x="258" y="47.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">L</text><circle cx="234" cy="45" r="5.5" fill="#e0a21b"/><text x="234" y="47.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">R</text><animateTransform attributeName="transform" type="translate" values="0 0;0 83;0 83" keyTimes="0;.8;1" dur="4s" repeatCount="indefinite"/></g><line x1="280" y1="50" x2="280" y2="130" stroke="#2f8f5b" stroke-width="2" marker-end="url(#gn)"/><text x="196" y="160" font-size="10" fill="#6d655b">板子橫著、整片往下</text></svg><ul><li>面向山下，膝蓋彎、屁股不要往後坐</li><li>腳跟慢慢放鬆 → 往下滑；腳跟壓 → 停</li><li>手放前面、視線看遠方</li></ul><div class="pass">過關：能在想停的地方停下來</div></div>
+<div class="dcard"><div class="dhd"><span class="dn">3</span>前刃側滑<small>Toe-side slip</small></div><svg viewBox="0 0 340 182" font-family="Zen Kaku Gothic New" fill="#2a2622"><defs><marker id="dn" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9fb2cf"/></marker><marker id="gn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f8f5b"/></marker></defs><g transform="translate(4,22) scale(0.86)"><path d="M8 40 L150 150 L150 180 L8 180Z" fill="#eef3f8"/><line x1="8" y1="40" x2="150" y2="150" stroke="#9fb2cf" stroke-width="2"/><text x="14" y="34" font-size="10" fill="#6d655b">山上</text><text x="120" y="174" font-size="10" fill="#6d655b">山下</text><rect x="56" y="97" width="44" height="6" rx="3" fill="#c8442f" transform="rotate(-14 78 99)"/><polyline points="78,97 68,77 81,59 73,33" fill="none" stroke="#2a2622" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="73" y1="33" x2="54" y2="49" stroke="#2a2622" stroke-width="3" stroke-linecap="round"/><circle cx="69" cy="21" r="8" fill="#2a2622"/><line x1="57" y1="21" x2="29" y2="29" stroke="#c8442f" stroke-width="1.5" stroke-dasharray="3 3"/></g><text x="78" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#2a2622">面向山上・重心在腳尖</text><rect x="168" y="22" width="166" height="152" rx="6" fill="#f7fafc" stroke="#d9cfbf"/><line x1="324" y1="34" x2="324" y2="160" stroke="#9fb2cf" stroke-width="1.5" marker-end="url(#dn)"/><text x="318" y="170" font-size="9" fill="#6d655b" text-anchor="end">往山下</text><text x="251" y="16" text-anchor="middle" font-size="11" font-weight="700">軌跡：直直往下</text><line x1="246" y1="45" x2="246" y2="128" stroke="#c8442f" stroke-width="2" stroke-dasharray="3 4" opacity=".4"/><g><rect x="227" y="40" width="38" height="10" rx="5" fill="#2a2622"/><circle cx="234" cy="45" r="5.5" fill="#2f63b8"/><text x="234" y="47.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">L</text><circle cx="258" cy="45" r="5.5" fill="#e0a21b"/><text x="258" y="47.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">R</text><animateTransform attributeName="transform" type="translate" values="0 0;0 83;0 83" keyTimes="0;.8;1" dur="4s" repeatCount="indefinite"/></g><line x1="280" y1="50" x2="280" y2="130" stroke="#2f8f5b" stroke-width="2" marker-end="url(#gn)"/><text x="196" y="160" font-size="10" fill="#6d655b">背對山下、整片往下</text></svg><ul><li>面向山坡，膝蓋往坡面頂</li><li>腳尖放鬆 → 滑；腳尖壓 → 停</li><li>不要回頭看太久，用餘光看下方</li></ul><div class="pass">過關：前後刃都能穩穩側滑</div></div>
+<div class="dcard"><div class="dhd"><span class="dn">4</span>落葉飄<small>Falling leaf</small></div><svg viewBox="0 0 340 182" font-family="Zen Kaku Gothic New" fill="#2a2622"><defs><marker id="dn" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9fb2cf"/></marker><marker id="gn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f8f5b"/></marker></defs><g transform="translate(4,22) scale(0.86)"><path d="M8 40 L150 150 L150 180 L8 180Z" fill="#eef3f8"/><line x1="8" y1="40" x2="150" y2="150" stroke="#9fb2cf" stroke-width="2"/><text x="14" y="34" font-size="10" fill="#6d655b">山上</text><text x="120" y="174" font-size="10" fill="#6d655b">山下</text><rect x="56" y="97" width="44" height="6" rx="3" fill="#c8442f" transform="rotate(-14 78 99)"/><polyline points="78,97 88,77 75,59 83,33" fill="none" stroke="#2a2622" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="83" y1="33" x2="102" y2="49" stroke="#2a2622" stroke-width="3" stroke-linecap="round"/><circle cx="87" cy="21" r="8" fill="#2a2622"/><line x1="99" y1="21" x2="127" y2="29" stroke="#c8442f" stroke-width="1.5" stroke-dasharray="3 3"/></g><text x="78" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#2a2622">後刃・視線看要去的方向</text><rect x="168" y="22" width="166" height="152" rx="6" fill="#f7fafc" stroke="#d9cfbf"/><line x1="324" y1="34" x2="324" y2="160" stroke="#9fb2cf" stroke-width="1.5" marker-end="url(#dn)"/><text x="318" y="170" font-size="9" fill="#6d655b" text-anchor="end">往山下</text><text x="251" y="16" text-anchor="middle" font-size="11" font-weight="700">軌跡：左右來回、慢慢往下</text><path d="M190 40 L310 75 L190 110 L310 145" fill="none" stroke="#c8442f" stroke-width="2.5" opacity=".18"/><path d="M190 40 L310 75 L190 110 L310 145" fill="none" stroke="#c8442f" stroke-width="2.5" pathLength="1" stroke-dasharray="1 1"><animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;.85;1" dur="6s" repeatCount="indefinite"/></path><g><rect x="-19" y="-5" width="38" height="10" rx="5" fill="#2a2622"/><circle cx="12" cy="0" r="5.5" fill="#2f63b8"/><text x="12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">L</text><circle cx="-12" cy="0" r="5.5" fill="#e0a21b"/><text x="-12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">R</text><animateMotion dur="6s" repeatCount="indefinite" rotate="0" keyPoints="0;1;1" keyTimes="0;.85;1" calcMode="linear" path="M190 40 L310 75 L190 110 L310 145"/></g></svg><ul><li>一邊側滑，一邊把重心移到左腳 → 往左走</li><li>再移到右腳 → 往右走（板頭板尾互換）</li><li>先後刃練，再前刃練</li></ul><div class="pass">過關：兩個方向都能控制速度</div></div>
+<div class="dcard"><div class="dhd"><span class="dn">5</span>花環轉<small>Garland</small></div><svg viewBox="0 0 340 182" font-family="Zen Kaku Gothic New" fill="#2a2622"><defs><marker id="dn" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9fb2cf"/></marker><marker id="gn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f8f5b"/></marker></defs><g transform="translate(4,22) scale(0.86)"><path d="M8 40 L150 150 L150 180 L8 180Z" fill="#eef3f8"/><line x1="8" y1="40" x2="150" y2="150" stroke="#9fb2cf" stroke-width="2"/><text x="14" y="34" font-size="10" fill="#6d655b">山上</text><text x="120" y="174" font-size="10" fill="#6d655b">山下</text><rect x="56" y="97" width="44" height="6" rx="3" fill="#c8442f" transform="rotate(-14 78 99)"/><polyline points="78,97 88,77 75,59 83,33" fill="none" stroke="#2a2622" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="83" y1="33" x2="102" y2="49" stroke="#2a2622" stroke-width="3" stroke-linecap="round"/><circle cx="87" cy="21" r="8" fill="#2a2622"/><line x1="99" y1="21" x2="127" y2="29" stroke="#c8442f" stroke-width="1.5" stroke-dasharray="3 3"/></g><text x="78" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#2a2622">同一刃・前手指方向</text><rect x="168" y="22" width="166" height="152" rx="6" fill="#f7fafc" stroke="#d9cfbf"/><line x1="324" y1="34" x2="324" y2="160" stroke="#9fb2cf" stroke-width="1.5" marker-end="url(#dn)"/><text x="318" y="170" font-size="9" fill="#6d655b" text-anchor="end">往山下</text><text x="251" y="16" text-anchor="middle" font-size="11" font-weight="700">軌跡：C 形一個接一個</text><path d="M182 45 Q 205 105 228 62 Q 251 120 274 80 Q 297 138 320 98" fill="none" stroke="#c8442f" stroke-width="2.5" opacity=".18"/><path d="M182 45 Q 205 105 228 62 Q 251 120 274 80 Q 297 138 320 98" fill="none" stroke="#c8442f" stroke-width="2.5" pathLength="1" stroke-dasharray="1 1"><animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;.85;1" dur="6s" repeatCount="indefinite"/></path><g><rect x="-19" y="-5" width="38" height="10" rx="5" fill="#2a2622"/><circle cx="12" cy="0" r="5.5" fill="#2f63b8"/><text x="12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">L</text><circle cx="-12" cy="0" r="5.5" fill="#e0a21b"/><text x="-12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">R</text><animateMotion dur="6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.85;1" calcMode="linear" path="M182 45 Q 205 105 228 62 Q 251 120 274 80 Q 297 138 320 98"/></g></svg><ul><li>從側滑開始，前腳壓 → 板頭轉向山下一點</li><li>板子開始加速前，回到同一刃把板子轉回橫向</li><li>整個過程「不換刃」，就像轉彎的前半段</li></ul><div class="pass">過關：每個 C 都能自己收住速度</div></div>
+<div class="dcard"><div class="dhd"><span class="dn">6</span>換刃<small>Edge change</small></div><svg viewBox="0 0 340 182" font-family="Zen Kaku Gothic New" fill="#2a2622"><defs><marker id="dn" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9fb2cf"/></marker><marker id="gn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f8f5b"/></marker></defs><g transform="translate(4,22) scale(0.86)"><path d="M8 40 L150 150 L150 180 L8 180Z" fill="#eef3f8"/><line x1="8" y1="40" x2="150" y2="150" stroke="#9fb2cf" stroke-width="2"/><text x="14" y="34" font-size="10" fill="#6d655b">山上</text><text x="120" y="174" font-size="10" fill="#6d655b">山下</text><rect x="56" y="97" width="44" height="6" rx="3" fill="#c8442f" transform="rotate(-14 78 99)"/><polyline points="78,97 88,77 75,59 83,33" fill="none" stroke="#2a2622" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="83" y1="33" x2="102" y2="49" stroke="#2a2622" stroke-width="3" stroke-linecap="round"/><circle cx="87" cy="21" r="8" fill="#2a2622"/><line x1="99" y1="21" x2="127" y2="29" stroke="#c8442f" stroke-width="1.5" stroke-dasharray="3 3"/></g><text x="78" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#2a2622">視線先轉・前腳壓</text><rect x="168" y="22" width="166" height="152" rx="6" fill="#f7fafc" stroke="#d9cfbf"/><line x1="324" y1="34" x2="324" y2="160" stroke="#9fb2cf" stroke-width="1.5" marker-end="url(#dn)"/><text x="318" y="170" font-size="9" fill="#6d655b" text-anchor="end">往山下</text><text x="251" y="16" text-anchor="middle" font-size="11" font-weight="700">軌跡：一個 S</text><path d="M195 38 C 300 48, 300 95, 250 100 C 200 105, 200 148, 305 162" fill="none" stroke="#c8442f" stroke-width="2.5" opacity=".18"/><path d="M195 38 C 300 48, 300 95, 250 100 C 200 105, 200 148, 305 162" fill="none" stroke="#c8442f" stroke-width="2.5" pathLength="1" stroke-dasharray="1 1"><animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;.85;1" dur="5s" repeatCount="indefinite"/></path><g><rect x="-19" y="-5" width="38" height="10" rx="5" fill="#2a2622"/><circle cx="12" cy="0" r="5.5" fill="#2f63b8"/><text x="12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">L</text><circle cx="-12" cy="0" r="5.5" fill="#e0a21b"/><text x="-12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">R</text><animateMotion dur="5s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.85;1" calcMode="linear" path="M195 38 C 300 48, 300 95, 250 100 C 200 105, 200 148, 305 162"/></g><text x="268" y="96" font-size="10" fill="#c8442f">換刃點</text></svg><ul><li>視線與前手先轉到新方向</li><li>重心移到前腳，板頭對準山下（短暫直滑，別怕）</li><li>膝蓋從腳跟換到腳尖（或反過來），新的刃接住</li></ul><div class="pass">過關：直滑那一下不慌、不往後坐</div></div>
+<div class="dcard"><div class="dhd"><span class="dn">7</span>連續轉彎<small>Linked turns</small></div><svg viewBox="0 0 340 182" font-family="Zen Kaku Gothic New" fill="#2a2622"><defs><marker id="dn" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9fb2cf"/></marker><marker id="gn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f8f5b"/></marker></defs><g transform="translate(4,22) scale(0.86)"><path d="M8 40 L150 150 L150 180 L8 180Z" fill="#eef3f8"/><line x1="8" y1="40" x2="150" y2="150" stroke="#9fb2cf" stroke-width="2"/><text x="14" y="34" font-size="10" fill="#6d655b">山上</text><text x="120" y="174" font-size="10" fill="#6d655b">山下</text><rect x="56" y="97" width="44" height="6" rx="3" fill="#c8442f" transform="rotate(-14 78 99)"/><polyline points="78,97 88,77 75,59 83,33" fill="none" stroke="#2a2622" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="83" y1="33" x2="102" y2="49" stroke="#2a2622" stroke-width="3" stroke-linecap="round"/><circle cx="87" cy="21" r="8" fill="#2a2622"/><line x1="99" y1="21" x2="127" y2="29" stroke="#c8442f" stroke-width="1.5" stroke-dasharray="3 3"/></g><text x="78" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#2a2622">節奏：看 → 壓 → 轉</text><rect x="168" y="22" width="166" height="152" rx="6" fill="#f7fafc" stroke="#d9cfbf"/><line x1="324" y1="34" x2="324" y2="160" stroke="#9fb2cf" stroke-width="1.5" marker-end="url(#dn)"/><text x="318" y="170" font-size="9" fill="#6d655b" text-anchor="end">往山下</text><text x="251" y="16" text-anchor="middle" font-size="11" font-weight="700">軌跡：連續 S</text><path d="M250 30 C 320 42, 320 68, 250 74 C 180 80, 180 104, 250 110 C 320 116, 320 140, 250 146 C 195 151, 195 165, 250 170" fill="none" stroke="#c8442f" stroke-width="2.5" opacity=".18"/><path d="M250 30 C 320 42, 320 68, 250 74 C 180 80, 180 104, 250 110 C 320 116, 320 140, 250 146 C 195 151, 195 165, 250 170" fill="none" stroke="#c8442f" stroke-width="2.5" pathLength="1" stroke-dasharray="1 1"><animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;.85;1" dur="7s" repeatCount="indefinite"/></path><g><rect x="-19" y="-5" width="38" height="10" rx="5" fill="#2a2622"/><circle cx="12" cy="0" r="5.5" fill="#2f63b8"/><text x="12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">L</text><circle cx="-12" cy="0" r="5.5" fill="#e0a21b"/><text x="-12" y="2.6" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="sans-serif">R</text><animateMotion dur="7s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.85;1" calcMode="linear" path="M250 30 C 320 42, 320 68, 250 74 C 180 80, 180 104, 250 110 C 320 116, 320 140, 250 146 C 195 151, 195 165, 250 170"/></g></svg><ul><li>把換刃連起來，每個彎都畫完整</li><li>速度太快 → 把彎畫大、多停留在刃上</li><li>喊節奏：看、壓、轉</li></ul><div class="pass">過關：一趟不停轉 6 次以上</div></div>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2><span class="n">06</span>單板新手的關鍵技巧</h2>
+<div class="grid">
+<div class="card"><h3 style="margin-top:0">平坦段＝單板的敵人</h3>
+Cruise（最小 7°）、Arch（5°）、ランラン (Ran-ran)（平均 6°）都有平坦路段。<ul>
+<li>進平地前<b>不要減速</b>，板子放平、直線滑過去。</li>
+<li>停住了就解開後腳，用後腳像滑板一樣蹬。</li>
+<li>別在平地前停下來休息。</li></ul></div>
+<div class="card"><h3 style="margin-top:0">連續轉彎</h3>照 05 的練習卡 1 → 7 順序練。卡住就退回上一張，不要硬跳。</div>
+<div class="card"><h3 style="margin-top:0">纜車</h3><ul>
+<li>上纜車前解開後腳，前腳綁著。</li>
+<li>下車：後腳踩在止滑墊上，板子朝前直直滑出去，不要轉。</li>
+<li>纜車頂區常擁擠，滑到旁邊再綁後腳。</li></ul></div>
+<div class="card"><h3 style="margin-top:0">禮儀與安全</h3><ul>
+<li>停下時選雪道兩側、能被上方看到的地方，不要坐在坡折下方。</li>
+<li>下坡者優先；超車要大寬距。</li>
+<li>午後腿累最容易受傷：14:30 後一律「降一級」。</li></ul></div>
+</div>
+
+<!-- ============ 6 ============ -->
+<h2><span class="n">07</span>雪道清單：滑／先別滑</h2>
+<div class="grid">
+<div class="card ok"><h3 style="margin-top:0">✓ 可以滑</h3>
+<p><b>岩原</b></p><ul>
+<li>3 Wide Bahn（最緩，主練習）</li><li>2 Grand Bahn（650m・14°）</li><li>4 Smile（800m・12°）</li><li>16 Cruise（山頂下來的林間道）</li><li>20 Arch（12°/5°，連絡道，注意平坦）</li></ul>
+<p><b>舞子</b></p><ul>
+<li>パラダイス (Paradaisu)（760m・10°）</li><li>ファミリー (Famirī)・キンダー (Kindā)・バンビ (Banbi)・イージー (Ījī)・ロマンス (Romansu)</li><li>ルンルン (Run-run)・ラクラク (Raku-raku)（奥添地 (Okusoechi)）</li><li>ランラン (Ran-ran)（6km，狀態好才去）</li></ul></div>
+<div class="card"><h3 style="margin-top:0">△ 狀態好可試</h3>
+<p><b>岩原</b></p><ul>
+<li>8 Beginner Course、9 Terrace 前半、7 Panorama（18°）</li>
+<li>19 Fine Snow Bahn（18°，雪質最好）</li></ul>
+<p><b>舞子</b></p><ul><li>チョイチョイ (Choi-choi)（長峰 (Nagamine)初級）</li></ul>
+<p class="note">建議 1/5 前不要嘗試；看當天狀態。</p></div>
+<div class="card ng"><h3 style="margin-top:0">✕ 先別滑</h3>
+<p><b>岩原</b></p><ul>
+<li>12 Giant・15 Technical（35°）</li><li>14 Dynamic・17 Natural（30°）</li><li>11 Racers・6 Challenge</li><li>18 Romance（未壓雪）</li></ul>
+<p><b>舞子</b></p><ul><li>グングン (Gun-gun)・ゾクゾク (Zoku-zoku)・ガンガン (Gan-gan)</li><li>チャンピオン (Chanpion)（30°）</li><li>舞子區中級道（短陡段）</li></ul></div>
+</div>
+
+<div class="card" style="border-color:var(--shu)">
+<b>出發前 / 當天確認：</b>⓪ 岩原、舞子 2026–27 接駁班表（12 月公布），存計程車電話備用 ① 兩場地的「本日營業コース (Honjitsu Eigyō Kōsu)」（季初未必全開）② 舞子 2026–27 接駁班表（12 月公布）③ 岩原 RC2 拿紙本地圖確認往山頂與 Wide Bahn 的纜車 ④ 手機下載舞子地圖照片，山上收訊或電量不穩時備用。
+</div>
+
+<p style="margin-top:28px"><a href="./" style="color:var(--shu);font-weight:700">← 回行程主頁</a></p>
+<p class="note">資料：岩原官方 gelande 頁、SURF&amp;SNOW 岩原／舞子介紹、Travel-inn 舞子實地報告。整理於 2026-11-05（v4：加讀音、練習卡＋軌跡動畫、晚回程方案）。</p>
+</div>
+
+<script>
+const data=[
+ ["岩原 (Iwappara) 3 Wide Bahn",12,"#2f8f5b"],["岩原 4 Smile",12,"#2f8f5b"],["岩原 16 Cruise",12,"#2f8f5b"],["岩原 20 Arch",12,"#2f8f5b"],
+ ["岩原 2 Grand Bahn",14,"#2f8f5b"],["舞子 (Maiko) パラダイス (Paradaisu)",10,"#2f8f5b"],
+ ["岩原 8 Beginner",18,"#2f8f5b"],["岩原 9 Terrace",18,"#2f63b8"],["岩原 19 Fine Snow",18,"#2f63b8"],
+ ["岩原 10 Front",22,"#2f63b8"],["岩原 5 West",23,"#2f63b8"],["岩原 13 Sky",25,"#2f63b8"],
+ ["舞子 チャンピオン (Chanpion)",30,"#222"],["岩原 14 Dynamic",30,"#222"],["岩原 12 Giant",35,"#222"]
+];
+const g=document.getElementById('bars'),ns="http://www.w3.org/2000/svg";
+data.sort((a,b)=>a[1]-b[1]).forEach((d,i)=>{
+ const y=44+i*24;
+ const t=document.createElementNS(ns,'text');t.setAttribute('x',242);t.setAttribute('y',y+13);t.setAttribute('text-anchor','end');t.setAttribute('font-size','12');t.textContent=d[0];g.appendChild(t);
+ const r=document.createElementNS(ns,'rect');r.setAttribute('x',250);r.setAttribute('y',y);r.setAttribute('height',16);r.setAttribute('rx',3);r.setAttribute('width',d[1]*13);r.setAttribute('fill',d[2]);g.appendChild(r);
+ const v=document.createElementNS(ns,'text');v.setAttribute('x',256+d[1]*13);v.setAttribute('y',y+13);v.setAttribute('font-size','12');v.setAttribute('fill','#6d655b');v.textContent=d[1]+'°';g.appendChild(v);
+});
+</script>
+</body>
+</html>
