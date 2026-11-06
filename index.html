@@ -51,18 +51,10 @@ a.pl::after{content:"";display:inline-block;width:.72em;height:.9em;margin-left:
 
 /* ---------- Sticky bar ---------- */
 .bar{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px 8px;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.search{display:flex;align-items:center;gap:8px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:0 6px 0 12px;transition:border-color .2s}
-.search:focus-within{border-color:var(--shu)}
-.search svg{flex:0 0 20px;color:var(--muted)}
-.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:17px var(--sans);padding:11px 0;outline:0}
-.search .count{font-size:14px;color:var(--muted);white-space:nowrap}
-.search button{border:0;background:transparent;color:var(--muted);font-size:24px;line-height:1;cursor:pointer;padding:6px 8px;display:none}
-.search.has button{display:block}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:9px 0 2px;scrollbar-width:none}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 2px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
 .chips a{flex:0 0 auto;font:15px var(--sans);color:var(--ink2);text-decoration:none;padding:5px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
 .chips a:hover{border-color:var(--shu);color:var(--shu)}
-.nores{display:none;text-align:center;color:var(--muted);padding:40px 0;font-family:var(--serif);font-size:18px}
 mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
 .hide{display:none!important}
 
@@ -242,17 +234,11 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 
 <div class="bar">
   <!--ski-tab--><nav class="pagetabs" aria-label="分頁"><a class="on" href="./" aria-current="page">📖 行程</a><a href="ski.html">🏂 滑雪攻略</a></nav>
-  <label class="search" id="searchBox">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-    <input id="q" type="text" enterkeyhint="search" placeholder="搜尋：拉麵、巴士、溫泉、toco…" autocomplete="off" aria-label="搜尋行程">
-    <span class="count" id="count"></span>
-    <button type="button" id="clear" aria-label="清除">×</button>
-  </label>
+  <!--no-search-->
   <nav class="chips" aria-label="章節">
     <a href="#days">每日章節</a><a href="#stay">住宿</a><a href="#ski">滑雪</a><a href="#bus">岩原巴士</a><a href="#go">交通</a><a href="#breakfast">早餐</a><a href="#plan-b">備案</a><a href="#gifts">伴手禮</a><a href="#pack">打包</a><a href="#money">預算</a><a href="#todo">待確認</a>
   </nav>
 </div>
-<p class="nores" id="nores">找不到相符的段落。換個關鍵字試試。</p>
 
 <section class="sec" id="status-sec" data-s>
   <div class="status">
@@ -966,40 +952,6 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
     });
   });
 
-  /* ---------- search ---------- */
-  var q=document.getElementById('q'),box=document.getElementById('searchBox'),cnt=document.getElementById('count'),
-      clr=document.getElementById('clear'),nores=document.getElementById('nores'),blocks=document.querySelectorAll('[data-s]');
-  function unmark(){document.querySelectorAll('mark').forEach(function(m){var t=document.createTextNode(m.textContent),par=m.parentNode;par.replaceChild(t,m);par.normalize();});}
-  function markIn(root,term){
-    var n=0,lt=term.toLowerCase(),list=[],w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(x){
-      return x.nodeValue.toLowerCase().indexOf(lt)>-1&&!/SCRIPT|STYLE|BUTTON/.test(x.parentNode.nodeName)&&!x.parentNode.closest('.read')?1:3}});
-    while(w.nextNode())list.push(w.currentNode);
-    list.forEach(function(node){
-      var txt=node.nodeValue,low=txt.toLowerCase(),i,last=0,frag=document.createDocumentFragment();
-      while((i=low.indexOf(lt,last))>-1){
-        frag.appendChild(document.createTextNode(txt.slice(last,i)));
-        var m=document.createElement('mark');m.textContent=txt.slice(i,i+term.length);frag.appendChild(m);n++;last=i+term.length;}
-      frag.appendChild(document.createTextNode(txt.slice(last)));node.parentNode.replaceChild(frag,node);
-    });
-    return n;
-  }
-  var timer;
-  function run(){
-    unmark();var term=q.value.trim();box.classList.toggle('has',!!term);
-    if(!term){blocks.forEach(function(b){b.classList.remove('hide')});document.getElementById('days').classList.remove('hide');cnt.textContent='';nores.style.display='none';
-      document.querySelectorAll('details').forEach(function(x){x.open=false});return;}
-    var total=0,first=null;
-    blocks.forEach(function(b){
-      var n=markIn(b,term);total+=n;b.classList.toggle('hide',n===0);
-      if(n){b.classList.add('in');b.querySelectorAll('details').forEach(function(x){if(x.querySelector('mark'))x.open=true});if(!first)first=b;}
-    });
-    cnt.textContent=total?total+' 處':'';nores.style.display=total?'none':'block';
-    var sec=document.getElementById('days');sec.classList.toggle('hide',!sec.querySelector('.chapter:not(.hide)')&&total>0);
-    if(first){var m=first.querySelector('mark');if(m)m.scrollIntoView({block:'center',behavior:'smooth'});}
-  }
-  q.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,180)});
-  clr.addEventListener('click',function(){q.value='';run();q.focus()});
-  document.querySelectorAll('.chips a').forEach(function(a){a.addEventListener('click',function(){if(q.value){q.value='';run();}})});
 
   /* overdue to-dos */
   function lateMark(){document.querySelectorAll('#todolist label[data-due]').forEach(function(l){l.classList.toggle('late',!l.querySelector('input').checked&&l.dataset.due<=now.d)})}
