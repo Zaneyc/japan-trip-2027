@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#f4efe4">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+:root{color-scheme:only light}
 :root{
   --paper:#f4efe4;--paper2:#ebe3d2;--card:#fbf8f1;--ink:#1d1a16;--ink2:#433d35;--muted:#7a7062;
   --line:#d9cfbb;--shu:#c0392b;--shu-soft:#f3dcd5;--ai:#2c4a6e;--ai-soft:#dfe6ee;--matcha:#4f6b3a;--matcha-soft:#e3ead8;
@@ -219,6 +221,20 @@ th{color:var(--muted);font-weight:500;border-top:0;font-size:14px;letter-spacing
 .ski-link:hover{background:var(--shu);color:#fff}
 /* ---------- 照片不可點 ---------- */
 figure img{pointer-events:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.okuri{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:15px;background:var(--card);border-radius:8px;overflow:hidden}
+.okuri th,.okuri td{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.okuri th{white-space:nowrap;color:var(--ink2);font-weight:700;width:1%}
+.okuri td{color:var(--ink);word-break:break-all}
+.okuri tr.g th{background:var(--paper2);color:var(--ai);font:700 14px var(--sans);letter-spacing:.05em}
+/*okuri-stack*/
+.eat-card>div{min-width:0}
+.okuri,.okuri tbody,.okuri tr{display:block;width:100%}
+.okuri th,.okuri td{display:block;width:auto;white-space:normal;border-bottom:0}
+.okuri tr{border-bottom:1px solid var(--line);padding:4px 0}
+.okuri th{padding:2px 10px 0;font-size:13.5px}
+.okuri td{padding:0 10px 2px;font-size:15.5px;word-break:normal;overflow-wrap:anywhere}
+.okuri tr.g{padding:0;border-bottom:0}
+.okuri tr.g th{padding:4px 10px}
 </style>
 </head>
 <body>
@@ -361,7 +377,7 @@ figure img{pointer-events:none;-webkit-touch-callout:none;-webkit-user-select:no
   </div>
   <ul class="timeline">
     <li><span class="t">08:15</span><details class="x"><summary>行李箱自己拿到入谷附近 7-Eleven／FamilyMart 寄宅急便到石亭（指定 1/5 送達）<span class="hint">流程</span></summary>
-      <div class="eat-card info"><div class="ic">箱</div><div><h4>便利商店寄宅急便<small>toco 櫃台 9:00 才開，自己寄最快</small></h4><p>① 前一晚把 1/2–1/5 要用的東西移到背包（滑雪衣物、盥洗、充電器、護照）。<br>② 到櫃台說「宅急便でお願いします」，拿「宅急便（発払い）」送り狀填寫：<br>　・お届け先：〒169-0073 東京都新宿区百人町 2-15-10　新大久保 石亭 気付　Zan Yu Chong 様（Check-in Jan 5）・TEL 03-3365-5931<br>　・ご依頼主：Zan Yu Chong、手機、toco 地址<br>　・お届け予定日：1月5日、時間帯：午前中<br>③ 店員量尺寸、收費（行李箱多為 140–160 尺寸，金額以櫃台為準）。<br>④ 收好「お客様控え」，上面有追蹤號碼。⑤ 1/5 到石亭領取。</p><div class="meta">也可以 1/1 晚上從淺草回入谷時先寄（隔天才收件，一樣 1/5 到）</div><span class="warnline">✅ 石亭已確認免費代收（11/11）</span></div></div>
+      <div class="eat-card info"><div class="ic">箱</div><div><h4>便利商店寄宅急便<small>toco 櫃台 9:00 才開，自己寄最快</small></h4><!--okurijo-table--><p>① 前一晚把 1/2–1/5 要用的東西移到背包（滑雪衣物、盥洗、充電器、護照）。<br>② 到櫃台說「宅急便でお願いします」，拿「宅急便（発払い）」送り狀，照下表填：</p><table class="okuri"><tr class="g"><th colspan="2">お届け先</th></tr><tr><th>電話番号</th><td>03-3365-5931</td></tr><tr><th>郵便番号</th><td>169-0073</td></tr><tr><th>ご住所</th><td>東京都新宿区百人町 2-15-10　新大久保 石亭 気付</td></tr><tr><th>お名前</th><td>Zan Yu Chong 様（Check-in Jan 5）</td></tr><tr class="g"><th colspan="2">ご依頼主</th></tr><tr><th>電話番号</th><td>自己的手機（國際格式 +886-9xx-xxx-xxx）</td></tr><tr><th>郵便番号</th><td>110-0004</td></tr><tr><th>ご住所</th><td>東京都台東区下谷 2-13-21　Guesthouse toco</td></tr><tr><th>お名前</th><td>Zan Yu Chong</td></tr><tr class="g"><th colspan="2">其他</th></tr><tr><th>品名</th><td>衣類・身の回り品（スーツケース）</td></tr><tr><th>お届け予定日</th><td>1 月 5 日</td></tr><tr><th>お届け時間帯</th><td>圈「午前中」（其他：14–16／16–18／18–20／19–21）</td></tr><tr><th>取扱注意</th><td>不用勾</td></tr><tr><th>ご請求先</th><td>空白（発払い＝當場付）</td></tr><tr><th>サイズ・重量・運賃・伝票番号</th><td>空白，店員填</td></tr></table><p>③ 店員量尺寸、收費：24 吋行李箱約 <b>140 尺寸 ¥2,090</b>；量出來超過就算 160 尺寸 ¥2,410（東京寄東京＝同一都道府縣運費，2025/11 起；以櫃台為準）。帶<b>現金</b>最穩。<br>④ 不能寄：行動電源／鋰電池、噴霧罐（防曬噴霧等）→ 放背包。<br>⑤ 收好「お客様控え」並拍照，上面有追蹤號碼。⑥ 1/5 到石亭領取。</p><div class="meta">也可以 1/1 晚上從淺草回入谷時先寄（隔天才收件，一樣 1/5 到）</div><span class="warnline">✅ 石亭已確認免費代收（11/11）</span></div></div>
     </details></li>
     <li><span class="t">08:40</span><span class="x">toco 退房 → 入谷搭日比谷線到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A5%E6%AF%94%E8%B0%B7%E9%A7%85">日比谷</a>（約 15 分）→ 步行約 12 分到 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%9A%87%E5%B1%85%E6%AD%A3%E9%96%80">皇居正門</a></span></li>
     <li><span class="t">09:30</span><details class="x"><summary>新年一般參賀：開門入場，約 10:10 天皇第一次出來致意<span class="hint">詳情</span></summary>
@@ -512,11 +528,14 @@ figure img{pointer-events:none;-webkit-touch-callout:none;-webkit-user-select:no
     <li><span class="t">14:45</span><span class="x">Toki 越後湯澤 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%8A%E9%87%8E%E9%A7%85">上野</a>（約 70 分，12/5 開賣先訂位）</span></li>
     <li><span class="t">16:00</span><span class="x">上野 → 山手線（往池袋方向）不用轉車直達 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%E9%A7%85">新大久保</a>（約 25 分）</span></li>
     <li><span class="t">16:30</span><span class="x">入住 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D%20%E7%9F%B3%E4%BA%AD">石亭旅館</a>（15:00 起可入住），領宅急便行李箱</span></li>
-    <li class="eat"><span class="t">18:00</span><details class="x"><summary><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF">思い出横丁</a>「カブト」鰻魚串 → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E8%A1%97">黃金街</a> 小酒吧<span class="hint">詳情</span></summary>
-      <div class="eat-card"><div class="ic">串</div><div><h4>カブト<small>1948 年創業・鰻魚串</small></h4><p>只賣鰻魚各部位的串燒，吧檯 15 席，多是一個人來的客人。</p><p class="rec"><b>推薦點：</b>「一通り」套餐（各部位串燒一輪，約 ¥1,700）＋ 肝焼き，配一杯燒酎</p><div class="cost">預估一人 約 ¥2,000–3,000</div><div class="meta">週一至五 13:00–20:00、週六 12:00–20:00、週日休・<b>只收現金</b>・<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%96%E3%83%88%20%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81">地圖</a></div><span class="warnline">20:00 打烊，18:30 前到</span></div></div>
+    <li><span class="t">16:45</span><details class="x"><summary>新宿東口購物：後背包、Uniqlo、Onitsuka Tiger、襪子<span class="hint">詳情</span></summary><!--shopping-0105-->
+      <div class="eat-card info"><div class="ic">買</div><div><h4>新宿東口購物路線<small>山手線 1 站到新宿，東口出；照關門時間排</small></h4><p class="shop"><b>16:45</b> <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=ARC%27TERYX%20%E6%96%B0%E5%AE%BF%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%83%88%E3%82%A2">Arc'teryx 新宿店</a>：看 Granville 25（25L、約 ¥37,400）<br><small>東口廣場對面（Alta 旁）・11:00–20:00</small></p><p class="shop"><b>17:15</b> <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Alpen%20TOKYO%20%E6%96%B0%E5%AE%BF%E6%9C%AC%E5%BA%97">Alpen TOKYO 新宿本店</a>：10 層綜合運動戶外店，多品牌後背包一次比（TNF 有沒有現場看）<br><small>東口走 1 分・11:00–22:00</small></p><p class="shop"><b>17:50</b> <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=Onitsuka%20Tiger%20%E6%96%B0%E5%AE%BF%20%E6%97%97%E8%89%A6%E5%BA%97">Onitsuka Tiger 新宿旗艦店</a>：鞋<br><small>新宿 3-26-11 高野大樓・11:00–20:00</small></p><p class="shop"><b>18:20</b> <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%A6%E3%83%8B%E3%82%AF%E3%83%AD%20%E6%96%B0%E5%AE%BF%E6%9C%AC%E5%BA%97">Uniqlo 新宿本店</a>：衣服<br><small>新宿 3-29-1（原 Bicqlo）・10:00–22:00</small></p><p class="shop"><b>19:00</b> <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=L-Breath%20%E6%96%B0%E5%AE%BF%E5%BA%97">L-Breath 新宿店</a>：3F 約 500 款後背包<br><small>東南口走 2 分・11:00–22:00</small></p><p class="shop"><b>19:40</b> <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=UNITED%20ARROWS%20green%20label%20relaxing%20%E3%83%AB%E3%83%9F%E3%83%8D%E6%96%B0%E5%AE%BF">LUMINE 2：green label relaxing 5F</a>：TNF シャトルデイパック（¥28,600；庫存不一定）<br><small>LUMINE 2・11:00–21:00</small></p><p class="shop"><b>19:40</b> <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9D%B4%E4%B8%8B%E5%B1%8B%20Tabio%20chaussette%20%E3%83%AB%E3%83%9F%E3%83%8D%E6%96%B0%E5%AE%BF">LUMINE 2：靴下屋 Tabio chaussette 4F</a>：襪子（男款區較小）<br><small>同一棟・11:00–21:00</small></p><p class="rec"><b>後背包候選（NT$1 萬內）：</b>THE NORTH FACE シャトルデイパック 24–28L、15 吋（約 ¥28,600–30,800）／Arc'teryx Granville 25（約 ¥37,400）／ACE シルパック 22L、14 吋（約 ¥23,100）</p><div class="meta">帶護照辦免稅：先付含稅價，1/7 成田機器確認後退回信用卡；同一張收據的東西出境時都要在身上</div><span class="warnline">新年營業時間先當作照常；買了新後背包，1/7 直接背上飛機，舊背包放託運</span></div></div>
+    </details></li>
+    <li class="eat"><span class="t">20:30</span><details class="x"><summary>晚餐：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF">思い出横丁</a> 隨意吃（「カブト」鰻魚串趕得上再說） → <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E8%A1%97">黃金街</a> 小酒吧<span class="hint">詳情</span></summary>
+      <div class="eat-card"><div class="ic">串</div><div><h4>カブト<small>1948 年創業・鰻魚串</small></h4><p>只賣鰻魚各部位的串燒，吧檯 15 席，多是一個人來的客人。</p><p class="rec"><b>推薦點：</b>「一通り」套餐（各部位串燒一輪，約 ¥1,700）＋ 肝焼き，配一杯燒酎</p><div class="cost">預估一人 約 ¥2,000–3,000</div><div class="meta">週一至五 13:00–20:00、週六 12:00–20:00、週日休・<b>只收現金</b>・<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%96%E3%83%88%20%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81">地圖</a></div><span class="warnline">20:00 打烊，購物路線走完多半趕不上，不勉強；思い出横丁其他店、黃金街開到很晚</span></div></div>
     </details></li>
   </ul>
-  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4&amp;destination=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85%7C%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-05" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">岩原 → BOO → 新幹線 → 石亭 → 思い出横丁（地圖開啟後可切換大眾運輸看每段）</span>
+  <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4&amp;destination=%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81%20%E6%96%B0%E5%AE%BF&amp;waypoints=BOO%20SPORTS%20%E6%B9%AF%E6%B2%A2%7C%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85%7C%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-05" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">岩原 → BOO → 新幹線 → 石亭 → 新宿東口購物 → 思い出横丁（地圖開啟後可切換大眾運輸看每段）</span>
   <a class="ski-link" href="ski.html#d0105">🏂 1/5 岩原半天怎麼滑 →</a>
   <div class="wx" id="wx-2027-01-05"></div>
   <div class="ph-hint">左右滑看更多・共 4 張</div>
@@ -562,7 +581,7 @@ figure img{pointer-events:none;-webkit-touch-callout:none;-webkit-user-select:no
       <div class="eat-card info"><div class="ic">景</div><div><h4>都廳展望室＋光雕投影<small>西口步行約 10 分</small></h4><p>1 月日落約 16:45，上去剛好看天色轉夜景。光雕「TOKYO Night &amp; Light」投在都廳外牆，從 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4">都民廣場</a> 看，17:30 起每 30 分一場、約 15 分鐘。</p><span class="warnline">場次以官網為準</span></div></div>
     </details></li>
     <li><span class="t">18:00</span><details class="x"><summary>伴手禮：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%97%E3%83%AC%E3%82%B9%E3%83%90%E3%82%BF%E3%83%BC%E3%82%B5%E3%83%B3%E3%83%89%20%E3%83%AB%E3%83%9F%E3%83%8D%E3%82%A8%E3%82%B9%E3%83%88%E6%96%B0%E5%AE%BF">PRESS BUTTER SAND ルミネエスト新宿</a>（B1）<span class="hint">詳情</span></summary>
-      <div class="eat-card info"><div class="ic">禮</div><div><h4>PRESS BUTTER SAND ルミネエスト新宿<small>新宿 3-38-1 B1・JR 新宿站東口</small></h4><p>看完 17:30 光雕，從都廳走到新宿站東口約 20 分（或大江戶線 都庁前 → 新宿）。買朋友的 5 入 ×4（約 ¥1,215／盒），買完走約 3 分到つな八。</p><span class="warnline">賞味期限約 7–9 天，回台後一週內送出；營業時間與新年庫存出發前再確認</span></div></div>
+      <div class="eat-card info"><div class="ic">禮</div><div><h4>PRESS BUTTER SAND ルミネエスト新宿<small>新宿 3-38-1 B1・JR 新宿站東口</small></h4><p>看完 17:30 光雕，從都廳走到新宿站東口約 20 分（或大江戶線 都庁前 → 新宿）。買朋友的 5 入 ×4（約 ¥1,215／盒），同一棟 3F 有 <a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9D%B4%E4%B8%8B%E5%B1%8B%20%E3%83%AB%E3%83%9F%E3%83%8D%E3%82%A8%E3%82%B9%E3%83%88%E5%BA%97">靴下屋 ルミネエスト店</a>（11:00–21:00），1/5 沒買夠的襪子在這裡補。買完走約 3 分到つな八。</p><span class="warnline">賞味期限約 7–9 天，回台後一週內送出；營業時間與新年庫存出發前再確認</span></div></div>
     </details></li>
     <li class="eat"><span class="t">18:30</span><details class="x"><summary>晚餐（不訂位，現場候位）：<a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A9%E3%81%B7%E3%82%89%E6%96%B0%E5%AE%BF%E3%81%A4%E3%81%AA%E5%85%AB%20%E7%B7%8F%E6%9C%AC%E5%BA%97%20%E5%88%A5%E9%A4%A8">天ぷら新宿つな八 總本店 別館</a> 天婦羅吧檯<span class="hint">詳情</span></summary>
       <div class="eat-card"><div class="ic">天</div><div><h4>天ぷら新宿つな八 總本店 別館<small>1924 年創業・天婦羅吧檯</small></h4><p>6 樓以吧檯為主，師傅在你面前一件一件炸。總本店改建中，暫時在 TRES SHINJUKU 營業。</p><p class="rec"><b>推薦點：</b>江戶前特選套餐 ¥5,940（吧檯現炸），想省一點點定食 ¥3,630</p><div class="cost">預估一人 ¥3,630–6,500</div><div class="meta">新宿 3-28-4 TRES SHINJUKU 6F・11:00–22:00（L.O. 21:00）</div><span class="warnline">TableCheck 最少 2 人，1 人不能線上訂 → 直接到 6F 候位，說想坐吧檯；等超過 30 分就改去旁邊的船橋屋</span></div></div>
@@ -608,7 +627,7 @@ figure img{pointer-events:none;-webkit-touch-callout:none;-webkit-user-select:no
     </details></li>
     <li><span class="t">11:45</span><span class="x">回石亭取背包</span></li>
     <li><span class="t">12:30</span><span class="x"><a class="pl" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BF%E9%A7%85%20%E6%88%90%E7%94%B0%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AC%E3%82%B9">新宿站</a> 搭 N'EX（¥3,330，約 80–90 分）</span></li>
-    <li><span class="t">14:00</span><span class="x">成田第一航廈：<b>先到免稅手續機掃護照</b>確認免稅品（藥妝、防摔褲要在身上），再辦樂桃報到、託運</span></li>
+    <li><span class="t">14:00</span><span class="x">成田第一航廈：<b>先到免稅手續機掃護照</b>確認免稅品（藥妝、防摔褲、後背包等購物要在身上），再辦樂桃報到、託運</span></li>
     <li><span class="t">16:35</span><span class="x">樂桃 MM625 → 20:00 桃園</span></li>
   </ul>
   <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E7%9F%B3%E4%BA%AD%E6%97%85%E9%A4%A8%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D&amp;destination=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;waypoints=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%7CAFURI%20%E5%8E%9F%E5%AE%BF%7C%E6%96%B0%E5%AE%BF%E9%A7%85"><span class="ico"><svg viewBox="0 0 12 16"><path d="M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.3A2.3 2.3 0 1 1 6 3.7a2.3 2.3 0 0 1 0 4.6z"/></svg></span>今日路線・Google 地圖</a><button type="button" class="wxbtn" data-wx="2027-01-07" aria-expanded="false"><span class="ico">☁</span>天氣・穿搭<span class="bd"></span></button><span class="route-note">石亭 → 明治神宮 → AFURI → 新宿 → 成田（地圖開啟後可切換大眾運輸看每段）</span>
